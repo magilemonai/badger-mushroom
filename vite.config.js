@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
-  base: '/',
+  base: '/badger-mushroom/',
   build: {
     outDir: 'docs',
   },
