@@ -62,10 +62,10 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       />
-      <div className="relative max-w-6xl mx-auto px-6 h-16 flex items-center">
+      <div className="relative max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-display text-xl text-charcoal hover:text-forest transition-colors absolute left-6"
+          className="font-display text-xl text-charcoal hover:text-forest transition-colors"
           style={{
             opacity: nameVisible ? 1 : 0,
             transform: `scale(${nameScale})`,
@@ -78,7 +78,7 @@ export default function Navigation() {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8 ml-auto">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -101,7 +101,7 @@ export default function Navigation() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden ml-auto w-10 h-10 flex items-center justify-center overflow-visible"
+          className="md:hidden w-10 h-10 flex items-center justify-center overflow-visible"
           aria-label="Toggle menu"
         >
           <div className="relative w-5 h-5">
