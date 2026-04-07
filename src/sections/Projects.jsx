@@ -36,7 +36,7 @@ const projects = [
     subtitle: 'A 5-minute alien gameshow',
     description:
       'A short, silly web trivia gameshow hosted by an alien named Zorp. Quick to play, hard to take seriously. Built with Claude Code.',
-    url: 'https://lnkd.in/gXHStG7d',
+    url: 'https://magilemonai.github.io/galactic-bangle/',
     tags: ['Game', 'Claude Code', 'Trivia'],
     image: 'zorp-gameshow.jpg',
     imageAlt: 'Zorp alien gameshow screenshot',
