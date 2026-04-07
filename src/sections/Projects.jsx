@@ -86,11 +86,11 @@ export default function Projects() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {project.image ? (
-                  <div className="h-44 sm:h-52 overflow-hidden bg-charcoal">
+                  <div className="h-40 sm:h-48 overflow-hidden">
                     <img
                       src={import.meta.env.BASE_URL + project.image}
                       alt={project.imageAlt || ''}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ) : (

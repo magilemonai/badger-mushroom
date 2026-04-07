@@ -15,8 +15,8 @@ export const projects = [
       'A 32-bit top-down RPG set in the world of my homebrew D&D campaign. Three playable characters, original music, and hand-crafted pixel art. Built entirely with Claude Code.',
     url: 'https://magilemonai.github.io/reimagined-barnacle/',
     tags: ['Game', 'Claude Code', 'RPG'],
-    image: 'post-dnd-game.png',
-    imageAlt: 'Valisar RPG gameplay screenshot',
+    image: 'valisar-title.png',
+    imageAlt: 'Valisar — Shadows of the Elospyre',
   },
   {
     title: 'Last Light',
@@ -25,7 +25,7 @@ export const projects = [
       'Guide ships safely to harbor while fighting back dark creatures from the deep. Playable on web and mobile. Built iteratively using a Karpathy loop — autonomous AI optimization running overnight.',
     url: 'https://magilemonai.github.io/last-light/',
     tags: ['Game', 'Claude Code', 'Karpathy Loop'],
-    image: 'last-light.png',
+    image: 'last-light-title.png',
     imageAlt: 'Last Light — a lighthouse keeper\'s vigil against the dark',
   },
   {
@@ -35,8 +35,8 @@ export const projects = [
       'A short, silly web trivia gameshow hosted by an alien named Zorp. Quick to play, hard to take seriously. Built with Claude Code.',
     url: 'https://magilemonai.github.io/galactic-bangle/',
     tags: ['Game', 'Claude Code', 'Trivia'],
-    image: 'zorp-gameshow.jpg',
-    imageAlt: 'Zorp alien gameshow screenshot',
+    image: 'zorp-title.png',
+    imageAlt: 'Who Wants to Zorp a Blorginaire?',
   },
   {
     title: 'Numinous',

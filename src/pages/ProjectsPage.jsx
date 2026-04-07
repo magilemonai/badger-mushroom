@@ -10,11 +10,11 @@ function ProjectCard({ project, large }) {
       className="group block bg-pearl rounded-xl border border-taupe/50 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
     >
       {project.image ? (
-        <div className={`${large ? 'h-56 sm:h-72' : 'h-48 sm:h-56'} overflow-hidden bg-charcoal`}>
+        <div className={`${large ? 'h-56 sm:h-72' : 'h-48 sm:h-56'} overflow-hidden`}>
           <img
             src={import.meta.env.BASE_URL + project.image}
             alt={project.imageAlt || ''}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       ) : (
