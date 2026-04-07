@@ -45,5 +45,7 @@ export const projects = [
       'An atmospheric, interactive web experience exploring the numinous. Built with Claude Code.',
     url: 'https://magilemonai.github.io/upgraded-waffle/',
     tags: ['Experience', 'Claude Code', 'Creative'],
+    image: 'numinous.png',
+    imageAlt: 'Numinous immersive experience screenshot',
   },
 ]
