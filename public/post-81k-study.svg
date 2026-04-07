@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#F0EBE3"/>
+  <!-- Two overlapping silhouette circles: hope and fear entangled -->
+  <circle cx="165" cy="175" r="95" fill="#4A7C59" opacity="0.25"/>
+  <circle cx="235" cy="175" r="95" fill="#C4896E" opacity="0.25"/>
+  <!-- Overlap region highlight -->
+  <text x="200" y="170" text-anchor="middle" font-family="serif" font-size="14" fill="#3A3530" font-style="italic">light</text>
+  <text x="200" y="190" text-anchor="middle" font-family="serif" font-size="14" fill="#3A3530" font-style="italic">&amp; shade</text>
+  <!-- Labels -->
+  <text x="120" y="175" text-anchor="middle" font-family="monospace" font-size="11" fill="#4A7C59" font-weight="bold">hope</text>
+  <text x="280" y="175" text-anchor="middle" font-family="monospace" font-size="11" fill="#C4896E" font-weight="bold">fear</text>
+  <!-- 81K number -->
+  <text x="200" y="60" text-anchor="middle" font-family="monospace" font-size="36" fill="#3A3530" font-weight="bold">81,000</text>
+  <text x="200" y="80" text-anchor="middle" font-family="monospace" font-size="11" fill="#6B6560">voices \u00b7 159 countries</text>
+  <!-- Quote -->
+  <text x="200" y="320" text-anchor="middle" font-family="serif" font-size="11" fill="#6B6560" font-style="italic">"The people closest to AI aren't the most</text>
+  <text x="200" y="336" text-anchor="middle" font-family="serif" font-size="11" fill="#6B6560" font-style="italic">comfortable with it. They're the most conflicted."</text>
+  <!-- Small people icons across bottom -->
+  <g fill="#D6D0C8" opacity="0.5">
+    <circle cx="80" cy="380" r="4"/><circle cx="100" cy="380" r="4"/><circle cx="120" cy="380" r="4"/>
+    <circle cx="140" cy="380" r="4"/><circle cx="160" cy="380" r="4"/><circle cx="180" cy="380" r="4"/>
+    <circle cx="200" cy="380" r="4"/><circle cx="220" cy="380" r="4"/><circle cx="240" cy="380" r="4"/>
+    <circle cx="260" cy="380" r="4"/><circle cx="280" cy="380" r="4"/><circle cx="300" cy="380" r="4"/>
+    <circle cx="320" cy="380" r="4"/>
+  </g>
+</svg>

@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color palette */
+  --color-cream: #FAF7F2;
+  --color-linen: #F0EBE3;
+  --color-charcoal: #2C2C2C;
+  --color-warm-gray: #6B6560;
+  --color-sage: #7A9E7E;
+  --color-forest: #4A7C59;
+  --color-muted-sage: #B5C9B3;
+  --color-sage-wash: #E8F0E8;
+  --color-pearl: #FFFFFF;
+  --color-taupe: #D6D0C8;
+  --color-terracotta: #C4896E;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  --animate-fade-in: fade-in 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-sage-wash);
+  color: var(--color-forest);
+}
+
+/* Scroll animation utility */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blog prose styles */
+.blog-prose p {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-charcoal);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.blog-prose em {
+  font-style: italic;
+}
+
+.blog-prose a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-decoration-color: var(--color-muted-sage);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.blog-prose a:hover {
+  text-decoration-color: var(--color-forest);
+}
+
+.blog-prose figure {
+  margin: 2.5rem 0;
+}
+
+.blog-prose figure img {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-taupe);
+  cursor: zoom-in;
+  transition: opacity 0.2s;
+}
+
+.blog-prose figure img:hover {
+  opacity: 0.85;
+}
+
+.blog-prose figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-warm-gray);
+  font-family: var(--font-mono);
+}
+
+.blog-prose figcaption strong {
+  color: var(--color-charcoal);
+}

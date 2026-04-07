@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#F0EBE3"/>
+  <!-- Bar chart: widening trust gap 2024 vs 2026 -->
+  <line x1="60" y1="50" x2="60" y2="290" stroke="#D6D0C8" stroke-width="1.5"/>
+  <line x1="60" y1="290" x2="350" y2="290" stroke="#D6D0C8" stroke-width="1.5"/>
+  <!-- 2024 gap -->
+  <rect x="95" y="130" width="50" height="160" rx="5" fill="#4A7C59" opacity="0.35"/>
+  <text x="120" y="120" text-anchor="middle" font-family="monospace" font-size="14" fill="#4A7C59" font-weight="bold">32pt</text>
+  <text x="120" y="310" text-anchor="middle" font-family="monospace" font-size="10" fill="#6B6560">2024</text>
+  <!-- 2026 gap — larger -->
+  <rect x="175" y="100" width="50" height="190" rx="5" fill="#C4896E" opacity="0.55"/>
+  <text x="200" y="90" text-anchor="middle" font-family="monospace" font-size="14" fill="#C4896E" font-weight="bold">37pt</text>
+  <text x="200" y="310" text-anchor="middle" font-family="monospace" font-size="10" fill="#6B6560">2026</text>
+  <!-- Arrow showing widening -->
+  <line x1="255" y1="145" x2="255" y2="100" stroke="#C4896E" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="255,95 250,105 260,105" fill="#C4896E"/>
+  <text x="290" y="105" font-family="serif" font-size="10" fill="#C4896E" font-style="italic">widening</text>
+  <!-- Labels -->
+  <text x="200" y="45" text-anchor="middle" font-family="monospace" font-size="12" fill="#3A3530" font-weight="bold">Trust Gap: Execs vs Consumers</text>
+  <!-- Quote at bottom -->
+  <text x="200" y="350" text-anchor="middle" font-family="serif" font-size="11" fill="#6B6560" font-style="italic">"Smart in a way that slightly works</text>
+  <text x="200" y="366" text-anchor="middle" font-family="serif" font-size="11" fill="#6B6560" font-style="italic">against me."</text>
+  <!-- 85% callout -->
+  <text x="320" y="200" text-anchor="middle" font-family="monospace" font-size="22" fill="#3A3530" opacity="0.3" font-weight="bold">85%</text>
+  <text x="320" y="218" text-anchor="middle" font-family="monospace" font-size="8" fill="#6B6560" opacity="0.5">say AI will</text>
+  <text x="320" y="228" text-anchor="middle" font-family="monospace" font-size="8" fill="#6B6560" opacity="0.5">hurt trust</text>
+</svg>
