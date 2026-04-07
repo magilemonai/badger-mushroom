@@ -63,7 +63,7 @@ export default function Hero() {
             >
               Ad tech strategist.{' '}
               <span className="text-forest">Composer.</span>{' '}
-              Builder. Early AI adopter.
+              Builder. <span className="text-terracotta">Early AI adopter.</span>
             </p>
 
             <p
