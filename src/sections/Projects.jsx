@@ -1,55 +1,7 @@
+import { Link } from 'react-router-dom'
 import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
-
-const featured = {
-  title: 'AI Build Wizard',
-  subtitle: 'Build something real with AI in under 60 minutes',
-  description:
-    'A guided, step-by-step tool that helps anyone — from AI newbies to experienced practitioners — build a working artifact or coded tool using Claude. It interviews you first, then walks you through four modules with copy/paste prompts. No coding experience required. Built with Claude Code.',
-  url: 'https://build.codywymore.com',
-  tags: ['Tool', 'Claude Code', 'AI Education'],
-}
-
-const projects = [
-  {
-    title: 'Valisar',
-    subtitle: 'An SNES-style RPG adventure',
-    description:
-      'A 32-bit top-down RPG set in the world of my homebrew D&D campaign. Three playable characters, original music, and hand-crafted pixel art. Built entirely with Claude Code.',
-    url: 'https://magilemonai.github.io/reimagined-barnacle/',
-    tags: ['Game', 'Claude Code', 'RPG'],
-    image: 'post-dnd-game.png',
-    imageAlt: 'Valisar RPG gameplay screenshot',
-  },
-  {
-    title: 'Last Light',
-    subtitle: 'A harbor defense game',
-    description:
-      'Guide ships safely to harbor while fighting back dark creatures from the deep. Playable on web and mobile. Built iteratively using a Karpathy loop — autonomous AI optimization running overnight.',
-    url: 'https://magilemonai.github.io/last-light/',
-    tags: ['Game', 'Claude Code', 'Karpathy Loop'],
-    image: 'last-light.png',
-    imageAlt: 'Last Light — a lighthouse keeper\'s vigil against the dark',
-  },
-  {
-    title: 'Who Wants to Zorp a Blorginaire?',
-    subtitle: 'A 5-minute alien gameshow',
-    description:
-      'A short, silly web trivia gameshow hosted by an alien named Zorp. Quick to play, hard to take seriously. Built with Claude Code.',
-    url: 'https://magilemonai.github.io/galactic-bangle/',
-    tags: ['Game', 'Claude Code', 'Trivia'],
-    image: 'zorp-gameshow.jpg',
-    imageAlt: 'Zorp alien gameshow screenshot',
-  },
-  {
-    title: 'Numinous',
-    subtitle: 'An immersive experience',
-    description:
-      'An atmospheric, interactive web experience exploring the numinous. Built with Claude Code.',
-    url: 'https://magilemonai.github.io/upgraded-waffle/',
-    tags: ['Experience', 'Claude Code', 'Creative'],
-  },
-]
+import { featured, projects } from '../data/projects'
 
 export default function Projects() {
   const sectionRef = useScrollAnimation()
@@ -134,11 +86,11 @@ export default function Projects() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {project.image ? (
-                  <div className="h-40 sm:h-48 overflow-hidden">
+                  <div className="h-44 sm:h-52 overflow-hidden bg-charcoal">
                     <img
                       src={import.meta.env.BASE_URL + project.image}
                       alt={project.imageAlt || ''}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ) : (
@@ -183,6 +135,18 @@ export default function Projects() {
                 </div>
               </a>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-forest text-cream rounded-lg text-sm font-medium hover:bg-charcoal transition-colors"
+            >
+              View all projects
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

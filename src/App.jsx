@@ -9,6 +9,7 @@ import Writing from './sections/Writing'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
 import Q1_2026 from './blog/Q1_2026'
+import ProjectsPage from './pages/ProjectsPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -67,6 +68,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog/q1-2026" element={<Q1_2026 />} />
+        <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
     </BrowserRouter>
   )
