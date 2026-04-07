@@ -122,6 +122,9 @@ export default function Hero() {
                   src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
                   alt="Cody Wymore"
                   className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="async"
                   onError={(e) => { e.target.src = import.meta.env.BASE_URL + 'headshot.svg' }}
                 />
               </div>
