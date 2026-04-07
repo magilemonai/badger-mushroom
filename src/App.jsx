@@ -37,7 +37,7 @@ function HomePage() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/badger-mushroom">
+    <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
