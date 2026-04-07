@@ -101,7 +101,7 @@ export default function Q1_2026_Content() {
         like pointing my imagination at an idea and summoning it into existence.
       </p>
       <p>
-        Then the scope crept. I took Valisar, a homebrew D&amp;D world I'd been
+        Then the scope crept. I took <a href="https://magilemonai.github.io/reimagined-barnacle/" target="_blank" rel="noopener noreferrer">Valisar</a>, a homebrew D&amp;D world I'd been
         building for three years, and turned it into a playable SNES-style
         adventure game. Three characters, six rooms, original music,
         hand-crafted portraits. Idea to playable demo in a couple of hours.
@@ -109,7 +109,7 @@ export default function Q1_2026_Content() {
         eight sessions: maybe fourteen hours.
       </p>
       <p>
-        Then a second game. Last Light. You're the owner of a lighthouse
+        Then a second game. <a href="https://magilemonai.github.io/last-light/" target="_blank" rel="noopener noreferrer">Last Light</a>. You're the owner of a lighthouse
         fighting against something dark and eldritch in the deep ocean. I
         published it, put it in a LinkedIn post, and watched people actually
         play it.
