@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#FAF7F2"/>
+  <!-- Three concentric rounded rectangles — three levels -->
+  <!-- Level 3 (outermost) — Practical -->
+  <rect x="40" y="60" width="320" height="280" rx="20" fill="none" stroke="#D6D0C8" stroke-width="2"/>
+  <text x="200" y="90" text-anchor="middle" font-family="monospace" font-size="10" fill="#D6D0C8" letter-spacing="2">PRACTICAL</text>
+  <!-- Level 2 — Capabilities -->
+  <rect x="80" y="110" width="240" height="200" rx="16" fill="none" stroke="#7A9E7E" stroke-width="2"/>
+  <text x="200" y="136" text-anchor="middle" font-family="monospace" font-size="10" fill="#7A9E7E" letter-spacing="2">CAPABILITIES</text>
+  <!-- Level 1 (innermost) — Emotional -->
+  <rect x="120" y="160" width="160" height="120" rx="12" fill="#C4896E" opacity="0.12"/>
+  <rect x="120" y="160" width="160" height="120" rx="12" fill="none" stroke="#C4896E" stroke-width="2.5"/>
+  <text x="200" y="190" text-anchor="middle" font-family="monospace" font-size="10" fill="#C4896E" letter-spacing="2" font-weight="bold">EMOTIONAL</text>
+  <!-- Eye in center -->
+  <ellipse cx="200" cy="230" rx="30" ry="18" fill="none" stroke="#2C2C2C" stroke-width="1.5"/>
+  <circle cx="200" cy="230" r="8" fill="#2C2C2C" opacity="0.7"/>
+  <circle cx="203" cy="228" r="2.5" fill="#FAF7F2"/>
+  <!-- Caption -->
+  <text x="200" y="375" text-anchor="middle" font-family="serif" font-size="12" fill="#6B6560" font-style="italic">"their eyes changed"</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#E8F0E8"/>
+  <!-- Terminal window -->
+  <rect x="60" y="80" width="280" height="200" rx="12" fill="#2C2C2C"/>
+  <rect x="60" y="80" width="280" height="32" rx="12" fill="#3a3a3a"/>
+  <rect x="60" y="100" width="280" height="12" fill="#3a3a3a"/>
+  <circle cx="82" cy="96" r="6" fill="#C4896E"/>
+  <circle cx="100" cy="96" r="6" fill="#7A9E7E"/>
+  <circle cx="118" cy="96" r="6" fill="#D6D0C8"/>
+  <!-- Code lines -->
+  <rect x="80" y="130" width="100" height="8" rx="4" fill="#7A9E7E" opacity="0.8"/>
+  <rect x="190" y="130" width="60" height="8" rx="4" fill="#C4896E" opacity="0.6"/>
+  <rect x="80" y="150" width="40" height="8" rx="4" fill="#D6D0C8" opacity="0.4"/>
+  <rect x="130" y="150" width="120" height="8" rx="4" fill="#7A9E7E" opacity="0.5"/>
+  <rect x="80" y="170" width="80" height="8" rx="4" fill="#C4896E" opacity="0.7"/>
+  <rect x="170" y="170" width="90" height="8" rx="4" fill="#D6D0C8" opacity="0.3"/>
+  <rect x="80" y="190" width="140" height="8" rx="4" fill="#7A9E7E" opacity="0.6"/>
+  <!-- Cursor blink -->
+  <rect x="80" y="220" width="12" height="16" rx="2" fill="#7A9E7E">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Vibes emanating -->
+  <text x="200" y="330" text-anchor="middle" font-family="serif" font-size="28" fill="#4A7C59" opacity="0.7">~ vibes ~</text>
+  <circle cx="320" cy="120" r="20" fill="none" stroke="#7A9E7E" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="320" cy="120" r="32" fill="none" stroke="#7A9E7E" stroke-width="1" opacity="0.2"/>
+  <circle cx="320" cy="120" r="44" fill="none" stroke="#7A9E7E" stroke-width="0.5" opacity="0.1"/>
+</svg>
