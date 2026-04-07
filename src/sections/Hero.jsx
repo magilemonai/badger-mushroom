@@ -63,7 +63,7 @@ export default function Hero() {
             >
               Ad tech strategist.{' '}
               <span className="text-forest">Composer.</span>{' '}
-              Builder. <span className="text-terracotta">Early AI adopter.</span>
+              Builder. <span className="text-terracotta">Early AI builder.</span>
             </p>
 
             <p
@@ -71,10 +71,9 @@ export default function Hero() {
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              I think about AI in advertising, write music for the stage,
-              and build things with tools that didn't exist two years ago.
-              Navigating the space between hype and reality with equal parts
-              enthusiasm and honesty.
+              13 years in ad tech. Seven AI projects in 90 days. An MFA in
+              musical theatre writing. Navigating the space between hype and
+              reality with equal parts enthusiasm and honesty.
             </p>
 
             <div

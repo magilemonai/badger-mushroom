@@ -16,7 +16,7 @@ export default function About() {
 
           <div className="space-y-5 text-base sm:text-lg text-warm-gray leading-relaxed">
             <p>
-              I'm Cody Wymore, VP of Client Solutions at{' '}
+              I'm VP, Client Solutions at{' '}
               <a
                 href="https://www.innovid.com"
                 target="_blank"
@@ -25,17 +25,7 @@ export default function About() {
               >
                 Innovid
               </a>{' '}
-              (now part of Mediaocean), where I lead teams working at the
-              intersection of AI, connected TV, and advertising. I've spent
-              13+ years in ad tech figuring out how to make campaigns smarter,
-              more personal, and more human.
-            </p>
-
-            <p>
-              I'm also a trained composer and music director. I hold an MFA in
-              Musical Theatre Writing from NYU Tisch and a B.M. in Music Theory
-              &amp; Composition from Ithaca College. For more than a decade, I've
-              directed pit bands, composed original work, and arranged music with{' '}
+              (Mediaocean), leading teams at the intersection of AI, connected TV, and advertising. I'm also a trained composer and music director &mdash; MFA from NYU Tisch, decade-plus of shows with{' '}
               <a
                 href="https://afterworktheater.org"
                 target="_blank"
@@ -44,16 +34,14 @@ export default function About() {
               >
                 AfterWork Theater
               </a>
-              , a NYC nonprofit that makes theater accessible for working adults.
+              .
             </p>
 
             <p>
-              More recently, I've become an early and enthusiastic adopter of AI
-              as a creative tool. I've gone from never opening a terminal to
-              building games, apps, and autonomous optimization loops with
-              Claude Code. I write openly about what excites me and what concerns
-              me, because I think the most honest response to rapidly
-              accelerating capabilities is holding both feelings at once.
+              More recently, I went from never opening a terminal to building
+              games, apps, and autonomous optimization loops with Claude Code.
+              I write openly about what excites me and what concerns me, because
+              holding both feelings at once is the only honest response to what's happening.
             </p>
 
             <p className="text-charcoal font-medium">

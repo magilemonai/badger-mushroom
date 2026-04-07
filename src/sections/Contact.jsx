@@ -52,7 +52,7 @@ export default function Contact() {
             Cody Wymore
           </p>
           <p className="text-sm text-muted-sage">
-            VP, Client Solutions at Innovid · New York City
+            VP, Client Solutions at Innovid (Mediaocean) · New York City
           </p>
           <p className="text-xs text-sage mt-4">
             &copy; {new Date().getFullYear()} Cody Wymore

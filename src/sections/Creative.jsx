@@ -29,7 +29,7 @@ export default function Creative() {
   const sectionRef = useScrollAnimation()
 
   return (
-    <section id="music" className="bg-linen py-24 sm:py-32">
+    <section id="music" className="bg-cream py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="03" label="Music &amp; Theater" />

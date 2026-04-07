@@ -18,6 +18,8 @@ const projects = [
       'A 32-bit top-down RPG set in the world of my homebrew D&D campaign. Three playable characters, original music, and hand-crafted pixel art. Built entirely with Claude Code.',
     url: 'https://magilemonai.github.io/reimagined-barnacle/',
     tags: ['Game', 'Claude Code', 'RPG'],
+    image: 'post-dnd-game.png',
+    imageAlt: 'Valisar RPG gameplay screenshot',
   },
   {
     title: 'Last Light',
@@ -26,6 +28,8 @@ const projects = [
       'Guide ships safely to harbor while fighting back dark creatures from the deep. Playable on web and mobile. Built iteratively using a Karpathy loop — autonomous AI optimization running overnight.',
     url: 'https://magilemonai.github.io/last-light/',
     tags: ['Game', 'Claude Code', 'Karpathy Loop'],
+    image: 'the-crabbening.jpg',
+    imageAlt: 'Last Light harbor defense gameplay',
   },
   {
     title: 'Who Wants to Zorp a Blorginaire?',
@@ -34,6 +38,8 @@ const projects = [
       'A short, silly web trivia gameshow hosted by an alien named Zorp. Quick to play, hard to take seriously. Built with Claude Code.',
     url: 'https://lnkd.in/gXHStG7d',
     tags: ['Game', 'Claude Code', 'Trivia'],
+    image: 'zorp-gameshow.jpg',
+    imageAlt: 'Zorp alien gameshow screenshot',
   },
   {
     title: 'Numinous',
@@ -49,7 +55,7 @@ export default function Projects() {
   const sectionRef = useScrollAnimation()
 
   return (
-    <section id="projects" className="bg-linen py-24 sm:py-32">
+    <section id="projects" className="bg-cream py-24 sm:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="05" label="Projects" />
@@ -127,8 +133,17 @@ export default function Projects() {
                 className="group block bg-pearl rounded-xl border border-taupe/50 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Preview bar */}
-                <div className="h-2 bg-gradient-to-r from-sage to-forest" />
+                {project.image ? (
+                  <div className="h-40 sm:h-48 overflow-hidden">
+                    <img
+                      src={import.meta.env.BASE_URL + project.image}
+                      alt={project.imageAlt || ''}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-2 bg-gradient-to-r from-sage to-forest" />
+                )}
 
                 <div className="p-6 sm:p-8 lg:p-10">
                   <div className="flex items-start justify-between gap-3 mb-4">

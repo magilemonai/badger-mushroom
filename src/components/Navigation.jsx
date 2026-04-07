@@ -83,6 +83,7 @@ export default function Navigation() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
+              aria-current={activeSection === link.id ? 'true' : undefined}
               className={`text-sm font-medium transition-colors relative py-1 ${
                 activeSection === link.id
                   ? 'text-forest'
@@ -112,8 +113,12 @@ export default function Navigation() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="relative md:hidden bg-cream/95 backdrop-blur-md border-b border-taupe/50 px-6 pb-6">
+      <div
+        className={`relative md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="bg-cream/95 backdrop-blur-md border-b border-taupe/50 px-6 pb-6">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -128,7 +133,7 @@ export default function Navigation() {
             </button>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   )
 }

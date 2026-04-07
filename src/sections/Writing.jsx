@@ -48,7 +48,15 @@ function LinkedInPost({ post }) {
               {post.date}
             </span>
             <h3 className="font-display text-xl sm:text-2xl text-charcoal mt-2 mb-2">
-              {post.title}
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="hover:text-forest transition-colors"
+              >
+                {post.title}
+              </a>
             </h3>
             <p className="text-sm text-warm-gray leading-relaxed">
               {post.preview}
@@ -176,7 +184,7 @@ export default function Writing() {
   const olderPosts = allLinkedinPosts.slice(VISIBLE_COUNT)
 
   return (
-    <section id="writing" className="bg-cream py-24 sm:py-32">
+    <section id="writing" className="bg-linen py-24 sm:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="04" label="Writing" />

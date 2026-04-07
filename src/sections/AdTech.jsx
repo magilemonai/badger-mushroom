@@ -2,17 +2,17 @@ import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
 
 const expertise = [
-  { label: 'Connected TV', desc: 'Helping brands navigate the CTV landscape and reach audiences on the biggest screen in the house.' },
-  { label: 'AI & Personalization', desc: 'Cutting through the hype to find where AI actually drives revenue, builds trust, and improves campaigns.' },
-  { label: 'Client Solutions', desc: 'Leading cross-functional teams to solve real problems for enterprise advertisers at scale.' },
-  { label: 'Measurement & Analytics', desc: 'Making sense of converged TV measurement so brands can understand what\'s actually working.' },
+  { label: 'Connected TV', desc: 'CTV isn\'t "digital TV." It\'s a new medium with its own rules. Most brands still buy it like linear — I help them stop doing that.' },
+  { label: 'AI & Personalization', desc: 'The gap between an AI demo and an AI workflow is where most companies stall. I close that gap — from pilots to production.' },
+  { label: 'Client Solutions', desc: 'The best ad tech is invisible to the advertiser. My team makes complexity disappear so clients can focus on outcomes.' },
+  { label: 'Measurement & Analytics', desc: 'Everyone measures impressions. Almost nobody measures whether the creative actually worked. That\'s the problem I care about.' },
 ]
 
 export default function AdTech() {
   const sectionRef = useScrollAnimation()
 
   return (
-    <section id="adtech" className="bg-cream py-24 sm:py-32">
+    <section id="adtech" className="bg-sage-wash/40 py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="02" label="Ad Tech" />
