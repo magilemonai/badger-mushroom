@@ -28,8 +28,8 @@ const projects = [
       'Guide ships safely to harbor while fighting back dark creatures from the deep. Playable on web and mobile. Built iteratively using a Karpathy loop — autonomous AI optimization running overnight.',
     url: 'https://magilemonai.github.io/last-light/',
     tags: ['Game', 'Claude Code', 'Karpathy Loop'],
-    image: 'the-crabbening.jpg',
-    imageAlt: 'Last Light harbor defense gameplay',
+    image: 'last-light.png',
+    imageAlt: 'Last Light — a lighthouse keeper\'s vigil against the dark',
   },
   {
     title: 'Who Wants to Zorp a Blorginaire?',
