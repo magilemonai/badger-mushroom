@@ -46,12 +46,14 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
       {/* Hero */}
       {heroImage && (
         <div className="pt-24 max-w-4xl mx-auto px-6">
-          <img
-            src={heroImage}
-            alt={heroAlt || ''}
-            className="w-full rounded-xl block cursor-zoom-in hover:opacity-85 transition-opacity"
-            onClick={() => { setLightboxSrc(heroImage); setLightboxAlt(heroAlt || '') }}
-          />
+          <div className="aspect-[2/1] rounded-xl overflow-hidden bg-linen">
+            <img
+              src={heroImage}
+              alt={heroAlt || ''}
+              className="w-full h-full object-cover cursor-zoom-in hover:opacity-85 transition-opacity"
+              onClick={() => { setLightboxSrc(heroImage); setLightboxAlt(heroAlt || '') }}
+            />
+          </div>
         </div>
       )}
 
