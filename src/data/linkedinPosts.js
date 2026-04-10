@@ -1,5 +1,82 @@
 const linkedinPosts = [
   {
+    title: 'The Seams Are Where the Trust Lives',
+    date: 'Apr 10, 2026',
+    impressions: 99,
+    engagements: 3,
+    image: 'post-cybersecurity.webp',
+    imageAlt: 'Cybersecurity illustration showing a shield and lock protecting digital infrastructure',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7448007118957428736',
+    preview: 'Anthropic\u2019s newest model found exploitable security vulnerabilities in every major operating system and every major web browser.',
+    body: `Yesterday, Anthropic published a blog post explaining how their newest model found exploitable security vulnerabilities in every major operating system and every major web browser.
+
+Am I underreacting? Or overreacting? I\u2019m not sure.
+
+Quick vocab moment: a zero-day vulnerability is a bug that was previously unknown to exist.
+
+Anthropic\u2019s red team released findings on Claude Mythos Preview. One case study of many: the model found a 27-year-old security vulnerability in OpenBSD, an operating system famous for one thing: being secure.
+
+While it\u2019s moderately expensive to run at scale ($20k was poured into this OpenBSD exploration), the specific run that found this zero-day vulnerability was $50.
+
+I sent the report to our head of infosec. His first reaction: \u201CIt\u2019s a force multiplier. It will only enhance my role and what we do. It\u2019s exciting.\u201D
+
+Then I mentioned that Anthropic is restricting access, running a coordinated defense program before releasing it broadly. His tone shifted: \u201CIf one company can do it, they all can.\u201D
+
+Two reactions from the same expert. Thirty seconds apart. I think that\u2019s the whole industry mood right now.
+
+He\u2019s right on both counts.
+
+For defenders, this is going to be transformative. A model that can find vulnerabilities at this speed can also patch them at this speed. Anthropic\u2019s own blog makes this case. The same intelligence that cracks systems open can harden them. Security teams that adopt these tools early will be operating on a different plane than those that don\u2019t.
+But the defensive window has a shelf life.
+
+Open-weight models with fewer restrictions already exist. The capabilities are proliferating whether any single company exercises restraint or not. One lab\u2019s ethics don\u2019t set the timeline.
+
+How long until this Mythos-level capability is up and running in the hands of bad actors?
+
+For those of us in advertising and media technology, this isn\u2019t abstract. We run infrastructure that touches billions of impressions daily. Our systems talk to each other through layers of integrations, APIs, and trust assumptions that nobody has stress-tested against this class of threat.
+
+The pipes connecting our industry were built for a world where finding a zero-day required a team of specialists and months of work.
+
+We spend a lot of time talking about AI as an opportunity. New creative. Better measurement. Smarter optimization. We spend almost no time talking about what happens when AI gets pointed at the seams between our systems.
+
+The seams are where the trust lives. And the clock on shoring them up just got a lot shorter.`,
+  },
+  {
+    title: 'You Can\u2019t Prompt Your Way Into Taste',
+    date: 'Apr 8, 2026',
+    impressions: 4,
+    engagements: 4,
+    image: 'post-ai-slop.webp',
+    imageAlt: 'Painter\u2019s hands covered in paint, creating something by hand',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7447606684379820033',
+    preview: 'I\u2019m absolutely sick of the AI slop filling up my feed. And I say that as someone who builds with AI every day.',
+    body: `I have to tell you, I\u2019m absolutely sick of the AI slop filling up my feed.
+
+And I say that as someone who builds with AI every day and loves these tools. This technology is extraordinary and it\u2019s also producing an avalanche of garbage. The tools are powerful. Taste is rare. And you can\u2019t prompt your way into taste.
+
+I developed mine over a lifetime of playing music, performing theater, and being steeped in the weird, complicated things humans make when they\u2019re really trying. It would be too easy for me to say \u201Ctake an evening off and go to the opera.\u201D I can feel you pulling away. Stay with me.
+
+Creating something, anything, yourself is what builds your ability to judge AI. When you make something with your own hands and your own weird instincts, you\u2019ll hate what you make at first because it\u2019s not \u201Cwhat you wanted it to be.\u201D
+
+That\u2019s the muscle.
+
+That\u2019s what tells you when AI output is good enough and when it\u2019s just slop that learned how to dress up.
+
+We need that muscle right now. This technology is coming at us sideways. Even the scientists who built it don\u2019t fully understand how it works. Knowing your field tells you what\u2019s right. Thinking creatively tells you what\u2019s possible. And right now AI is generating possibilities faster than any single domain can evaluate alone.
+
+I know why a lot of creative people want nothing to do with AI. These models were trained on the work of countless artists, most of whom never consented and none of whom were paid. That\u2019s a real grievance. And still, I think the people who push themselves to think creatively are going to get the most out of this moment. Anyone willing to get down and get funky without totally knowing where they\u2019re going.
+
+If you\u2019re not a creative person by nature or practice, try something small. Sing a little song you just make up as you go. Listen to a piece of music with the lights off (don\u2019t do anything else, just listen) then draw something on paper. Just make something. You will probably like the process, if not the product.
+
+Humans like to make stuff. And we like to get weird with it.
+
+The humanities will save humanity. And I don\u2019t mean the classic definition of the college department. I mean everything that makes us human. Creativity. Lateral thinking. Humor. Weirdness. The impulse to make something strange just to see what happens.
+
+This moment demands that all of us lean into the \u201Cbeing more human\u201D stuff. That\u2019s the part worth celebrating.
+
+I also think it might be the hardest part.`,
+  },
+  {
     title: 'Friday Fun: Alien Gameshow',
     date: 'Mar 27, 2026',
     impressions: 258,
