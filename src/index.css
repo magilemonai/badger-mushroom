@@ -105,14 +105,18 @@ body {
 
 .blog-prose figure {
   margin: 2.5rem 0;
-  position: relative;
 }
 
 .blog-prose figure picture {
   display: block;
 }
 
-/* "Tap to zoom" hint — mobile only, auto-fades after first scroll */
+.blog-image-wrap {
+  display: block;
+  position: relative;
+}
+
+/* "Tap to zoom" hint — mobile only */
 .blog-zoom-hint {
   display: none;
 }

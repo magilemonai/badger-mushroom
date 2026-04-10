@@ -15,7 +15,7 @@
 export default function BlogImage({ name, alt, width = 1600, height = 872 }) {
   const base = `/blog/${name}`
   return (
-    <>
+    <span className="blog-image-wrap">
       <picture>
         <source
           type="image/webp"
@@ -41,6 +41,6 @@ export default function BlogImage({ name, alt, width = 1600, height = 872 }) {
         </svg>
         Tap to zoom
       </span>
-    </>
+    </span>
   )
 }
