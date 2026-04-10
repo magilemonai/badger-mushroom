@@ -12,11 +12,32 @@ import Contact from './sections/Contact'
 const Q1_2026 = lazy(() => import('./blog/Q1_2026'))
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
 
-function ScrollToTop() {
-  const { pathname } = useLocation()
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (hash) {
+      // Wait a tick so the target element is mounted, then scroll to it
+      const id = hash.slice(1)
+      const scrollToHash = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'auto', block: 'start' })
+          return true
+        }
+        return false
+      }
+      if (!scrollToHash()) {
+        // If the element isn't ready yet, try again next frame
+        requestAnimationFrame(() => {
+          if (!scrollToHash()) {
+            setTimeout(scrollToHash, 100)
+          }
+        })
+      }
+      return
+    }
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 
@@ -65,7 +86,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollManager />
       <Suspense fallback={<div className="min-h-svh bg-cream" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -25,7 +25,10 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-benchmark-performance"
-          alt="Frontier performance across benchmarks chart from Epoch AI showing MMLU scores plateauing near 90% by 2023 and Humanity's Last Exam scores climbing past 35% by early 2026."
+          mobileName="q1-2026-benchmark-performance-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
+          alt="Q1 2026 Major Model Releases timeline showing 271 total releases, with flagships like Claude Opus 4.6, GPT-5.3 Codex, Gemini 3.1 Pro, and Grok 4.20."
         />
         <figcaption>
           <strong>Chart 1:</strong> Major AI model releases, Q1 2026. Each dot
@@ -63,7 +66,10 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-model-releases-timeline"
-          alt="Q1 2026 Major Model Releases Timeline showing 271 total releases in 90 days, color-coded by lab: Anthropic, Google, xAI, DeepSeek, OpenAI, and others. Major flagships labeled include Claude Opus 4.6, GPT-5.3 Codex, Gemini 3.1 Pro, GPT-5.4, and Grok 4.20."
+          mobileName="q1-2026-model-releases-timeline-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
+          alt="Two benchmarks, two trajectories. MMLU flatlined near 90%, while Humanity's Last Exam climbed from 4% to 53% in 12 months."
           height={900}
         />
         <figcaption>
@@ -131,6 +137,9 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-build-timeline"
+          mobileName="q1-2026-build-timeline-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
           alt="My Q1 Build Timeline showing six projects from January through March: Trivia app, Valisar game, Last Light, Content system, Personal website, and Skill-agents, each progressively more complex."
         />
         <figcaption>
@@ -176,7 +185,10 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-tech-layoffs"
-          alt="Q1 2026 Tech Layoffs chart showing major reductions by company: Oracle 20,000-30,000, Amazon 16,000, Dell 11,000, Block 4,000, and others. Q1 total: over 80,000 tech sector cuts."
+          mobileName="q1-2026-tech-layoffs-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
+          alt="Q1 2026 Tech Layoffs chart showing major reductions by company: Oracle 30,000, Amazon 16,000, Dell 11,000, Block 4,000, and others. Q1 total: over 80,000 tech sector cuts."
           height={893}
         />
         <figcaption>
@@ -261,6 +273,9 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-data-center-electricity"
+          mobileName="q1-2026-data-center-electricity-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
           alt="Data center electricity as a share of total consumption by geography: Virginia 26%, Ireland 21% current and 32% projected, U.S. national 4.4% current and 7-12% projected, global approximately 1.5% current and 3% projected."
         />
         <figcaption>
@@ -309,6 +324,9 @@ export default function Q1_2026_Content() {
       <figure>
         <BlogImage
           name="q1-2026-spending-imbalance"
+          mobileName="q1-2026-spending-imbalance-mobile"
+          mobileWidth={960}
+          mobileHeight={1200}
           alt="Spending imbalance for AI infrastructure chart showing Big 5 Tech companies' data center capex at $320 billion versus entire U.S. utility industry infrastructure investment at $160 billion."
         />
         <figcaption>
