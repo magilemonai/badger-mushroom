@@ -116,6 +116,24 @@ body {
   position: relative;
 }
 
+/* Lightbox image — desktop fits whole image, mobile zooms to fill height */
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .lightbox-image {
+    height: 90vh;
+    max-height: 90vh;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+  }
+}
+
 /* "Tap to zoom" hint — mobile only */
 .blog-zoom-hint {
   display: none;

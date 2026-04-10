@@ -1,9 +1,10 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, children }) {
   const [lightboxSrc, setLightboxSrc] = useState(null)
   const [lightboxAlt, setLightboxAlt] = useState('')
+  const lightboxRef = useRef(null)
 
   const closeLightbox = useCallback(() => {
     setLightboxSrc(null)
@@ -16,6 +17,14 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
   }, [lightboxSrc, closeLightbox])
+
+  // Center the lightbox scroll position on open (wide images overflow horizontally on mobile)
+  const centerLightboxScroll = useCallback(() => {
+    const el = lightboxRef.current
+    if (!el) return
+    el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2
+    el.scrollTop = (el.scrollHeight - el.clientHeight) / 2
+  }, [])
 
   const handleProseClick = useCallback((e) => {
     const img = e.target.closest('figure img')
@@ -115,24 +124,28 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
       {/* Lightbox */}
       {lightboxSrc && (
         <div
-          className="fixed inset-0 z-[100] bg-charcoal/90 flex items-center justify-center p-4 sm:p-8"
+          ref={lightboxRef}
+          className="fixed inset-0 z-[100] bg-charcoal/95 overflow-auto"
           onClick={closeLightbox}
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-pearl/20 hover:bg-pearl/40 flex items-center justify-center transition-colors cursor-pointer"
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-10 w-10 h-10 rounded-full bg-pearl/20 hover:bg-pearl/40 flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm"
             aria-label="Close"
           >
             <svg className="w-6 h-6 text-pearl" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <img
-            src={lightboxSrc}
-            alt={lightboxAlt}
-            className="max-w-full max-h-full object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="min-h-full min-w-full flex items-center justify-center p-4 sm:p-8">
+            <img
+              src={lightboxSrc}
+              alt={lightboxAlt}
+              className="lightbox-image rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+              onLoad={centerLightboxScroll}
+            />
+          </div>
         </div>
       )}
     </div>
