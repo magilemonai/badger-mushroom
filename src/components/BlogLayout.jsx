@@ -130,14 +130,14 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
         >
           <button
             onClick={closeLightbox}
-            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-10 w-10 h-10 rounded-full bg-pearl/20 hover:bg-pearl/40 flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm"
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-10 w-12 h-12 rounded-full bg-pearl text-charcoal hover:bg-cream shadow-lg flex items-center justify-center transition-colors cursor-pointer"
             aria-label="Close"
           >
-            <svg className="w-6 h-6 text-pearl" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="min-h-full min-w-full flex items-center justify-center p-4 sm:p-8">
+          <div className="w-max min-w-full min-h-full flex items-center justify-center p-4 sm:p-8">
             <img
               src={lightboxSrc}
               alt={lightboxAlt}
