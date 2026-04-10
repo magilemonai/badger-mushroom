@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Hero from './sections/Hero'
@@ -8,8 +8,9 @@ import Creative from './sections/Creative'
 import Writing from './sections/Writing'
 import Projects from './sections/Projects'
 import Contact from './sections/Contact'
-import Q1_2026 from './blog/Q1_2026'
-import ProjectsPage from './pages/ProjectsPage'
+
+const Q1_2026 = lazy(() => import('./blog/Q1_2026'))
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -65,11 +66,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/blog/q1-2026" element={<Q1_2026 />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-svh bg-cream" />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/q1-2026" element={<Q1_2026 />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }

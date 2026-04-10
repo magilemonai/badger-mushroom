@@ -184,7 +184,7 @@ export default function Writing() {
   const olderPosts = allLinkedinPosts.slice(VISIBLE_COUNT)
 
   return (
-    <section id="writing" className="bg-linen py-24 sm:py-32">
+    <section id="writing" className="bg-linen py-16 sm:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="04" label="Writing" />

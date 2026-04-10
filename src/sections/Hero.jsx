@@ -25,7 +25,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center bg-cream pt-16">
+    <section className="min-h-svh flex items-center bg-cream pt-16">
       <div className="max-w-6xl mx-auto px-6 py-20 w-full">
         <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-center">
           {/* Text — 3 columns */}
@@ -117,15 +117,22 @@ export default function Hero() {
             >
               <div className="relative">
                 <div className="absolute -inset-3 bg-sage-wash rounded-2xl -z-10" />
-                <img
-                  src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
-                  alt="Cody Wymore"
-                  className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
-                  fetchpriority="high"
-                  loading="eager"
-                  decoding="async"
-                  onError={(e) => { e.target.src = import.meta.env.BASE_URL + 'headshot.svg' }}
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={`${import.meta.env.BASE_URL}headshot-sm.webp 512w, ${import.meta.env.BASE_URL}headshot.webp 800w`}
+                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+                  />
+                  <img
+                    src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
+                    alt="Cody Wymore"
+                    className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    onError={(e) => { e.target.src = import.meta.env.BASE_URL + 'headshot.svg' }}
+                  />
+                </picture>
               </div>
             </div>
           </div>

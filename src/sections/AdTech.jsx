@@ -12,7 +12,7 @@ export default function AdTech() {
   const sectionRef = useScrollAnimation()
 
   return (
-    <section id="adtech" className="bg-sage-wash/40 py-24 sm:py-32">
+    <section id="adtech" className="bg-sage-wash/40 py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="02" label="Ad Tech" />

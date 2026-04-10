@@ -7,7 +7,7 @@ export default function Projects() {
   const sectionRef = useScrollAnimation()
 
   return (
-    <section id="projects" className="bg-cream py-24 sm:py-32">
+    <section id="projects" className="bg-cream py-16 sm:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={sectionRef} className="animate-on-scroll">
           <SectionLabel number="05" label="Projects" />
