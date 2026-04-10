@@ -92,7 +92,7 @@ function LinkedInPost({ post }) {
                     key={img}
                     src={import.meta.env.BASE_URL + img}
                     alt={postImagesAlt[i] || ''}
-                    className={`max-h-96 rounded-lg object-contain ${postImages.length > 1 ? 'flex-1 min-w-0' : 'max-w-full mx-auto block'}`}
+                    className={`max-h-96 sm:max-h-[32rem] rounded-lg object-contain ${postImages.length > 1 ? 'flex-1 min-w-0' : 'max-w-full mx-auto block'}`}
                   />
                 ))}
               </div>
