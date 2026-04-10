@@ -1,3 +1,5 @@
+import BlogImage from '../components/BlogImage'
+
 export default function Q1_2026_Content() {
   return (
     <>
@@ -21,8 +23,8 @@ export default function Q1_2026_Content() {
       </p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-benchmark-performance.png"
+        <BlogImage
+          name="q1-2026-benchmark-performance"
           alt="Frontier performance across benchmarks chart from Epoch AI showing MMLU scores plateauing near 90% by 2023 and Humanity's Last Exam scores climbing past 35% by early 2026."
         />
         <figcaption>
@@ -59,9 +61,10 @@ export default function Q1_2026_Content() {
       </p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-model-releases-timeline.png"
+        <BlogImage
+          name="q1-2026-model-releases-timeline"
           alt="Q1 2026 Major Model Releases Timeline showing 271 total releases in 90 days, color-coded by lab: Anthropic, Google, xAI, DeepSeek, OpenAI, and others. Major flagships labeled include Claude Opus 4.6, GPT-5.3 Codex, Gemini 3.1 Pro, GPT-5.4, and Grok 4.20."
+          height={900}
         />
         <figcaption>
           <strong>Chart 2:</strong> Two benchmarks, two trajectories. The teal
@@ -126,8 +129,8 @@ export default function Q1_2026_Content() {
       </p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-build-timeline.png"
+        <BlogImage
+          name="q1-2026-build-timeline"
           alt="My Q1 Build Timeline showing six projects from January through March: Trivia app, Valisar game, Last Light, Content system, Personal website, and Skill-agents, each progressively more complex."
         />
         <figcaption>
@@ -171,9 +174,10 @@ export default function Q1_2026_Content() {
       </p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-tech-layoffs.png"
+        <BlogImage
+          name="q1-2026-tech-layoffs"
           alt="Q1 2026 Tech Layoffs chart showing major reductions by company: Oracle 20,000-30,000, Amazon 16,000, Dell 11,000, Block 4,000, and others. Q1 total: over 80,000 tech sector cuts."
+          height={893}
         />
         <figcaption>
           <strong>Chart 4:</strong> Major tech reductions by company, Q1 2026.
@@ -255,8 +259,8 @@ export default function Q1_2026_Content() {
       </p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-data-center-electricity.png"
+        <BlogImage
+          name="q1-2026-data-center-electricity"
           alt="Data center electricity as a share of total consumption by geography: Virginia 26%, Ireland 21% current and 32% projected, U.S. national 4.4% current and 7-12% projected, global approximately 1.5% current and 3% projected."
         />
         <figcaption>
@@ -303,8 +307,8 @@ export default function Q1_2026_Content() {
       <p>The bottleneck in the AI race is shifting from software to atoms.</p>
 
       <figure>
-        <img
-          src="/blog/q1-2026-spending-imbalance.png"
+        <BlogImage
+          name="q1-2026-spending-imbalance"
           alt="Spending imbalance for AI infrastructure chart showing Big 5 Tech companies' data center capex at $320 billion versus entire U.S. utility industry infrastructure investment at $160 billion."
         />
         <figcaption>

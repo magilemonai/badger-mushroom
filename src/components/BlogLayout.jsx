@@ -20,7 +20,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
   const handleProseClick = useCallback((e) => {
     const img = e.target.closest('figure img')
     if (img) {
-      setLightboxSrc(img.src)
+      setLightboxSrc(img.dataset.zoomSrc || img.currentSrc || img.src)
       setLightboxAlt(img.alt || '')
     }
   }, [])
@@ -47,12 +47,23 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
       {heroImage && (
         <div className="pt-24 max-w-4xl mx-auto px-6">
           <div className="aspect-[2/1] rounded-xl overflow-hidden bg-linen">
-            <img
-              src={heroImage}
-              alt={heroAlt || ''}
-              className="w-full h-full object-cover cursor-zoom-in hover:opacity-85 transition-opacity"
-              onClick={() => { setLightboxSrc(heroImage); setLightboxAlt(heroAlt || '') }}
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`/blog/${heroImage}-sm.webp 800w, /blog/${heroImage}.webp 1600w`}
+                sizes="(max-width: 768px) 100vw, 1024px"
+              />
+              <img
+                src={`/blog/${heroImage}.jpg`}
+                alt={heroAlt || ''}
+                width={1600}
+                height={872}
+                fetchpriority="high"
+                decoding="async"
+                className="w-full h-full object-cover cursor-zoom-in hover:opacity-85 transition-opacity"
+                onClick={() => { setLightboxSrc(`/blog/${heroImage}.webp`); setLightboxAlt(heroAlt || '') }}
+              />
+            </picture>
           </div>
         </div>
       )}

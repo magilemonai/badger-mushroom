@@ -10,7 +10,7 @@ const articles = [
     date: 'Apr 6, 2026',
     summary: '270+ model releases. Over 80,000 layoffs. Seven projects built from scratch. A personal reckoning with the pace of AI.',
     url: '/blog/q1-2026',
-    image: 'blog/q1-2026-hero.png',
+    image: 'blog/q1-2026-hero.jpg',
     imageAlt: 'Q1 2026: The Quarter That Broke the Timeline',
     internal: true,
     featured: true,

@@ -7,7 +7,7 @@ export default function Q1_2026() {
       title="Q1 2026: The Quarter That Broke the Timeline"
       subtitle="270+ model releases. Over 80,000 layoffs. Seven projects built from scratch. A personal reckoning with the pace of AI."
       date="April 6, 2026"
-      heroImage="/blog/q1-2026-hero.png"
+      heroImage="q1-2026-hero"
       heroAlt="Q1 2026: The Quarter That Broke the Timeline"
     >
       <Q1Content />

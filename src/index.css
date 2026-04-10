@@ -107,9 +107,13 @@ body {
   margin: 2.5rem 0;
 }
 
+.blog-prose figure picture {
+  display: block;
+}
+
 .blog-prose figure img {
   width: 100%;
-  aspect-ratio: auto;
+  height: auto;
   border-radius: 0.75rem;
   border: 1px solid var(--color-taupe);
   cursor: zoom-in;
