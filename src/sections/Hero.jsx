@@ -1,4 +1,13 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
+
+function revealAndScroll(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+  el.querySelectorAll('.animate-on-scroll').forEach((child) => {
+    child.classList.add('is-visible')
+  })
+  el.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function Hero() {
   const [visible, setVisible] = useState(false)
@@ -81,30 +90,30 @@ export default function Hero() {
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              <a
-                href="#about"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-forest text-cream rounded-lg text-sm font-medium hover:bg-charcoal transition-colors"
+              <button
+                onClick={() => revealAndScroll('about')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-forest text-cream rounded-lg text-sm font-medium hover:bg-charcoal transition-colors cursor-pointer"
               >
                 Get to know me
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
-              <a
-                href="#writing"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta text-cream rounded-lg text-sm font-medium hover:bg-terracotta/85 transition-colors"
+              </button>
+              <button
+                onClick={() => revealAndScroll('writing')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta text-cream rounded-lg text-sm font-medium hover:bg-terracotta/85 transition-colors cursor-pointer"
               >
                 Get the latest
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-taupe text-charcoal rounded-lg text-sm font-medium hover:border-sage hover:text-forest transition-colors"
+              </button>
+              <button
+                onClick={() => revealAndScroll('contact')}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-taupe text-charcoal rounded-lg text-sm font-medium hover:border-sage hover:text-forest transition-colors cursor-pointer"
               >
                 Get in touch
-              </a>
+              </button>
             </div>
           </div>
 

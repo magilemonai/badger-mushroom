@@ -47,7 +47,12 @@ export default function Navigation() {
 
   const scrollTo = (id) => {
     setMenuOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const el = document.getElementById(id)
+    if (!el) return
+    el.querySelectorAll('.animate-on-scroll').forEach((child) => {
+      child.classList.add('is-visible')
+    })
+    el.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (

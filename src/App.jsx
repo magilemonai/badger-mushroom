@@ -12,11 +12,32 @@ import Contact from './sections/Contact'
 const Q1_2026 = lazy(() => import('./blog/Q1_2026'))
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
 
-function ScrollToTop() {
-  const { pathname } = useLocation()
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1)
+      const scrollToHash = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          // Force any scroll animations in this section to become visible
+          el.querySelectorAll('.animate-on-scroll').forEach((child) => {
+            child.classList.add('is-visible')
+          })
+          el.scrollIntoView({ behavior: 'auto', block: 'start' })
+          return true
+        }
+        return false
+      }
+      if (!scrollToHash()) {
+        requestAnimationFrame(() => {
+          if (!scrollToHash()) setTimeout(scrollToHash, 100)
+        })
+      }
+      return
+    }
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 
@@ -65,7 +86,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollManager />
       <Suspense fallback={<div className="min-h-svh bg-cream" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
