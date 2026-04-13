@@ -117,32 +117,26 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Headshot — 2 columns */}
+          {/* Headshot — 2 columns. No opacity animation: delays LCP. */}
           <div className="md:col-span-2 order-1 md:order-2 flex justify-center">
-            <div
-              className={`transition-all duration-1000 delay-200 ${
-                visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.02]'
-              }`}
-            >
-              <div className="relative">
-                <div className="absolute -inset-3 bg-sage-wash rounded-2xl -z-10" />
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={`${import.meta.env.BASE_URL}headshot-sm.webp 512w, ${import.meta.env.BASE_URL}headshot.webp 800w`}
-                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
-                  />
-                  <img
-                    src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
-                    alt="Cody Wymore"
-                    className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
-                    fetchpriority="high"
-                    loading="eager"
-                    decoding="async"
+            <div className="relative">
+              <div className="absolute -inset-3 bg-sage-wash rounded-2xl -z-10" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${import.meta.env.BASE_URL}headshot-xs.webp 320w, ${import.meta.env.BASE_URL}headshot-sm.webp 512w, ${import.meta.env.BASE_URL}headshot.webp 800w`}
+                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+                />
+                <img
+                  src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
+                  alt="Cody Wymore"
+                  className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="async"
                     onError={(e) => { e.target.src = import.meta.env.BASE_URL + 'headshot.svg' }}
                   />
                 </picture>
-              </div>
             </div>
           </div>
         </div>
