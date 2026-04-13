@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Self-hosted Inter 400 — eliminates Google Fonts network hops
+   for the primary body text weight, which is often the LCP element
+   on blog pages. Other weights still load from Google Fonts. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
 @theme {
   /* Color palette */
   --color-cream: #FAF7F2;
