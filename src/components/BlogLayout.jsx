@@ -5,6 +5,15 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
   const [lightboxSrc, setLightboxSrc] = useState(null)
   const [lightboxAlt, setLightboxAlt] = useState('')
   const lightboxRef = useRef(null)
+  const articleRef = useRef(null)
+  const [readingMinutes, setReadingMinutes] = useState(null)
+
+  useEffect(() => {
+    if (!articleRef.current) return
+    const text = articleRef.current.innerText || ''
+    const words = text.trim().split(/\s+/).length
+    setReadingMinutes(Math.max(1, Math.round(words / 220)))
+  }, [children])
 
   const closeLightbox = useCallback(() => {
     setLightboxSrc(null)
@@ -81,11 +90,6 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
       <article className={`max-w-3xl mx-auto px-6 pb-24 ${heroImage ? 'pt-12' : 'pt-28'}`}>
         {/* Title block */}
         <header className="mb-12">
-          {date && (
-            <span className="font-mono text-xs tracking-wide text-sage block mb-3">
-              {date}
-            </span>
-          )}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-charcoal leading-tight mb-4">
             {title}
           </h1>
@@ -94,16 +98,41 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
               {subtitle}
             </p>
           )}
-          <div className="mt-6 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-sage-wash flex items-center justify-center text-forest text-xs font-mono">
-              CW
+          <div className="mt-8 pt-6 border-t border-taupe/40 flex items-center gap-4">
+            <Link to="/" aria-label="Back to home" className="shrink-0">
+              <img
+                src="/headshot-xs.webp"
+                alt="Cody Wymore"
+                width="44"
+                height="44"
+                className="w-11 h-11 rounded-full object-cover object-top bg-sage-wash ring-2 ring-sage-wash hover:ring-sage transition"
+              />
+            </Link>
+            <div className="flex-1 min-w-0">
+              <div className="font-display text-base text-charcoal leading-tight">
+                Cody Wymore
+              </div>
+              <div className="font-mono text-xs tracking-wide text-warm-gray mt-0.5">
+                VP, Client Solutions · Innovid
+              </div>
             </div>
-            <span className="text-sm text-warm-gray">Cody Wymore</span>
+            <div className="text-right shrink-0">
+              {date && (
+                <div className="font-mono text-xs tracking-wide text-sage">
+                  {date}
+                </div>
+              )}
+              {readingMinutes && (
+                <div className="font-mono text-xs tracking-wide text-warm-gray mt-0.5">
+                  {readingMinutes} min read
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
         {/* Body */}
-        <div className="blog-prose" onClick={handleProseClick}>
+        <div ref={articleRef} className="blog-prose" onClick={handleProseClick}>
           {children}
         </div>
 
