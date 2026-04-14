@@ -127,10 +127,12 @@ body {
   position: relative;
 }
 
-/* Lightbox image — desktop fits whole image, mobile zooms to fill height */
+/* Lightbox image — desktop fits whole image in viewport, mobile zooms to fill height */
 .lightbox-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 4rem);
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
 }
