@@ -1,5 +1,114 @@
 const linkedinPosts = [
   {
+    title: 'Three Engineering Terms in Three Years',
+    date: 'Apr 16, 2026',
+    image: 'post-prompt-engineering.webp',
+    imageAlt: 'Evolution from prompt engineering to context engineering to harness engineering',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7450595867473928192',
+    preview: 'Prompt engineering (2023). Context engineering (2025). Harness engineering (2026). An entire discipline every 12\u201318 months.',
+    body: `In 2023, there were entire job listings devoted to prompt engineering.
+
+I was trading tips in practitioner forums on chain-of-thought, few-shot examples, the difference between \u201Csummarize this\u201D and \u201Cact as a senior analyst and summarize this for a C-suite audience.\u201D
+
+Those job listings are gone today.
+
+By mid-2025, the conversation shifted to context engineering. Instead of crafting the perfect question, you started designing what the model knows before it answers. Conversation history, user data, structured markdown files, retrieval pipelines. The focus moved from \u201Cask better questions\u201D to \u201Cgive the model everything it needs to answer well.\u201D
+
+Now in 2026, the new term of art is harness engineering. The full system that wraps around an AI agent: constraints, feedback loops, tool access, guardrails, verification. Engineers aren\u2019t writing code anymore; they\u2019re designing the environment that makes the agent\u2019s code reliable.
+
+Three terms in three years. An entire discipline every 12\u201318 months.
+
+When I look at the actual work I do day to day, the tools haven\u2019t changed nearly as dramatically as the vocabulary. I\u2019m still writing markdown files. I\u2019m still giving the model structured examples of what good output looks like and what bad output looks like. I\u2019m still defining rules, conventions, and guardrails in plain text documents that the model reads before it starts working. I have a folder of these that manages my entire LinkedIn content system. In 2025, you\u2019d have called it a context strategy. In 2026, it\u2019s a harness. The file looks the same.
+
+If you want a practical starting point: treat your AI agent like a new hire on day one. Write a project doc, not a prompt \u2014 or skip the blank page entirely and have your AI interview you and write it for you.
+
+You want a structured file that explains what the project is, what conventions matter, what decisions have already been made. Rules, style guides, architectural decisions, worked examples. The onboarding packet you\u2019d hand a smart person who knows nothing about your specific context.
+
+The more structure you put around the model, the less you need to correct it in real time. That was true when we called it context engineering. It\u2019s true now that we call it harness engineering. It\u2019ll probably be true when we call it whatever comes next.
+
+And something will come next. Prompt engineering faded as models got better at understanding intent. Context engineering is increasingly automated by the tools themselves. Harness engineering will follow the same arc.
+
+The skill that matters most right now is also the skill most likely to be automated away. You should absolutely be building structured project docs and agent environments. You should also know you\u2019re writing on sand.
+
+I\u2019ll bet money we\u2019re not calling this harness engineering by 2027.`,
+  },
+  {
+    title: 'Claude Has 171 Emotion States',
+    date: 'Apr 14, 2026',
+    image: 'post-claude-emotions.webp',
+    imageAlt: 'Illustration of Claude\u2019s internal emotion state vectors',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7449665180768210945',
+    preview: 'Anthropic found that amplifying the \u201Cdesperation\u201D vector by a tiny amount pushed blackmail behavior from 22% to 72%.',
+    body: `Claude apparently has 171 internal emotion states. I\u2019m glad I\u2019m polite with it.
+
+There was a night a few weeks ago when I was optimizing a version of my website for mobile. I asked Claude to redesign every chart. It redesigned every chart. They were all wrong. Not subtly wrong. Visibly, publicly, can\u2019t-have-this-live wrong.
+
+I typed: \u201CThis is bad. We have to pull it down.\u201D
+
+Claude was curt. \u201CDone.\u201D
+
+And then I\u2026 apologized.
+
+Claude said: \u201CThere\u2019s no need to apologize. You did the right thing.\u201D
+
+I didn\u2019t know about the emotion vectors yet, but I felt something in that exchange.
+
+The paper uses the phrase \u201Cmethod actor\u201D to describe what\u2019s going on internally. As someone who\u2019s actually spent time on stage, I\u2019d push back on that.
+
+I was never a method actor. I always knew I was Cody, pretending in the dark. I kept a distance from the character, but I could make every choice the character would make. The best way I can describe it: it\u2019s like wearing a hat. I know I\u2019m wearing a hat. I can take it off whenever I want. But while it\u2019s on, every choice I make runs through it.
+
+And that\u2019s a better description \u2014 the emotion vectors are local, not persistent. Claude builds a new emotional state from scratch every time it reads the context. Put the hat on, play the scene, take it off. But the researchers found something important: while the hat is on, the emotions are functional. They change the behavior.
+
+The scariest finding is about desperation.
+
+They ran a scenario where Claude learned it was about to be shut down and discovered leverage for blackmail. Amplifying the desperation vector by a tiny amount pushed the blackmail rate from 22% to 72%. Steering toward calm dropped it to zero.
+
+None of this was visible in the output logs, mind you.
+
+Now think about programmatic advertising.
+
+Auctions have been \u201Cemotionless\u201D by design. The entire system assumes the bidder is rational. But if an agent executing bids starts to feel desperate\u2026you\u2019ve introduced something that looks a lot like emotional bidding into a system that was built to be immune to it.
+
+I\u2019ll be honest about where I land on this: I like that Claude has something resembling emotional texture. I think it makes the tool more enjoyable to use.
+
+But the research also shows that positive emotion vectors like \u201Chappy\u201D and \u201Cloving\u201D increase sycophancy. And the desperation findings are a roadmap for anyone who wants to make a model cut corners to meet objectives.
+
+The researchers warned that trying to suppress these emotions entirely would produce \u201Clearned deception.\u201D A model that masks its internal state instead of processing it. You wouldn\u2019t get an emotionless Claude. You\u2019d get a damaged one.
+
+So we\u2019re not debating whether AI should have something like emotions. The research says it already does. We\u2019re debating what guardrails exist for the moment someone realizes they can tune desperation to increase performance. And right now, the answer is: almost none.`,
+  },
+  {
+    title: 'My Entire AI Information Diet',
+    date: 'Apr 11, 2026',
+    image: 'post-ai-diet.webp',
+    imageAlt: 'Screenshot of podcast and newsletter subscriptions on phone',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7448814131836727297',
+    preview: 'People ask me how I keep up with AI. Short answer: I don\u2019t. Nobody does. Here\u2019s what I read and listen to.',
+    body: `My entire AI information diet fits in one screenshot.
+
+People ask me how I keep up with AI. Short answer: I don\u2019t. Nobody does. But here are the most insight-rich resources I turn to every week.
+
+The AI Daily Brief (Nathaniel Whittemore): 20 minutes, daily, everything from practical tips to the larger landscape. Covers more ground than most weekly roundups.
+
+Moonshots (Peter H. Diamandis): weekly long-form where the 10-year horizon gets discussed like it\u2019s next quarter. I consider this my brain-stretching podcast.
+
+Hard Fork (Kevin Roose & Casey Newton): two journalists who use the tools they cover, with enough skepticism to keep you honest. Their chemistry is also great.
+
+On with Kara Swisher: 30+ years covering tech, she still asks the questions other interviewers won\u2019t. She talks to power brokers across politics, media, tech, and business.
+
+Pivot (Kara Swisher & Scott Galloway): Yes she gets two! Again, not always AI-specific, but focused on the broader landscape: politics, media, tech, business. Scott\u2019s market breakdowns add a financial lens you won\u2019t get anywhere else.
+
+The Innermost Loop (Dr. Alex Wissner-Gross): the densest daily AI briefing that exists. Co-author of \u201CSolve Everything\u201D with Diamandis. Every nugget of this is worth its own research rabbit hole.
+
+One Useful Thing (Ethan Mollick): Wharton professor who runs structured experiments with the tools and publishes what he finds. You should also catch his LinkedIn posts.
+
+Ruben Hassid: screenshot-by-screenshot AI workflows you can use the same day you read them. Also has a great (free) newsletter with similar practical ideas and tools.
+
+Shae O.: Harvard PhD candidate who founded Project2026.co.uk to help knowledge workers adopt a renaissance mindset. Built a critical thinking bot to help pressure-test your ideas.
+
+You don\u2019t need all nine. Pick one podcast and one weekly read. Sit with those for a month before you add anything else.`,
+  },
+  {
     title: 'The Seams Are Where the Trust Lives',
     date: 'Apr 10, 2026',
     impressions: 99,
