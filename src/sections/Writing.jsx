@@ -179,7 +179,7 @@ const VISIBLE_COUNT = 12
 export default function Writing() {
   const sectionRef = useScrollAnimation()
   const [showOlder, setShowOlder] = useState(false)
-  const [sortMode, setSortMode] = useState('popular')
+  const [sortMode, setSortMode] = useState('recent')
 
   const sortedPosts = useMemo(() => {
     if (sortMode === 'popular') {
