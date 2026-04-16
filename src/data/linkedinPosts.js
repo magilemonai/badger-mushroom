@@ -14,7 +14,7 @@ Those job listings are gone today.
 
 By mid-2025, the conversation shifted to context engineering. Instead of crafting the perfect question, you started designing what the model knows before it answers. Conversation history, user data, structured markdown files, retrieval pipelines. The focus moved from \u201Cask better questions\u201D to \u201Cgive the model everything it needs to answer well.\u201D
 
-Now in 2026, the new term of art is harness engineering. The full system that wraps around an AI agent: constraints, feedback loops, tool access, guardrails, verification. Engineers aren\u2019t writing code anymore; they\u2019re designing the environment that makes the agent\u2019s code reliable.
+Now in 2026, the new term of art is harness engineering. The full system that wraps around an AI agent: constraints, feedback loops, tool access, guardrails, verification. Engineers aren\u2019t writing code anymore; they\u2019re designing the environment that makes the agent\u2019s code reliable. The most popular of these is called \u201CClaude Code\u201D. You might have heard of it.
 
 Three terms in three years. An entire discipline every 12\u201318 months.
 
