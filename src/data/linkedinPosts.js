@@ -2,6 +2,8 @@ const linkedinPosts = [
   {
     title: 'Three Engineering Terms in Three Years',
     date: 'Apr 16, 2026',
+    impressions: 69,
+    engagements: 1,
     image: 'post-prompt-engineering.webp',
     imageAlt: 'Evolution from prompt engineering to context engineering to harness engineering',
     url: 'https://www.linkedin.com/feed/update/urn:li:activity:7450595867473928192',
@@ -35,6 +37,8 @@ I\u2019ll bet money we\u2019re not calling this harness engineering by 2027.`,
   {
     title: 'Claude Has 171 Emotion States',
     date: 'Apr 14, 2026',
+    impressions: 200,
+    engagements: 11,
     image: 'post-claude-emotions.webp',
     imageAlt: 'Illustration of Claude\u2019s internal emotion state vectors',
     url: 'https://www.linkedin.com/feed/update/urn:li:activity:7449665180768210945',
@@ -80,6 +84,8 @@ So we\u2019re not debating whether AI should have something like emotions. The r
   {
     title: 'My Entire AI Information Diet',
     date: 'Apr 11, 2026',
+    impressions: 525,
+    engagements: 21,
     image: 'post-ai-diet.webp',
     imageAlt: 'Screenshot of podcast and newsletter subscriptions on phone',
     url: 'https://www.linkedin.com/feed/update/urn:li:activity:7448814131836727297',

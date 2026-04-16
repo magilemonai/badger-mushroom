@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
@@ -179,9 +179,19 @@ const VISIBLE_COUNT = 12
 export default function Writing() {
   const sectionRef = useScrollAnimation()
   const [showOlder, setShowOlder] = useState(false)
+  const [sortMode, setSortMode] = useState('popular')
 
-  const recentPosts = allLinkedinPosts.slice(0, VISIBLE_COUNT)
-  const olderPosts = allLinkedinPosts.slice(VISIBLE_COUNT)
+  const sortedPosts = useMemo(() => {
+    if (sortMode === 'popular') {
+      return [...allLinkedinPosts].sort(
+        (a, b) => (b.impressions ?? 0) - (a.impressions ?? 0)
+      )
+    }
+    return allLinkedinPosts
+  }, [sortMode])
+
+  const recentPosts = sortedPosts.slice(0, VISIBLE_COUNT)
+  const olderPosts = sortedPosts.slice(VISIBLE_COUNT)
 
   return (
     <section id="writing" className="bg-linen py-16 sm:py-24">
@@ -267,9 +277,36 @@ export default function Writing() {
           </div>
 
           {/* LinkedIn Posts */}
-          <h3 className="font-mono text-sm sm:text-base tracking-widest text-sage uppercase mb-6">
-            LinkedIn
-          </h3>
+          <div className="flex items-baseline justify-between mb-6 flex-wrap gap-3">
+            <h3 className="font-mono text-sm sm:text-base tracking-widest text-sage uppercase">
+              LinkedIn
+            </h3>
+            <div className="flex items-center gap-1 font-mono text-xs tracking-wide">
+              <span className="text-warm-gray mr-2">Sort:</span>
+              <button
+                onClick={() => setSortMode('popular')}
+                aria-pressed={sortMode === 'popular'}
+                className={`px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                  sortMode === 'popular'
+                    ? 'bg-sage text-cream'
+                    : 'text-warm-gray hover:text-charcoal'
+                }`}
+              >
+                Popular
+              </button>
+              <button
+                onClick={() => setSortMode('recent')}
+                aria-pressed={sortMode === 'recent'}
+                className={`px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                  sortMode === 'recent'
+                    ? 'bg-sage text-cream'
+                    : 'text-warm-gray hover:text-charcoal'
+                }`}
+              >
+                Recent
+              </button>
+            </div>
+          </div>
           <div className="space-y-4">
             {recentPosts.map((post) => (
               <LinkedInPost key={post.url} post={post} />
@@ -291,7 +328,7 @@ export default function Writing() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
-                {showOlder ? 'Hide' : 'Show'} older posts ({olderPosts.length})
+                {showOlder ? 'Hide' : 'Show'} more posts ({olderPosts.length})
               </button>
               {showOlder && (
                 <div className="space-y-4 mt-4">
