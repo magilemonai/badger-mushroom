@@ -98,8 +98,8 @@ npm run preview   # Preview production build locally
 
 ## Social / Link Previews
 
-- `public/og-image.jpg` — **1200×630** landscape Open Graph image (manually cropped from the portrait headshot so the face survives LinkedIn's 1.91:1 center-crop). Referenced in `index.html` via `og:image` and `twitter:image`.
-- If the headshot is ever replaced, regenerate `og-image.jpg` at 1200×630 with the face centered, then re-scrape the link in [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) to bust their ~7-day cache.
+- `public/og.jpg` — **1500×727** landscape Open Graph image (manually cropped from the portrait headshot so the face survives LinkedIn's 1.91:1 center-crop). Referenced in `index.html` via `og:image` and `twitter:image`.
+- If the headshot is ever replaced, regenerate `og.jpg` as a landscape crop (~1.91:1 or wider) with the face centered, then re-scrape the link in [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) to bust their ~7-day cache.
 
 ## Milestones
 
