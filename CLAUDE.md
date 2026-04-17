@@ -90,3 +90,7 @@ npm run preview   # Preview production build locally
 2. Commit and push to `main`
 3. GitHub Pages serves from `docs/` on `main`
 4. `public/CNAME` ensures the custom domain `codywymore.com` is preserved
+
+## Milestones
+
+- **2026-04-16** — Website linked from LinkedIn profile (Featured section). Watch analytics for a referral traffic bump starting this date.
