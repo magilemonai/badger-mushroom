@@ -96,7 +96,7 @@ npm run preview   # Preview production build locally
 - **GoatCounter** (free personal tier) — async script in `index.html`, dashboard at **https://codywymore.goatcounter.com**. No cookies, GDPR-friendly.
 - SPA route changes are tracked manually: `count.js` is loaded with `no_onload: true` and a `PageviewTracker` in `src/App.jsx` fires `window.goatcounter.count({ path: pathname })` on every `useLocation()` change. Each route (`/`, `/blog/q1-2026`, `/projects`) shows as its own row.
 - LinkedIn **strips UTM params** from profile links, so don't bother tagging the Featured URL — rely on the `Referrer` view in GoatCounter (`linkedin.com`) to measure LinkedIn-driven traffic.
-- **`build.codywymore.com`** (separate repo) also reports to the same GoatCounter account. Hostname collection is enabled in GoatCounter settings so the two sites show distinctly in the dashboard instead of colliding on `/`.
+- **`build.codywymore.com`** (separate repo) reports to its own GoatCounter site at **https://build.goatcounter.com** (same login, different dashboard). GoatCounter's free tier separates domains via the "Sites" feature rather than a hostname column, so each domain gets its own dashboard URL.
 
 ## Social / Link Previews
 
