@@ -91,6 +91,17 @@ npm run preview   # Preview production build locally
 3. GitHub Pages serves from `docs/` on `main`
 4. `public/CNAME` ensures the custom domain `codywymore.com` is preserved
 
+## Analytics
+
+- **GoatCounter** (free personal tier) — async script in `index.html`, dashboard at **https://codywymore.goatcounter.com**. No cookies, GDPR-friendly.
+- LinkedIn **strips UTM params** from profile links, so don't bother tagging the Featured URL — rely on the `Referrer` view in GoatCounter (`linkedin.com`) to measure LinkedIn-driven traffic.
+
+## Social / Link Previews
+
+- `public/og.jpg` — **1500×727** landscape Open Graph image (manually cropped from the portrait headshot so the face survives LinkedIn's 1.91:1 center-crop). Referenced in `index.html` via `og:image` and `twitter:image`.
+- If the headshot is ever replaced, regenerate `og.jpg` as a landscape crop (~1.91:1 or wider) with the face centered, then re-scrape the link in [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) to bust their ~7-day cache.
+
 ## Milestones
 
-- **2026-04-16** — Website linked from LinkedIn profile (Featured section). Watch analytics for a referral traffic bump starting this date.
+- **2026-04-16** — Website linked from LinkedIn profile (Featured section). Watch GoatCounter referrers for a `linkedin.com` traffic bump starting this date.
+- **2026-04-17** — Added landscape `og-image.jpg` so the LinkedIn preview actually shows Cody's face. Wired up GoatCounter analytics.
