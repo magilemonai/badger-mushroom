@@ -41,6 +41,16 @@ function ScrollManager() {
   return null
 }
 
+function PageviewTracker() {
+  const { pathname, search } = useLocation()
+  useEffect(() => {
+    const fire = () => window.goatcounter?.count?.({ path: pathname })
+    if (window.goatcounter?.count) fire()
+    else window.addEventListener('load', fire, { once: true })
+  }, [pathname, search])
+  return null
+}
+
 function BackToTop() {
   const [visible, setVisible] = useState(false)
 
@@ -87,6 +97,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollManager />
+      <PageviewTracker />
       <Suspense fallback={<div className="min-h-svh bg-cream" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
