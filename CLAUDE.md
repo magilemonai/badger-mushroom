@@ -97,6 +97,7 @@ npm run preview   # Preview production build locally
 - SPA route changes are tracked manually: `count.js` is loaded with `no_onload: true` and a `PageviewTracker` in `src/App.jsx` fires `window.goatcounter.count({ path: pathname })` on every `useLocation()` change. Each route (`/`, `/blog/q1-2026`, `/projects`) shows as its own row.
 - LinkedIn **strips UTM params** from profile links, so don't bother tagging the Featured URL — rely on the `Referrer` view in GoatCounter (`linkedin.com`) to measure LinkedIn-driven traffic.
 - **`build.codywymore.com`** (separate repo) reports to its own GoatCounter site at **https://build.goatcounter.com** (same login, different dashboard). GoatCounter's free tier separates domains via the "Sites" feature rather than a hostname column, so each domain gets its own dashboard URL.
+- **`inkwood.codywymore.com`** (separate repo, the Inkwood typing game) reports to its own GoatCounter site at **https://inkwood.goatcounter.com** (same login, different dashboard).
 
 ## Social / Link Previews
 
@@ -107,3 +108,4 @@ npm run preview   # Preview production build locally
 
 - **2026-04-16** — Website linked from LinkedIn profile (Featured section). Watch GoatCounter referrers for a `linkedin.com` traffic bump starting this date.
 - **2026-04-17** — Added landscape `og-image.jpg` so the LinkedIn preview actually shows Cody's face. Wired up GoatCounter analytics.
+- **2026-04-27** — Launched **Inkwood** at `inkwood.codywymore.com` (cozy 5-min typing game). Promoted to homepage featured card; AI Build Wizard demoted to top of the projects grid. GoatCounter wired up at `inkwood.goatcounter.com`.
