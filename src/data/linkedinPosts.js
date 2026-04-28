@@ -1,5 +1,167 @@
 const linkedinPosts = [
   {
+    title: 'Before the Switch Flips',
+    date: 'Apr 28, 2026',
+    impressions: 163,
+    engagements: 7,
+    image: 'post-switch-flip.webp',
+    imageAlt: 'Pencil sketch of a hand flipping a wall switch labeled ON / AI',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7454668062206668800',
+    preview: 'AI is either the ultimate job-killer or all hype. Both positions feel confident. Neither helps you, personally.',
+    body: `I see the same argument everywhere. AI is either the ultimate job-killing machine or it's all hype that'll collapse any day now.
+
+Both positions feel confident. Neither helps you, personally.
+
+The increasingly-clear reality is that AI won't hit every role, every vertical, every skill set the same way. Some jobs will be automated outright, yes. But some barriers to entry will collapse, flooding previously exclusive fields with new practitioners. Coding used to require years of specialized training. Now someone with domain expertise and curiosity can build functional software in an afternoon (ahem, me). That doesn't eliminate developers. It changes what "developer" means and who gets to be one.
+
+The same reshuffling is coming for design, legal research, data analysis, content production, campaign optimization. Some roles shrink. Others don't disappear, they get redefined. And still others become more valuable precisely because a machine can't replicate what makes them work.
+
+Economist Alex Imas wrote a piece recently that frames this well. His core argument: scarcity won’t disappear when AI arrives. It will relocate.
+
+In 1900, 40% of the American workforce farmed. Today it's under 2%. People didn't stop eating. Technology made food production so efficient that spending shifted toward things people wanted more as they got richer: manufacturing, services, and experiences.
+
+The economy didn't collapse. It transformed.
+
+Imas argues the same structural shift is happening now. As commodity production gets cheap, value migrates toward what he calls the "relational sector." Work where the human element is the product itself. Teaching. Care. Hospitality. Craft. Roles where your judgment, your presence, your human attention is what makes the thing valuable.
+
+The shift won't announce itself gradually. It'll feel theoretical until it suddenly feels violently practical. A light switch, not a slow fade.
+
+Which means the worst possible strategy is waiting. Waiting to see what happens to your role. Waiting for someone to tell you it's time to adapt.
+
+You have more power in this moment than you probably realize. Dig in. Get hands-on with the tools. Learn what this technology actually does rather than what the loudest voices on your feed say it does.
+
+This is undoubtedly the single best moment in history to invest in becoming a better version of yourself. The return on investment has never been higher for so many people.
+
+Those who treat this as an opportunity to grow rather than a threat to survive are going to be the ones best positioned when the switch flips.`,
+  },
+  {
+    title: 'Six AI Critics Reviewed Inkwood 14 Times',
+    date: 'Apr 27, 2026',
+    impressions: 93,
+    engagements: 8,
+    image: 'inkwood-title.png',
+    imageAlt: 'Inkwood title card — a starlit night sky over a dark forest with a small green pine tree logo',
+    projectUrl: 'https://inkwood.codywymore.com',
+    projectLabel: 'Play Inkwood',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7454312702291779584',
+    preview: 'A 5-minute typing game about regrowth. Six AI critics reviewed it 14 times. The seventh opinion had to be mine.',
+    body: `I built a 5-minute typing game called Inkwood. Six AI critics reviewed it 14 times.
+
+It's a cozy typing game about regrowth. You type to bring a dormant forest back to life. Felt like a fitting thing to make this month.
+
+The setup: a Claude skill I called /critique, modeled on Karpathy's autoresearch loop. Each round, six personas reviewed the codebase and art assets, then returned a prioritized list of changes.
+
+Code Reviewer
+UX Researcher
+Narrative Director
+Design Director
+Product Lead
+Alpha Tester Panel (four personas, from patient explorer to non-gamer on a phone)
+
+I stack-ranked the lists into one master backlog, executed it, and ran the loop again. Then again. Fourteen rounds.
+
+By cycle four or five, the feedback started contradicting itself, or pulling the vision of the game in different directions. The Narrative Director kept asking for more flowery language. The Alpha Tester Panel kept asking for faster load times. The Design Director wanted to cut a scene I'd been building toward for three days.
+
+The scene stayed.
+
+The AI gave me six informed opinions. I had to be the seventh. Which priorities to honor. Which to override. Which feedback to throw out because the panel was wrong.
+
+I saved /critique as a reusable skill. I'll be running it on all my game builds now.
+
+I'm not sure how you'll feel about an AI-built game being "artful." Some days I'm not sure how I feel about it either. There are real constraints in this medium. It's HTML, CSS, and TypeScript in a browser. There are also real choices I made about pacing, voice, mood, and what kind of feeling I wanted to leave you with.
+
+I'm proud of it. That's the honest answer.
+
+inkwood.codywymore.com
+
+5 minutes. Tell me what you think after you play.`,
+  },
+  {
+    title: 'GPT-5.5 Untangled Six Months of D&D',
+    date: 'Apr 25, 2026',
+    impressions: 1673,
+    engagements: 14,
+    image: 'post-dnd-wizard-canyon.webp',
+    imageAlt: 'Glowing wizard tower carved into a starlit canyon, with figures crossing a stone bridge',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7453810053121417216',
+    preview: 'I fed it 150 pages of chaotic campaign notes. It came back with three throughlines I wasn’t even thinking about.',
+    body: `GPT-5.5 just untangled six months of my D&D campaign in one conversation.
+
+I fed it 150 pages of chaotic campaign notes and 25 pages of slightly outdated world-building for a wizard university in a desert canyon. Political factions. Unresolved plot threads. Characters my players forgot about twelve sessions ago.
+
+It actually found three separate through lines I wasn't even thinking about.
+
+Three totally different options - each of which sent my players to a different corner of the world. Each was dramatically appropriate. None of the three were where I'd planned to send my players. But my DM brain immediately started weaving stories about what they'd do when they got there, because they all made perfect story sense.
+
+It didn't try to write for me (I told it not to). It acted like a writers' room while I blocked and tackled the next six months of sessions.
+
+This wasn't a chatbot upgrade. This was an inference compute breakthrough - which has been the story of OpenAI's research for the last half-year.
+
+The numbers back it up. 40% fewer tokens for equivalent tasks. Same per-token latency. The first fully retrained base model since GPT-4.5. Every 5.x release before this was post-training polish on the same foundation. This is new concrete.
+
+And the timing is worth reading. Images 2.0 dropped Monday, first place on Image Arena within 12 hours. GPT-5.5 dropped Thursday. OpenAI trimmed Sora, pulled back from consumer experiments, and put that discipline into a week that returned Anthropic's serve after months of Opus and Claude Code eating enterprise share.
+
+The breakneck pace of full-contact capitalism, working exactly as designed. Three frontier labs shipping increasingly powerful systems with zero regulatory framework in place is also capitalism working exactly as designed.
+
+We're not even in May yet.`,
+  },
+  {
+    title: 'Forty Minutes Fighting a Tittle',
+    date: 'Apr 21, 2026',
+    impressions: 2053,
+    engagements: 19,
+    image: 'post-claude-design-tittle.webp',
+    imageAlt: 'Pencil sketch of a hand drawing the tittle of a lowercase i',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7452189427985965056',
+    preview: 'Every small edit regenerated half the layout. It felt like directing someone carrying furniture down the stairs.',
+    body: `I spent 40 minutes two nights ago in Claude Design fighting the tittle of a lowercase i.
+
+Every small edit regenerated half the layout. I was uploading screenshots and it felt like directing someone carrying furniture down the stairs. “Your other left!”
+
+That little tittle fight capped yet another big week at Anthropic, the same week they shipped Opus 4.7.
+
+Anthropic is shipping hard from inside a compute-constrained environment, and the shape of the release tells the story. Opus 4.7 is a specialization, not a regression. SWE-bench Verified climbed from 80.8% to 87.6%. SWE-bench Pro from 53.4% to 64.3%. Rakuten is reporting 3x the production task resolutions over 4.6. For coding and agentic workflows, this is a substantial step. Most of the online complaints are from people using 4.6 for creative or conversational work, where 4.7's tighter instruction-following feels like a downgrade. The trade-off is legible.
+
+Sitting above 4.7 is Mythos, which was officially announced April 7 after a March leak. Framed as a step-change above the Opus line. Not released broadly. Access limited to a cybersecurity partnership cohort. Anthropic has said 4.7 serves as a test vehicle for cyber safeguards before Mythos-class models reach the public. Mythos continues to loom.
+
+Claude Design is also pointed at what's coming. One- and two-person companies will keep multiplying over the next 12 to 18 months. Claude Design exists to give them pitch decks, prototypes, and landing pages without a designer on staff. For that brief, first-pass quality matters more than micro-edit precision. My tittle fight was a signal about the iterative loop, nothing more.
+
+Two things I would ask for, as a heavy user:
+
+A pinned-region or surgical-edit mode in Claude Design. Small edits should stay small.
+
+Extended thinking as an explicit user choice, on every model, in every interface. Adaptive thinking is a sensible default. It should not be the only option. On hard problems I want to pin the deepest reasoning pass the model can run, without prompting tricks.
+
+Neither is a dealbreaker. But I'd like to stop directing furniture down stairs.`,
+  },
+  {
+    title: 'The Word of the Year Is Renaissance',
+    date: 'Apr 17, 2026',
+    impressions: 361,
+    engagements: 3,
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7450896836984336384',
+    preview: 'The capital "R" historical era inspires the lower-case "r" mindset. Be a beginner in three directions this year.',
+    body: `The word of the year is "renaissance".
+
+The capital "R" historical era inspires the lower-case "r" mindset.
+
+The Renaissance was a way of seeing yourself as capable of everything. Artist AND engineer. Scientist AND poet.
+
+AI has handed that mindset back to the rest of us.
+
+The theater kid can ship apps.
+
+The analyst can design websites.
+
+The copywriter can model data.
+
+Be curious across the lines! Be a beginner in three directions this year. Dive in before you can discredit yourself. Look at it that way, and there's no limit.
+
+renaissance, pass it on.
+
+Happy Friday! Go be a generalist about something.`,
+  },
+  {
     title: 'Three Engineering Terms in Three Years',
     date: 'Apr 16, 2026',
     impressions: 69,
