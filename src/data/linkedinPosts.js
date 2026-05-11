@@ -1,5 +1,103 @@
 const linkedinPosts = [
   {
+    title: 'Three Conversations, One Conversation',
+    date: 'May 7, 2026',
+    impressions: 485,
+    engagements: 11,
+    image: 'post-three-conversations.webp',
+    imageAlt: 'Pencil sketch of a pyramid with three nested layers, each holding a question mark, ringed by curving arrows',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7457916180503269377',
+    preview: 'A CMO pressured to cut headcount. A client handed an AI mandate with no instructions. A builder waiting for his org to catch up. All under one roof.',
+    body: `I had three conversations last week that were actually all the same conversation.
+
+A CMO being pressured by her board to cut headcount and "go AI" for efficiency. She thinks the real opportunity is growth, but no one's giving her license to invest.
+
+A client who's been told by leadership to "use AI" with zero further instruction. No training or tools or direction. Just a mandate and a deadline.
+
+A product lead who's been building with agents for months, impatiently waiting for the rest of his org to catch up so he can actually ship what he's built.
+
+Microsoft just dropped their 2026 Work Trend Index. I spent an afternoon with Claude pulling apart the full report and cross-referencing it against Deloitte's and Writer's enterprise surveys. All three of these people are somewhere in the data.
+
+20,000 workers surveyed. Of those, 50% landed in what Microsoft calls the "emergent" zone. Not even enough signal to know where they currently stand!
+
+And that's among people already using AI. Non-users weren't even counted. So in reality, the picture is even “worse”.
+
+The report found that organizational factors (culture, manager support, talent practices) drive 2x the AI impact of individual effort. The bottleneck isn’t showing up in the employees, it’s showing up in the system around them.
+
+Microsoft's tidy 2x2 grid also misses the fact that your company doesn’t fully belong to one quadrant alone. Your engineering team might be the code-blazing super-operator. Your marketing team might be the bewildered mandate-receiver. Your C-suite might be the paralyzed leader. All under one roof and all needing very different things.
+
+The transformation problem isn't "move the company from here to there." It's managing five different realities simultaneously while the clock runs.
+
+And the clock is running. The longer the transformation takes, the wider the gap between you and the company that figured it out six months ago.
+
+The three people I talked to last week? They all work at companies that consider themselves AI-forward. And none of them know where to start.`,
+  },
+  {
+    title: 'Copilot, Margins, and the AI Pricing Squeeze',
+    date: 'May 4, 2026',
+    impressions: 430,
+    engagements: 6,
+    image: 'post-copilot-pricing.webp',
+    imageAlt: 'Pencil sketch of a US dollar bill stretched between two rope knots',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7457074307022790659',
+    preview: 'GitHub Copilot just switched to usage-based billing because Microsoft was losing $80 per user. The subsidy era is ending — but the unit cost of intelligence is still in free fall.',
+    body: `GitHub Copilot just switched to usage-based billing because Microsoft was losing $80 per user on some $10 subscriptions.
+
+(I asked Claude to help me research this piece, by the way. I’m using my subsidized models while they’re still around!)
+
+For three years, every major AI lab has been running the Uber playbook: price below cost, capture the market, figure out margins later. OpenAI is burning $14 billion this year. Anthropic reportedly lets users consume $8 in compute for every $1 of subscription revenue. The head of ChatGPT called their own pricing "accidental” in response to overwhelming demand.
+
+Now both companies are preparing for IPOs. And public markets have a famously low tolerance for accidental pricing. You can't subsidize tokens forever when you're filing an S-1.
+
+So prices are going up. That part tracks.
+
+The part that doesn't track: the cost of a unit of intelligence is simultaneously in free fall. A recent study out of Warwick Business School found that once you account for capability improvements, effective AI prices fell 78% from early 2024 through early 2026.
+
+That's roughly double the nominal price decline.
+
+Google's flagship inference costs dropped 97% over eighteen months. Klarna replaced 700 customer service agents with an AI chatbot while growing revenue 30%. The cost collapse isn't theoretical. It's already reshaping vendor contracts.
+
+Two forces, opposite directions. The subsidy era ending pushes prices up. The collapsing cost of intelligence pushes them down. I've been in enough client meetings this year to know that both of these dynamics are showing up as clients try to think through their yearly budgets in real time against moving targets.
+
+And there’s a wrinkle.
+
+The same Warwick study found that AI providers with the highest markups fully absorb upstream cost declines into their margins, passing nothing through to customers. But those same high-markup providers are the ones releasing frontier models that generate most of the value for downstream users.
+
+The companies creating the deflation are the same companies capturing it.
+Squeeze their margins and you might accelerate cost pass-through. You might also slow down the innovation breakthroughs that are making everything cheaper in the first place.
+
+So what exactly are the economics going to look like come Q4? I don’t have a neat and clean answer here, but I’d be wary of anyone selling you certainty right now.`,
+  },
+  {
+    title: 'The Jennifer Aniston Neuron',
+    date: 'May 1, 2026',
+    impressions: 6447,
+    engagements: 10,
+    image: 'post-aniston-neuron.webp',
+    imageAlt: 'Pencil sketch of Jennifer Aniston beside a cross-section of a human brain with the medial temporal lobe glowing',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7455788686618562560',
+    preview: 'Your brain has a neuron that fires for Jennifer Aniston. It fires for Lisa Kudrow too. That sparsity is the same blueprint behind every frontier AI model.',
+    body: `Your brain has a neuron that fires for Jennifer Aniston.
+
+Neuroscientists found it in the medial temporal lobe. It activates when you see her photo, hear her name, or see a picture of Lisa Kudrow. Your brain decided they come as a package deal.
+
+But this neuron isn't a dedicated Jennifer Aniston detector. It's part of a sparse code. Your brain represents any given concept with a tiny ensemble, maybe a few thousand neurons out of 86 billion, while the overwhelming majority stay quiet.
+
+Researchers call this sparsity. In awake primates, only about 0.5% of visual cortex neurons fire strongly for any given image. Across the whole cortex, roughly 2% are significantly active at any moment. That's how your brain runs on 20 watts, about the same power as a dim light bulb. It's ruthlessly selective about what gets activated and when.
+
+AI researchers have been studying this blueprint since the early '90s.
+
+"Mixture of Experts" is now the dominant architecture behind virtually every frontier model. Instead of one massive network processing everything, you build dozens or hundreds of smaller specialized sub-networks and a learned router that picks which ones to activate for each input. Mixtral has 46.7 billion total parameters. Only 12.9 billion fire for any given token. The rest stay dark. The trend is pushing toward 256+ experts per layer, one or two firing at a time.
+
+The parallel to our brains is almost uncomfortable. A small, selective ensemble activates. A router decides what fires. Everything else conserves energy by staying quiet.
+
+And yet: 20 watts versus the gigawatts powering data centers. The same architectural insight is still five orders of magnitude apart.
+
+I researched this post using a model that uses sparse activation to surface the stats behind the post you're reading. It consumed roughly 300 times the energy your brain would use to understand the same papers.
+
+So we've copied the architecture, the routing, and the selective activation. But the brain does all of this while also running your heartbeat, regulating your temperature, and processing the feeling of the chair underneath you. What other secrets might the brain hold for AI research? We might need AI to find out.`,
+  },
+  {
     title: 'Before the Switch Flips',
     date: 'Apr 28, 2026',
     impressions: 163,
