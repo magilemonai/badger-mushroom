@@ -6,7 +6,7 @@ const linkedinPosts = [
     engagements: 11,
     image: 'post-three-conversations.webp',
     imageAlt: 'Pencil sketch of a pyramid with three nested layers, each holding a question mark, ringed by curving arrows',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7457916180503269377',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_i-had-three-conversations-last-week-that-share-7457916180503269377-QV-C',
     preview: 'A CMO pressured to cut headcount. A client handed an AI mandate with no instructions. A builder waiting for his org to catch up. All under one roof.',
     body: `I had three conversations last week that were actually all the same conversation.
 
@@ -39,7 +39,7 @@ The three people I talked to last week? They all work at companies that consider
     engagements: 6,
     image: 'post-copilot-pricing.webp',
     imageAlt: 'Pencil sketch of a US dollar bill stretched between two rope knots',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7457074307022790659',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_github-copilot-just-switched-to-usage-based-share-7457074307022790659-2XkR',
     preview: 'GitHub Copilot just switched to usage-based billing because Microsoft was losing $80 per user. The subsidy era is ending — but the unit cost of intelligence is still in free fall.',
     body: `GitHub Copilot just switched to usage-based billing because Microsoft was losing $80 per user on some $10 subscriptions.
 
@@ -75,7 +75,7 @@ So what exactly are the economics going to look like come Q4? I don’t have a n
     engagements: 10,
     image: 'post-aniston-neuron.webp',
     imageAlt: 'Pencil sketch of Jennifer Aniston beside a cross-section of a human brain with the medial temporal lobe glowing',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7455788686618562560',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_your-brain-has-a-neuron-that-fires-for-jennifer-share-7455788686618562560-sC9B',
     preview: 'Your brain has a neuron that fires for Jennifer Aniston. It fires for Lisa Kudrow too. That sparsity is the same blueprint behind every frontier AI model.',
     body: `Your brain has a neuron that fires for Jennifer Aniston.
 
@@ -104,7 +104,7 @@ So we've copied the architecture, the routing, and the selective activation. But
     engagements: 7,
     image: 'post-switch-flip.webp',
     imageAlt: 'Pencil sketch of a hand flipping a wall switch labeled ON / AI',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7454668062206668800',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_i-see-the-same-argument-everywhere-ai-is-share-7454668062206668800-08Hq',
     preview: 'AI is either the ultimate job-killer or all hype. Both positions feel confident. Neither helps you, personally.',
     body: `I see the same argument everywhere. AI is either the ultimate job-killing machine or it's all hype that'll collapse any day now.
 
@@ -141,7 +141,7 @@ Those who treat this as an opportunity to grow rather than a threat to survive a
     imageAlt: 'Inkwood title card — a starlit night sky over a dark forest with a small green pine tree logo',
     projectUrl: 'https://inkwood.codywymore.com',
     projectLabel: 'Play Inkwood',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7454312702291779584',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_inkwood-a-cozy-typing-game-share-7454312702291779584-_s1s',
     preview: 'A 5-minute typing game about regrowth. Six AI critics reviewed it 14 times. The seventh opinion had to be mine.',
     body: `I built a 5-minute typing game called Inkwood. Six AI critics reviewed it 14 times.
 
@@ -181,7 +181,7 @@ inkwood.codywymore.com
     engagements: 14,
     image: 'post-dnd-wizard-canyon.webp',
     imageAlt: 'Glowing wizard tower carved into a starlit canyon, with figures crossing a stone bridge',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7453810053121417216',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_gpt-55-just-untangled-six-months-of-my-d-share-7453810053121417216-CCL5',
     preview: 'I fed it 150 pages of chaotic campaign notes. It came back with three throughlines I wasn’t even thinking about.',
     body: `GPT-5.5 just untangled six months of my D&D campaign in one conversation.
 
@@ -210,7 +210,7 @@ We're not even in May yet.`,
     engagements: 19,
     image: 'post-claude-design-tittle.webp',
     imageAlt: 'Pencil sketch of a hand drawing the tittle of a lowercase i',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7452189427985965056',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_i-spent-40-minutes-two-nights-ago-in-claude-share-7452189427985965056--viY',
     preview: 'Every small edit regenerated half the layout. It felt like directing someone carrying furniture down the stairs.',
     body: `I spent 40 minutes two nights ago in Claude Design fighting the tittle of a lowercase i.
 
@@ -237,7 +237,7 @@ Neither is a dealbreaker. But I'd like to stop directing furniture down stairs.`
     date: 'Apr 17, 2026',
     impressions: 361,
     engagements: 3,
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7450896836984336384',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_the-word-of-the-year-is-renaissance-share-7450896836984336384-KAdb',
     preview: 'The capital "R" historical era inspires the lower-case "r" mindset. Be a beginner in three directions this year.',
     body: `The word of the year is "renaissance".
 
