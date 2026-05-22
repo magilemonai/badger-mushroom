@@ -1,5 +1,73 @@
 const linkedinPosts = [
   {
+    title: 'My First Conference Talk',
+    date: 'May 19, 2026',
+    impressions: 1505,
+    engagements: 146,
+    image: 'post-ana-talk.webp',
+    imageAlt: 'ANA 2026 Brand Masters Conference speaker badge reading Cody Wymore, Innovid',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_i-gave-my-first-conference-talk-today-at-share-7462586410118713344-ATok',
+    preview: 'I’ve performed for thousands before — but this stage was different. Almost three decades of theater training showed up louder than any deck prep.',
+    body: `I gave my first conference talk today at Association of National Advertisers Brand Masters.
+
+I’ve performed in front of hundreds (maybe thousands) of people before in musicals, plays, showcases, and recitals. But this was a different kind of stage.
+
+The material was mine and I was representing Innovid and Mediaocean in a room full of senior brand marketers trying to figure out what AI actually means for their campaigns.
+
+The speech was a format the ANA calls a “firestarter.” Seven minutes, one thesis, and no Q&A. You just say the thing and get offstage.
+
+And the theater training showed up louder than any deck prep could have.
+
+Modulated breathing so your voice doesn’t thin out under adrenaline. Eye contact that lifts off the confidence monitor and moves across the room instead of locking on one friendly face. Slower speaking rhythm when the concept gets dense.
+
+Pauses.
+
+Vocal range that keeps an audience tracking with you instead of drifting toward their phones. Storytelling structure that builds toward a point instead of listing bullets.
+
+Always ALWAYS being friendly and courteous to the tech crew and stage managers.
+
+These aren’t tips from a corporate presentation workshop. They’re muscle memory from almost three decades of performing onstage as someone else.
+
+This time I got to be myself.
+
+The talk centered on what I’ve been calling the 90% Problem: the operational gap between companies that have AI agents and companies that can get those agents to actually work together. I watched heads nod across the room. Not because the concept was new to them, but because they’re stuck in the middle of it every day.
+
+Massive thanks to the incomparable Megan Garnett Coyle, who helped shape this into something worthy of the room.
+
+I keep thinking about everyone with a non-traditional background who wonders whether those years of practice translate. The breathing exercises. The vocal training. The storytelling instincts.
+
+I can tell you: they translate. And they show up for you in ways you might never have predicted when you were a student or an amateur.`,
+  },
+  {
+    title: 'Curing Cancer vs. Replacing Accenture',
+    date: 'May 13, 2026',
+    impressions: 860,
+    engagements: 1,
+    image: 'post-jevons-org-chart.webp',
+    imageAlt: 'Pencil sketch of an org chart whose clean hierarchy dissolves into a tangled scribble at the bottom',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_ethan-mollick-thinks-curing-cancer-will-be-share-7460361015155859456-gtAT',
+    preview: 'Ethan Mollick thinks curing cancer will be easier than replacing Accenture. The AI constraint turned out to be organizational, not technical.',
+    body: `Ethan Mollick thinks curing cancer will be easier than replacing Accenture.
+
+He was responding to an OpenAI researcher who argued that information flow constraints will still apply to superintelligence (when it arrives).
+
+Even infinite intelligence can't centralize all the tacit knowledge distributed across an organization. The information that doesn't live in documents lives in people and their relationships. You can't brute-force a reorg in every instance. The researcher (Roon) said it makes them a greater jobs optimist than the AI lab consensus.
+
+Mollick called the emerging view the "East Coast consensus": even true superintelligence is less abruptly transformative than the West Coast vision of rapid automation the moment capabilities arrive. The researcher's two-word summary: "Gentle singularity."
+
+This landed the same week as another shift. In January, Anthropic's CEO predicted 50% of white-collar jobs would disappear within five years. By May, at a financial services event alongside JPMorgan's CEO, he was citing the Jevons Paradox: automate 90% of the job and the remaining 10% expands to fill the worker's full time again. Productivity multiplies. Headcount transforms instead of collapsing.
+
+The Jevons Paradox comes from Britain in 1865. When steam engines got more efficient, the UK didn't burn less coal. It burned more, because efficiency made coal useful for things it hadn't been useful for before. Apollo's chief economist has been applying this to labor: when professional work gets cheaper, more people and businesses can afford it and demand grows.
+
+Six months ago, two confident camps dominated this conversation. "AI is a bubble and the money will evaporate." and "AI will eliminate your job by 2027." Both had evidence and both were very loud. Both assumed this was primarily a technology story.
+
+The data increasingly says it's an organizational one. 75% of executives admit their AI strategy is largely performative. Companies chasing headcount reduction via AI aren't the ones seeing returns and are sheepishly hiring back some of their culled forces. The constraint turned out to be organizational, not technical.
+
+It's always easier to narrate a consensus shift backwards than to predict one forwards. Nobody knows what the future will bring, and optimists and pessimists are both racing to fill the space demanded by the endless appetite for predictions. This is a period of uncertainty, and it's playing out day by day.
+
+Which is exactly why now is the time to dive in and get involved.`,
+  },
+  {
     title: 'Three Conversations, One Conversation',
     date: 'May 7, 2026',
     impressions: 485,
