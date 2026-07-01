@@ -1,5 +1,115 @@
 const linkedinPosts = [
   {
+    title: 'The NIVO Launch',
+    date: 'June 12, 2026',
+    impressions: 1396,
+    engagements: 61,
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_mediaocean-launched-nivo-yesterday-and-i-ugcPost-7471222918828597249-sFFx',
+    preview: 'Mediaocean launched NIVO, the brain that connects our AI agents. After a year of writing about why agentic AI is so hard to put to work, we’ve announced our answer.',
+    body: `Mediaocean launched NIVO yesterday, and I can't stop smiling.
+
+I was working from home yesterday, which meant I watched something months in the making go live from my kitchen table: the press release, the AdExchanger article, the Slack channels lighting up. I was in a quiet room, but it still felt like a very loud day!
+
+NIVO is the brain that connects our AI agents. Creative, trafficking, QA, measurement, optimization, all of it speaking the same language, so an insight in one place becomes an action in another. One early customer already cut campaign execution time by roughly 80%.
+
+I write a lot about client adoption of AI here. Almost every client conversation I have includes some version of the same question: we believe in the power of agentic AI, so why is it still so hard to put it to work? 
+
+We have now announced our answer. 
+
+Watching this team spend months building toward that, then actually deliver it, is the kind of day that makes you glad you picked the company you picked.
+
+There's plenty of road ahead. Launches start things; they don't finish them. But today, I'm just proud of my company, my colleagues, and very excited about where we’re headed.`,
+  },
+  {
+    title: 'Ran Up a Tab',
+    date: 'June 4, 2026',
+    impressions: 346,
+    engagements: 6,
+    image: 'post-ran-up-a-tab.webp',
+    imageAlt: 'Pencil sketch of the word COMPLEXITY split into three fragments (COMP, LEX, ITY), each with an integer token ID beneath it',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_a-client-told-me-this-week-her-ai-agent-share-7468415857237344256-WcaN',
+    preview: 'A client told me her AI agent “ran up a tab.” A field guide to what a token actually is, and why spend and value have come unbolted from each other.',
+    body: `A client told me this week her AI agent "ran up a tab." Her word, "tab," like it shut down a bar.
+
+This is a premonition for a lot of Q3/Q4 budgets, as agentic coding tools have switched their API billing from seat-based to token-based. So before everyone panic-rations, let's clarify. What actually is a token?
+
+Allow me one super-technical paragraph, then I'll bring it back. A model doesn't process words. Your text hits a tokenizer that runs byte-pair encoding, splitting the string into subword units (tokens), each mapped to an integer ID. Those IDs become embeddings, high-dimensional vectors that move through the transformer's attention layers, and the model emits a probability distribution over its whole vocabulary for what comes next. It samples one token, then does the entire forward pass again for the next one. It's autoregressive generation; every output token is a fresh trip through a few hundred billion parameters.
+
+Okay, in plain terms: the model can't read. Before it sees your prompt, the text gets shredded into fragments, or "confetti." The word "the" survives as one piece. A more complex word like "complexity" gets torn into three or four. The model never sees what you wrote; it sees confetti, and every answer is it guessing the next piece, then the next, thousands of times.
+
+So a token was never a unit of intelligence. It's a unit of effort, closer to a kilowatt-hour than to an IQ point. And the economics of that effort isn't simple. There isn't one clean price-to-value throughline today. 
+
+Input tokens (the stuff you feed in) are cheap, often processed in parallel. Output tokens are multiple times more expensive, because each one demands its own full pass through the transformer. "Trim your prompts," the advice everyone's repeating, optimizes the cheapest side of the bill. It's clipping coupons on the appetizer while the entrée price triples.
+
+It's worth restating: more tokens doesn't mean more work, and more work doesn't mean more value. The newest models "think" before they answer, burning oodles of hidden reasoning tokens you never see. Sometimes that buys you brilliance - sometimes a longer, more expensive, more confident wrong answer. Spend and value have come unbolted from each other.
+
+Simultaneously, the meter keeps moving. Per-token prices keep falling (dramatically!), and likely will. But the useful applications all migrate toward the priciest uses: long memory, agentic loops that call themselves dozens of times, reasoning that runs before a word appears. Tokens are cheaper than ever, and every system uses 40x more. And the enterprise bills we saw in May made the subsidy impossible to ignore.
+
+I researched this post with a model. It cost a few thousand tokens to explain what tokens even are. I still can't tell my team exactly which ones are worth buying, and I'm starting to think "use more tokens" or "use less tokens" is the wrong argument. What does 10 pounds of tokens get you? Your mileage certainly will vary.`,
+  },
+  {
+    title: 'For My Sixteen-Year-Old Self',
+    date: 'May 29, 2026',
+    impressions: 285,
+    engagements: 10,
+    image: 'post-video-games.webp',
+    imageAlt: "Charcoal-on-cream pencil sketch of a golden knight on horseback with a lance (Elden Ring's Tree Sentinel), a small hooded figure fleeing toward a distant castle",
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_if-i-could-tell-my-sixteen-year-old-self-share-7466223580406562816-V4r9',
+    preview: "All my life I was told video games rot your brain. What they actually taught me: resilience, resource management, and knowing when to stop charging the boss you weren't meant to beat yet.",
+    body: `If I could tell my sixteen-year-old self that all those hours playing video games would be worth it, he wouldn't have believed me.
+
+All my life, I was told video games rot your brain and lower your intelligence. So I went looking for the studies behind that. They mostly don't exist. The biggest one followed about 9,000 kids and actually found the reverse: more gaming tracked with roughly a 2.5-point bump in IQ over two years, while TV and social media did nothing. It's correlational and small, not a hall pass to play all day. But the brain-rot line turns out to be the myth, not the warning.
+
+What games actually taught me was resilience, resource management, and the need to re-evaluate your strategy every once in a while. Every game over I ever hit wasn't a reason to turn the console off and quit. It was an invitation to try again, with more knowledge and experience than before.
+
+There’s a very popular current game type that epitomizes this: the roguelike. Think Hades, Balatro, and Vampire Survivors.
+
+The roguelike is a game with very fast play cycles, and death or failure states are common, nay, expected. Failure is a requirement to proceed. Because by failing, you typically carry over some indelible resource (experience, coins, armor, etc.) and this makes you more powerful on your next run. Failure isn’t something to fear, it's a necessary part of forward progress. 
+
+Where else is that idea useful? (hint: it's AI and also all business and also life)
+
+I build with AI the same way now. Ship something broken, study how it broke, run it again. The failures are the progress, not the detour.
+
+Another lesson came from Final Fantasy, where your characters are part of epic, world-changing stories. Along the way you collect items, armor, upgrades, and elixirs across the whole quest. Often you lose track of what you have, only to realize later that you already had the key to the puzzle you'd been bashing your head against for the last hour. It's worth taking stock of what you're holding every once in a while, and asking whether you already have what the current challenge needs.
+
+Here's a doozy: Elden Ring opens with a boss you're not supposed to beat yet.
+
+He's the Tree Sentinel, a golden knight on horseback, standing in an open field in the first few minutes of the game. You can see him the moment you start. Most new players ride straight at him and die. I did. Then I did it again. And again. Shameful. Hubristic. (and clearly not following my own advice re: strategic reevaluation above)
+
+It was my first Souls game, so it took me embarrassingly long to hear what it was actually saying: go somewhere else. Explore. Come back stronger. This boss isn't even your main objective right now. Do I need to fight this enemy, this challenge, my literal boss, right now?
+
+And the very question the new wave of AI repeatedly asks of all of us: Do we have to go through? Or can we simply get around?`,
+  },
+  {
+    title: 'Anxitement',
+    date: 'May 26, 2026',
+    impressions: 475,
+    engagements: 10,
+    image: 'post-anxitement.webp',
+    imageAlt: 'Charcoal-on-cream pencil sketch of a grocery yogurt aisle; a shopper pauses as an older woman with a basket is haloed in warm light',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_nathaniel-whittemore-of-the-ai-daily-brief-share-7465150635387154432-HjCw',
+    preview: 'Nathaniel Whittemore coined the word that nails it: Anxitement. Enthusiasm, anxiety, and stillness aren’t opposites; they’re a triangle.',
+    body: `Nathaniel Whittemore of The AI Daily Brief coined a word that nails it: Anxitement.
+
+I feel it. I'm caught up in the excitement with the best of them. I've built games, apps, and content systems without writing a line of code. I use Claude to sort through piles of spreadsheets and find matching data pairs in seconds. As a music director for an upcoming production of A Chorus Line, I can tick off production tasks at a pace I never imagined.
+
+And I still can't get an agent to teach my family how to stop driving me up the wall every once in a while.
+
+My problems haven't all gone away. The spreadsheets are sorted, but the interpersonal stuff lingers. I haven't unlocked a full swarm of agents running my life. And even if I did, I suspect I'd still have the same collection of very human issues waiting on the other side.
+
+As I've fed more tasks to the eagerly capable AI models, I've noticed something peculiar. The more AI handles the mechanical work, the more I notice the human moments.
+
+I'm a New Yorker. I used to get incandescently furious at someone blocking my path in the grocery store for five seconds. Now I find myself reveling in the full, glorious personhood of the stranger standing between me and my yogurt. Countless thoughts, stories, and memories shimmer and dance before me as I wait a little extra time for my dairy.
+
+And that extra time? I can make it up easily by pointing Claude Code at a tangle of contact data that needs to be sorted by tonight.
+
+NLW nailed the name. Anxitement is real. But I think there's a third thing mixed in that doesn't get enough airtime: moments of genuine zen. 
+
+Moments where the mechanical falls away and the human snaps into focus. I spend so much time on my screens consumed by doing "the next thing," and when that starts to feel like a task that AI can do, this extra space is opening up.
+
+Enthusiasm, anxiety, and stillness are not opposites. They're part of a triangle. It's a dance we'll keep doing, everyone at their own pace, as we metabolize this incredible surge of change.`,
+  },
+  {
     title: 'My First Conference Talk',
     date: 'May 19, 2026',
     impressions: 1505,
