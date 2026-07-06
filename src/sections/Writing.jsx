@@ -6,6 +6,16 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'Q2 2026: The Quarter That Built Its First Loop',
+    date: 'Jul 6, 2026',
+    summary: 'A record 40% of layoffs blamed on AI. China at 85% optimism about a technology half of America has never touched. Ninety days on a roller coaster where we can’t see the end.',
+    url: '/blog/q2-2026',
+    image: 'blog/q2-2026-hero.jpg',
+    imageAlt: 'Q2 2026: The Quarter That Built Its First Loop',
+    internal: true,
+    featured: true,
+  },
+  {
     title: 'Q1 2026: The Quarter That Broke the Timeline',
     date: 'Apr 6, 2026',
     summary: '270+ model releases. Over 80,000 layoffs. Seven projects built from scratch. A personal reckoning with the pace of AI.',
@@ -13,7 +23,7 @@ const articles = [
     image: 'blog/q1-2026-hero.jpg',
     imageAlt: 'Q1 2026: The Quarter That Broke the Timeline',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'AI Vertigo: Why Truth Resists Simplicity in the Age of Agents',
