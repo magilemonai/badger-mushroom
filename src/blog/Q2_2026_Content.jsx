@@ -114,7 +114,7 @@ export default function Q2_2026_Content() {
         The price of a token, the unit of everything these models do, has
         fallen something like 98% since 2022. Enterprise AI bills roughly
         tripled anyway. There's a name for this and it's a hundred and sixty
-        years old: Jevons paradox. Make the steam engine more efficient and the
+        years old: the Jevons paradox. Make the steam engine more efficient and the
         country burns more coal, not less, because cheap power finds new work
         to do. Cost per token keeps falling. The number of tokens keeps
         exploding, because a single agentic task, the kind that plans and acts
@@ -140,7 +140,7 @@ export default function Q2_2026_Content() {
           height={1067}
         />
         <figcaption>
-          <strong>Chart 2:</strong> Jevons paradox, in one picture. Per-token
+          <strong>Chart 2:</strong> The Jevons paradox, in one picture. Per-token
           prices fell roughly 98% since 2022 while enterprise AI spending
           roughly tripled, driven by agentic workloads (an estimated 50-500x
           tokens per task) and by cost outside the model invoice entirely (est.
@@ -540,8 +540,9 @@ export default function Q2_2026_Content() {
           measured by people who don't agree with each other. Gartner puts
           agent deployment at 17% of organizations; Fivetran finds 15% ready
           and 41% running agents anyway; a developer-skewed LangChain survey
-          says 57%; MIT says 95% of pilots fail. Sources: Gartner, Fivetran,
-          LangChain, MIT.
+          says 57%. MIT's bar measures the opposite direction: 95% of agent
+          pilots fail, so only about 1 in 20 ever reaches production. Sources:
+          Gartner, Fivetran, LangChain, MIT.
         </figcaption>
       </figure>
 
