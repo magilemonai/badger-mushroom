@@ -532,7 +532,7 @@ export default function Q2_2026_Content() {
       <figure>
         <BlogImage
           name="q2-2026-reality-gap"
-          alt="Bar chart of four conflicting estimates of enterprise AI agent adoption: Gartner 17 percent deployed, Fivetran 15 percent ready but 41 percent running anyway, LangChain developer survey 57 percent, and MIT reporting 95 percent of pilots fail."
+          alt="Bar chart of four conflicting estimates of enterprise AI agent adoption: Gartner 17 percent deployed, Fivetran 15 percent ready but 41 percent running anyway, LangChain developer survey 57 percent, and MIT at roughly 5 percent of pilots reaching production, reflecting their finding that 95 percent fail."
           height={1067}
         />
         <figcaption>
@@ -540,9 +540,9 @@ export default function Q2_2026_Content() {
           measured by people who don't agree with each other. Gartner puts
           agent deployment at 17% of organizations; Fivetran finds 15% ready
           and 41% running agents anyway; a developer-skewed LangChain survey
-          says 57%. MIT's bar measures the opposite direction: 95% of agent
-          pilots fail, so only about 1 in 20 ever reaches production. Sources:
-          Gartner, Fivetran, LangChain, MIT.
+          says 57%. MIT's short bar is their famous failure stat, inverted to
+          match the others: 95% of agent pilots fail, so only about 1 in 20
+          ever reaches production. Sources: Gartner, Fivetran, LangChain, MIT.
         </figcaption>
       </figure>
 
