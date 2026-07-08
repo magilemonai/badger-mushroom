@@ -433,8 +433,7 @@ export default function Q2_2026_Content() {
         signed a White House pledge in March to fund their own grid upgrades
         "whether they use the electricity or not." Virginia signed the
         country's first per-kilowatt-hour data-center tax on June 30, the last
-        day of the quarter. So I'll retire "and nobody’s doing anything about
-        it!" What's actually happening is pledges and minimums, none of it
+        day of the quarter. But it's all pledges and minimums, none of it
         audited, and the simple, visible thing remains undone: no company has
         yet put money directly back in the hands of the neighborhoods absorbing
         its buildout and said so out loud. It is the cheapest goodwill on the
