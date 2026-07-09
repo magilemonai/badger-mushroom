@@ -7,3 +7,4 @@
 - [x] npm run build → commit → push main so github pages serves the q2 post
 - [ ] [cody] share the q2 2026 blog post on LinkedIn to drive referral traffic
 - [ ] [crew] add a 2026-07-06 q2 blog launch entry to CLAUDE.md milestones
+- [ ] [crew] update CLAUDE.md structure + analytics route list to include /blog/q2-2026
