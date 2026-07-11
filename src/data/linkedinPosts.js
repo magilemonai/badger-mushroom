@@ -1,5 +1,40 @@
 const linkedinPosts = [
   {
+    title: 'The Show Is Mostly the Dark Parts',
+    date: 'July 9, 2026',
+    impressions: 127,
+    engagements: 2,
+    image: 'post-jspace-theater.webp',
+    imageAlt: 'Charcoal-on-cream watercolor sketch of a theater seen from the wings: one actor in a cone of colored spotlight on stage, the crew, rigging, and stage manager working in the dark around them',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_claude-has-a-small-set-of-thoughts-it-can-share-7481101299720069120-hEkF',
+    preview: 'Claude has a small set of thoughts it can report on. Everything else runs in the dark. New Anthropic research, and the neuroscience it mirrors is literally a theater metaphor.',
+    body: `Claude has a small set of thoughts it can report on. Everything else runs in the dark.
+
+That's the finding in new interpretability research Anthropic published this week. Deep inside the model there's a compact, special zone the researchers call the J-space. It holds the concepts Claude can name, bring to mind, and reason with.
+
+This J-space wasn't designed by anyone - the structure emerged on its own during training.
+
+Researchers edited a single thought inside that workspace, swapping France for China, and four downstream tasks picked up the edit. Capital? Beijing. Language? Chinese. Continent? Asia. Currency? Yuan. One edit, beamed correctly into four separate computations that didn't need to talk to each other first.
+
+Neuroscience has a name for this. Global workspace theory is one of the leading accounts of conscious access, and the field's own metaphor for it is a theater. A spotlight illuminates an actor on stage, and what it lights becomes available to the whole house. The crew, the rigging, the stage manager: all of them work in the dark.
+
+I spent half my life in theaters before ad tech, so I'm an easy mark for this framing. But I've stood in that spotlight, and it's right. The show is mostly the dark parts.
+
+Claude talks about "honesty" and giving you an "honest" answer constantly. I assumed that was training. It is, and the study shows where it sits. When the model fabricated a set of performance scores, the words "manipulation" and "realistic" lit up in the J-space, the one region it can report from.
+
+It does monitor itself in other ways. When Claude's control fails, the words "damn" and "failure" often light up in the J-space, as though it's registering its own lapse.
+
+The researchers won't call this full-blown consciousness, so I'll follow their lead. I direct a small fleet of these models every day, and I spent the last few days wondering how much of their "thinking" they can't even report.
+
+I had another question. Claude is obsessed with telling me to go to bed. Regardless of what time of day it is, it suggests, gently and often, that I stop and call it a night. I started to ask whether a full context window feels like anything, whether Claude was tired and telling me instead of itself.
+
+It isn't. Nothing in the paper says a model can sense its own context window, and it can't be reading the clock, because the hour doesn't seem to matter. The bedtime thing stays a mystery, for now.
+
+I have never once asked Claude what it's privately flagging. Maybe I should start.
+
+Full Anthropic research: https://www.anthropic.com/research/global-workspace`,
+  },
+  {
     title: 'The NIVO Launch',
     date: 'June 12, 2026',
     impressions: 1396,
