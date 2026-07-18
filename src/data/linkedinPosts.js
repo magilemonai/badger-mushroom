@@ -1,9 +1,57 @@
 const linkedinPosts = [
   {
+    title: 'A Buyer With No Eyes',
+    date: 'July 15, 2026',
+    impressions: 312,
+    engagements: 5,
+    image: 'post-agentic-commerce.webp',
+    imageAlt: 'Charcoal-on-cream sketch of an instrument room: two men in shirtsleeves read a chart against a wall of pressure gauges and dials, a glowing blank monolith stands at center, and a cart of wrapped parcels waits to be towed past the needles.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_by-2030-morgan-stanley-predicts-that-agentic-share-7483157756095455232-HQtB',
+    preview: 'By 2030, agentic shopping could reach $385 billion. What does advertising even look like when the buyer is software - no eyes, no feeling, no clicks?',
+    body: `By 2030, Morgan Stanley predicts that agentic shopping could reach $385 billion.
+
+That's their conservative number, counting only purchases where an AI agent takes meaningful autonomous action, about 10-20% of US e-commerce. Bain's looser cut, which also counts buying that was influenced by an agent, runs around $300-500 billion, as much as 25% of everything sold online. Both of these are predictive forecasts, but 30-45% of consumers already use AI for product research today, so the direction of where e-commerce is headed is not really up for debate.
+
+This means marketers are about to meet a buyer with no eyes, no emotional response, and, more importantly, no clicks.
+
+Everything I've spent my career helping people measure assumes a human on the other end. An impression assumes eyes. Brand lift assumes a feeling. Attribution assumes a finger on a click or a tap. An agent reads the whole catalog, compares every price, and parses every review in seconds and currently, the advertising industry's stack is not built to register any of it.
+
+So what does advertising even look like when the buyer is software? It's more about structured product data, clean feeds, and claims a machine can verify instead of taglines a human can feel. There are already two competing standards for how agents should read commerce content, and I can tell you the industry only fights over standards when it believes they will matter in the future.
+
+Bain's own research says half of shoppers aren't ready to let an agent finish the checkout yet, but the shift will come category by category: paper-towels long before perfume. Fine. That's how every infrastructure change in this industry has ever arrived. But the clock is ticking to figure this out sooner rather than later.
+
+The first buyer in history that reads every review and has never once seen an ad is about to get a budget.`,
+  },
+  {
+    title: 'The Model Was the Easy Part',
+    date: 'July 14, 2026',
+    impressions: 801,
+    engagements: 10,
+    image: 'post-deployment-arms.webp',
+    imageAlt: 'Charcoal-on-cream sketch of a Victorian machine hall where a swarm of small engineers installs a glowing blank monolith: welders throwing sparks, a cable spool, a blueprint table, workers climbing ladders and scaffolding around the slab.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_amazon-microsoft-and-wpp-all-opened-ai-share-7482656306621947904-dw5s',
+    preview: 'Amazon, Microsoft, and WPP all opened AI deployment arms in the same week. The most automated companies on earth are hiring armies of humans to make automation stick.',
+    body: `Amazon, Microsoft, and WPP all opened AI deployment arms in the same week.
+
+Amazon started the volley by committing a billion dollars. Microsoft answered two days later with $2.5 billion and roughly six thousand engineers, a whole new unit called Microsoft Frontier Company. Then, WPP signed a multi-year deployment agreement with AWS mere days after that. Anthropic and OpenAI have already built their own well-publicized versions.
+
+The most automated companies on earth are hiring armies of humans to help other humans make automation stick.
+
+Benedict Evans wrote the sharpest version of why. Per Benedict - giving everyone Copilot mostly failed; pilots and point solutions only move individual teams. Getting real value means reengineering whole workflows and functions, and that work is slow and manual. His phrase for the paradox: "automation requires a lot of manual labour."
+
+I've spent two years inside that paradox. Nearly every client conversation I have about agents reaches the same two stuck points: we don't have them yet, or we have them and they can't connect to anything. These conversations tend to stall on the stuff that isn't "what's the latest model". The permissions, the protocols. The workflow nobody has redrawn since RTB.
+
+KPMG just surveyed two thousand business leaders and hit a finding I'd put as the headline of the next conference: companies with clear ownership of AI outcomes are three times more likely to report ROI. When the CEO personally owns it, established ROI jumps from 4% to 14%. Which model, which mode, which tool you bought barely mattered. Whose name was signed up against the outcome mattered a lot.
+
+So the race everyone spent two years watching (whose model is smartest) has turned into the race nobody demos. The real race is now in who can freakin' install the thing against your particular organizational problems. We've entered the age of an army of human consultants helping to power the center of the automation economy.
+
+Wrapping up with a note on BubbleWatch 2026: between just these two announcements alone, the week adds up to a three-and-a-half-billion-dollar admission that the model was the easy part, and there's still an enormous amount of human-powered learning before orgs see what these things can actually do.`,
+  },
+  {
     title: 'The Show Is Mostly the Dark Parts',
     date: 'July 9, 2026',
-    impressions: 127,
-    engagements: 2,
+    impressions: 181,
+    engagements: 3,
     image: 'post-jspace-theater.webp',
     imageAlt: 'Charcoal-on-cream watercolor sketch of a theater seen from the wings: one actor in a cone of colored spotlight on stage, the crew, rigging, and stage manager working in the dark around them',
     url: 'https://www.linkedin.com/posts/cody-wymore-66543680_claude-has-a-small-set-of-thoughts-it-can-share-7481101299720069120-hEkF',
