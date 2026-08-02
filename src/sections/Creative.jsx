@@ -2,6 +2,7 @@ import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
 
 const shows = [
+  { title: 'A Chorus Line', year: '2026', role: 'Music Director' },
   { title: 'Urinetown', year: '2023', role: 'Music Director' },
   { title: 'Ragtime', year: '2018', role: 'Music Director' },
   { title: 'Into the Woods', year: '2016', role: 'Music Director' },
