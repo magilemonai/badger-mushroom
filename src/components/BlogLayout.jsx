@@ -1,7 +1,104 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, children }) {
+// Thin bar under the header showing how far through the article the reader is.
+function ReadingProgress() {
+  const barRef = useRef(null)
+  useEffect(() => {
+    const el = barRef.current
+    if (!el) return
+    let raf = null
+    const update = () => {
+      raf = null
+      const doc = document.documentElement
+      const max = doc.scrollHeight - window.innerHeight
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0
+      el.style.transform = `scaleX(${p})`
+    }
+    const onScroll = () => { if (raf === null) raf = requestAnimationFrame(update) }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (raf !== null) cancelAnimationFrame(raf)
+    }
+  }, [])
+  return <div ref={barRef} className="blog-progress" aria-hidden="true" />
+}
+
+// Desktop rail + mobile jump menu built from the essay's section list.
+function TableOfContents({ sections }) {
+  const [activeId, setActiveId] = useState(null)
+
+  useEffect(() => {
+    const headings = sections
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean)
+    if (!headings.length) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        if (visible.length) setActiveId(visible[0].target.id)
+      },
+      { rootMargin: '-15% 0px -70% 0px' }
+    )
+    headings.forEach((h) => observer.observe(h))
+    return () => observer.disconnect()
+  }, [sections])
+
+  return (
+    <>
+      {/* Desktop: fixed rail left of the reading column */}
+      <nav
+        aria-label="Table of contents"
+        className="hidden xl:block fixed top-28 w-[180px]"
+        style={{ left: 'calc(50% - 24rem - 200px)' }}
+      >
+        <div className="font-mono text-xs tracking-widest text-warm-gray uppercase mb-3">
+          Sections
+        </div>
+        <ol className="space-y-1.5 border-l border-taupe/60">
+          {sections.map(({ id, label }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className={`block pl-3 -ml-px border-l-2 text-sm leading-snug transition-colors ${
+                  activeId === id
+                    ? 'border-forest text-forest font-medium'
+                    : 'border-transparent text-warm-gray hover:text-charcoal'
+                }`}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      {/* Mobile / tablet: collapsible jump menu (works without JavaScript) */}
+      <details className="xl:hidden mt-6 rounded-lg border border-taupe/50 bg-linen/60 open:bg-linen">
+        <summary className="cursor-pointer px-4 py-3 font-mono text-xs tracking-widest text-charcoal uppercase select-none">
+          Jump to a section
+        </summary>
+        <ol className="px-4 pb-3 space-y-2">
+          {sections.map(({ id, label }) => (
+            <li key={id}>
+              <a href={`#${id}`} className="text-sm text-forest hover:text-charcoal transition-colors">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    </>
+  )
+}
+
+export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, sections, children }) {
   const [lightboxSrc, setLightboxSrc] = useState(null)
   const [lightboxAlt, setLightboxAlt] = useState('')
   const lightboxRef = useRef(null)
@@ -45,6 +142,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
 
   return (
     <div className="min-h-screen bg-cream">
+      <ReadingProgress />
       {/* Header / Nav */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-taupe/30">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -129,6 +227,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
               )}
             </div>
           </div>
+          {sections?.length > 0 && <TableOfContents sections={sections} />}
         </header>
 
         {/* Body */}

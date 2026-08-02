@@ -13,14 +13,19 @@ export default function Q1_2026_Content() {
         time, I scrapped both and asked a different question: what did this
         quarter actually <em>feel</em> like?
       </p>
-      <p>Because the feeling is the story. The events are just evidence.</p>
+      <blockquote>Because the feeling is the story. The events are just evidence.</blockquote>
 
-      <h2>The Pace</h2>
+      <h2 id="the-pace">The Pace</h2>
       <p>
         Over 270 AI models were released in Q1 2026. Three per day. Not
         incremental patches. New architectures. New reasoning paradigms. New
         benchmarks, because the old ones stopped working.
       </p>
+
+      <aside className="stat-callout">
+        <span className="stat-number">270+</span>
+        <span className="stat-label">AI models released in Q1 2026. Three per day.</span>
+      </aside>
 
       <figure>
         <BlogImage
@@ -82,12 +87,18 @@ export default function Q1_2026_Content() {
         Think of it like CPMs, except the price of reaching your audience went
         from a $20 CPM to seven cents, and the audience got smarter.
       </p>
+
+      <aside className="stat-callout">
+        <span className="stat-number">280-fold</span>
+        <span className="stat-label">reduction in eighteen months</span>
+      </aside>
+
       <p>
         I watched all of this from one specific vantage point: I was building
         things.
       </p>
 
-      <h2>The Personal Timeline</h2>
+      <h2 id="the-personal-timeline">The Personal Timeline</h2>
       <p>
         In January, I was an ad tech executive who had never opened a terminal.
         By the end of March, I had shipped three apps, two games, a personal
@@ -140,13 +151,22 @@ export default function Q1_2026_Content() {
       </figure>
 
       <p>
-        Each project taught me something the previous one couldn't. The trivia
-        app taught me what a repo is. The Valisar game taught me what debugging
-        feels like at 1am. Last Light taught me that narrative design and prompt
-        engineering are the same discipline in different costumes. The content
-        system taught me that single outputs matter less than structured
-        iteration.
+        Each project taught me something the previous one couldn't.
       </p>
+      <ul>
+        <li>The trivia app taught me what a repo is.</li>
+        <li>
+          The Valisar game taught me what debugging feels like at 1am.
+        </li>
+        <li>
+          Last Light taught me that narrative design and prompt engineering are
+          the same discipline in different costumes.
+        </li>
+        <li>
+          The content system taught me that single outputs matter less than
+          structured iteration.
+        </li>
+      </ul>
       <p>
         I went from "I've never written a line of code" to "I'm building a game
         while my partner is asleep and my content system is running a
@@ -159,11 +179,17 @@ export default function Q1_2026_Content() {
         AI" is thinner than the industry admits. And that has consequences.
       </p>
 
-      <h2>The Noise</h2>
+      <h2 id="the-noise">The Noise</h2>
       <p>
         While I was re-designing pixel art at midnight, the rest of the industry
         was watching the floor drop out.
       </p>
+
+      <aside className="stat-callout">
+        <span className="stat-number">80,000+</span>
+        <span className="stat-label">tech workers lost their jobs in Q1</span>
+      </aside>
+
       <p>
         Over 80,000 tech workers lost their jobs in Q1. For scale, that's
         more people than Omnicom employs worldwide.
@@ -246,7 +272,7 @@ export default function Q1_2026_Content() {
         compress into a headline.
       </p>
 
-      <h2>The Infrastructure</h2>
+      <h2 id="the-infrastructure">The Infrastructure</h2>
       <p>
         All of this AI mania runs on electricity. In Q1, that started to matter.
       </p>
@@ -293,6 +319,14 @@ export default function Q1_2026_Content() {
         </a>
         , potentially exceeding 25% in Northern Virginia.
       </p>
+      <aside className="stat-callout">
+        <span className="stat-number">$320 billion</span>
+        <span className="stat-label">
+          committed by the five largest tech companies to data center spending
+          in a single year
+        </span>
+      </aside>
+
       <p>
         The five largest tech companies committed over $320 billion in data
         center spending in a single year. For comparison, the entire U.S.
@@ -326,7 +360,7 @@ export default function Q1_2026_Content() {
         never been more seemingly disconnected yet so entangled.
       </p>
 
-      <h2>The Geopolitics</h2>
+      <h2 id="the-geopolitics">The Geopolitics</h2>
       <p>
         Q1 made something plain: AI is a geopolitical instrument now.
       </p>
@@ -360,7 +394,7 @@ export default function Q1_2026_Content() {
         models, the same infrastructure, the same ninety days.
       </p>
 
-      <h2>The Pattern</h2>
+      <h2 id="the-pattern">The Pattern</h2>
       <p>
         If I had to compress Q1 into a single sentence: capabilities outran
         governance at every level simultaneously.
@@ -374,7 +408,7 @@ export default function Q1_2026_Content() {
         unrestricted access to a system whose maker built it with restrictions
         as a design philosophy.
       </p>
-      <p>Four scales. Same structural problem. Speed without trust.</p>
+      <blockquote>Four scales. Same structural problem. Speed without trust.</blockquote>
       <p>
         I've been circling that phrase for months, and Q1 is the quarter where
         it stopped being an abstraction. Roughly 80% of the meetings I've had
@@ -391,7 +425,7 @@ export default function Q1_2026_Content() {
         that doesn't make for good keynote demos.
       </p>
 
-      <h2>What Survived the Blur</h2>
+      <h2 id="what-survived-the-blur">What Survived the Blur</h2>
       <p>
         I'm not going to pretend I have a tidy synthesis. Q1 taught me that tidy
         syntheses are what you produce when you haven't looked closely enough.

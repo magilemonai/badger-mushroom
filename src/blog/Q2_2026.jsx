@@ -9,6 +9,15 @@ export default function Q2_2026() {
       date="July 6, 2026"
       heroImage="q2-2026-hero"
       heroAlt="Charcoal sketch of a traveler with a backpack riding a roller-coaster car through a landscape of giant gears, sketching in a notebook, with a large riveted Q2 built into the loop behind and the track ahead dissolving into unfinished pencil lines"
+      sections={[
+        { id: 'the-pace', label: 'The Pace' },
+        { id: 'the-labor-force', label: 'The Labor Force' },
+        { id: 'the-slop', label: 'The Slop' },
+        { id: 'the-inversion', label: 'The Inversion' },
+        { id: 'the-grid', label: 'The Grid' },
+        { id: 'the-metabolization', label: 'The Metabolization' },
+        { id: 'the-first-loop', label: 'The First Loop' },
+      ]}
     >
       <Q2Content />
     </BlogLayout>

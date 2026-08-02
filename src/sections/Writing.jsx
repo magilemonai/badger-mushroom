@@ -10,7 +10,7 @@ const articles = [
     date: 'Jul 6, 2026',
     summary: 'A record 40% of layoffs blamed on AI. China at 85% optimism about a technology half of America has never touched. Ninety days on a roller coaster where we can’t see the end.',
     url: '/blog/q2-2026',
-    image: 'blog/q2-2026-hero.jpg',
+    image: 'blog/q2-2026-hero-sm.webp',
     imageAlt: 'Q2 2026: The Quarter That Built Its First Loop',
     internal: true,
     featured: true,
@@ -20,7 +20,7 @@ const articles = [
     date: 'Apr 6, 2026',
     summary: '270+ model releases. Over 80,000 layoffs. Seven projects built from scratch. A personal reckoning with the pace of AI.',
     url: '/blog/q1-2026',
-    image: 'blog/q1-2026-hero.jpg',
+    image: 'blog/q1-2026-hero-sm.webp',
     imageAlt: 'Q1 2026: The Quarter That Broke the Timeline',
     internal: true,
     featured: false,
@@ -40,6 +40,51 @@ const articles = [
     featured: false,
   },
 ]
+
+// Renders a post body string with light structure: consecutive paragraphs that
+// begin "N. " become a numbered list (value-attributed so split lists keep
+// their numbering); everything else stays a whitespace-preserving paragraph.
+function PostBody({ body }) {
+  const blocks = useMemo(() => {
+    const paras = body.split(/\n\s*\n/).filter((p) => p.trim().length)
+    const out = []
+    let list = null
+    for (const para of paras) {
+      const m = para.match(/^(\d+)\.\s+([\s\S]*)$/)
+      if (m) {
+        if (!list) {
+          list = []
+          out.push({ type: 'ol', items: list })
+        }
+        list.push({ n: Number(m[1]), text: m[2] })
+      } else {
+        list = null
+        out.push({ type: 'p', text: para })
+      }
+    }
+    return out
+  }, [body])
+
+  return (
+    <div className="pt-6 text-sm sm:text-base text-charcoal leading-relaxed">
+      {blocks.map((block, i) =>
+        block.type === 'ol' ? (
+          <ol key={i} className="list-decimal pl-6 mb-4 space-y-1 font-medium marker:font-mono marker:text-sage">
+            {block.items.map((item) => (
+              <li key={item.n} value={item.n} className="whitespace-pre-line">
+                {item.text}
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p key={i} className="mb-4 whitespace-pre-line last:mb-0">
+            {block.text}
+          </p>
+        )
+      )}
+    </div>
+  )
+}
 
 function LinkedInPost({ post }) {
   const [expanded, setExpanded] = useState(false)
@@ -76,6 +121,8 @@ function LinkedInPost({ post }) {
             <img
               src={import.meta.env.BASE_URL + post.image}
               alt={post.imageAlt || ''}
+              loading="lazy"
+              decoding="async"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover shrink-0"
             />
           ) : (
@@ -135,9 +182,7 @@ function LinkedInPost({ post }) {
               )}
             </div>
           )}
-          <div className="pt-6 text-sm sm:text-base text-charcoal leading-relaxed whitespace-pre-line">
-            {post.body}
-          </div>
+          <PostBody body={post.body} />
           <div className="flex flex-wrap items-center gap-4 mt-6">
             <a
               href={post.url}
@@ -186,6 +231,34 @@ function LinkedInPost({ post }) {
 
 const VISIBLE_COUNT = 12
 
+function YearDivider({ year }) {
+  return (
+    <div className="flex items-center gap-3 pt-6 pb-1" aria-hidden="true">
+      <span className="font-mono text-xs tracking-widest text-warm-gray">{year}</span>
+      <div className="flex-1 border-t border-taupe/60" />
+    </div>
+  )
+}
+
+// Interleave year dividers into a chronological post list (posts run
+// newest-first, so a divider marks the year the reader is scrolling into).
+function renderPostList(posts, showDividers) {
+  if (!showDividers) {
+    return posts.map((post) => <LinkedInPost key={post.url} post={post} />)
+  }
+  const out = []
+  let lastYear = null
+  for (const post of posts) {
+    const year = new Date(post.date).getFullYear()
+    if (lastYear !== null && year !== lastYear && !Number.isNaN(year)) {
+      out.push(<YearDivider key={`year-${year}`} year={year} />)
+    }
+    if (!Number.isNaN(year)) lastYear = year
+    out.push(<LinkedInPost key={post.url} post={post} />)
+  }
+  return out
+}
+
 export default function Writing() {
   const sectionRef = useScrollAnimation()
   const [showOlder, setShowOlder] = useState(false)
@@ -221,7 +294,7 @@ export default function Writing() {
           <h3 className="font-mono text-sm sm:text-base tracking-widest text-sage uppercase mb-6">
             Blog Articles
           </h3>
-          <div className="space-y-4 mb-16">
+          <div className="space-y-4 mb-16 anim-stagger">
             {articles.map((article) => {
               const cardClass = `block rounded-xl p-6 sm:p-8 border transition-all duration-200 group hover:-translate-y-0.5 hover:shadow-md ${
                 article.featured
@@ -235,6 +308,10 @@ export default function Writing() {
                       <img
                         src={import.meta.env.BASE_URL + article.image}
                         alt={article.imageAlt || ''}
+                        width={800}
+                        height={436}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full block object-cover object-top"
                       />
                     </div>
@@ -317,10 +394,8 @@ export default function Writing() {
               </button>
             </div>
           </div>
-          <div className="space-y-4">
-            {recentPosts.map((post) => (
-              <LinkedInPost key={post.url} post={post} />
-            ))}
+          <div className="space-y-4 anim-stagger">
+            {renderPostList(recentPosts, sortMode === 'recent')}
           </div>
 
           {olderPosts.length > 0 && (
@@ -342,9 +417,7 @@ export default function Writing() {
               </button>
               {showOlder && (
                 <div className="space-y-4 mt-4">
-                  {olderPosts.map((post) => (
-                    <LinkedInPost key={post.url} post={post} />
-                  ))}
+                  {renderPostList(olderPosts, sortMode === 'recent')}
                 </div>
               )}
             </div>

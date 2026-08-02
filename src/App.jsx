@@ -1,5 +1,6 @@
 import { useEffect, useState, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import routeMeta from './routeMeta'
 import Navigation from './components/Navigation'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -76,7 +77,7 @@ function BackToTop() {
   )
 }
 
-function HomePage() {
+export function HomePage() {
   return (
     <>
       <Navigation />
@@ -94,11 +95,21 @@ function HomePage() {
   )
 }
 
-export default function App() {
+function RouteMeta() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    const meta = routeMeta[pathname]
+    if (meta) document.title = meta.title
+  }, [pathname])
+  return null
+}
+
+export function AppRoutes() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollManager />
       <PageviewTracker />
+      <RouteMeta />
       <Suspense fallback={<div className="min-h-svh bg-cream" />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -107,6 +118,14 @@ export default function App() {
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Suspense>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
     </BrowserRouter>
   )
 }

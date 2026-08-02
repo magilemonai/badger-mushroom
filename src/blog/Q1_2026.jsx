@@ -9,6 +9,15 @@ export default function Q1_2026() {
       date="April 6, 2026"
       heroImage="q1-2026-hero"
       heroAlt="Q1 2026: The Quarter That Broke the Timeline"
+      sections={[
+        { id: 'the-pace', label: 'The Pace' },
+        { id: 'the-personal-timeline', label: 'The Personal Timeline' },
+        { id: 'the-noise', label: 'The Noise' },
+        { id: 'the-infrastructure', label: 'The Infrastructure' },
+        { id: 'the-geopolitics', label: 'The Geopolitics' },
+        { id: 'the-pattern', label: 'The Pattern' },
+        { id: 'what-survived-the-blur', label: 'What Survived the Blur' },
+      ]}
     >
       <Q1Content />
     </BlogLayout>

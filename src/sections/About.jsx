@@ -14,7 +14,7 @@ export default function About() {
             Two worlds, one throughline
           </h2>
 
-          <div className="space-y-5 text-base sm:text-lg text-warm-gray leading-relaxed">
+          <div className="space-y-5 text-base sm:text-lg text-charcoal/85 leading-relaxed">
             <p>
               I'm VP, Client Solutions at{' '}
               <a

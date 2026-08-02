@@ -46,7 +46,7 @@ export default function Q2_2026_Content() {
         goes to eye-wateringly expensive token usage.
       </p>
 
-      <h2>The Pace</h2>
+      <h2 id="the-pace">The Pace</h2>
       <p>
         Last quarter the models arrived every week or so. This quarter they
         arrived faster than I could write a LinkedIn post about the previous
@@ -93,7 +93,7 @@ export default function Q2_2026_Content() {
         answers. We are generating capability faster than we can build honest
         rulers for it.
       </p>
-      <p>The rulers being built next don't look like the old tests at all.</p>
+      <blockquote>The rulers being built next don't look like the old tests at all.</blockquote>
       <p>
         METR, the group that measures how long a task an agent can finish on
         its own, says that length is doubling every three months for recent
@@ -110,6 +110,13 @@ export default function Q2_2026_Content() {
         whether your fifteen-year-old can walk up a flight of stairs. When the
         toddler did it, it was a miracle. Now it's Tuesday.
       </p>
+      <aside className="stat-callout">
+        <span className="stat-number">98%</span>
+        <span className="stat-label">
+          fall in the price of a token since 2022
+        </span>
+      </aside>
+
       <p>
         The price of a token, the unit of everything these models do, has
         fallen something like 98% since 2022. Enterprise AI bills roughly
@@ -148,13 +155,20 @@ export default function Q2_2026_Content() {
         </figcaption>
       </figure>
 
-      <h2>The Labor Force</h2>
+      <h2 id="the-labor-force">The Labor Force</h2>
       <p>
         In an earlier draft, this section was called ‘The Noise’, and that was
         lazy. The labor force isn't doing one thing that a headline can hold.
         It's doing at least four things at once, and they point in different
         directions.
       </p>
+      <aside className="stat-callout">
+        <span className="stat-number">40%</span>
+        <span className="stat-label">
+          of announced U.S. job cuts in May were attributed to AI
+        </span>
+      </aside>
+
       <p>
         Let’s start with the real cuts. In May, 40% of announced U.S. job cuts
         were attributed to AI, the highest share since anyone started counting.
@@ -214,18 +228,34 @@ export default function Q2_2026_Content() {
         mid-operation, trying to grab as much ground as they can while heavier
         incumbents adjust. The ambition in that cohort talks along the lines of
         fifty-x and hundred-x. The record shows smaller numbers, but they are
-        just as absurd. Lovable says it passed $500 million in annual revenue
-        in June with 146 employees, roughly ten times the revenue per head of a
-        normal software company, self-reported and unaudited, while its CEO
-        publicly recruits the people Big Tech just laid off. Duolingo, in SEC
-        filings, grew headcount through its AI-first reorg while its CEO claims
-        four to five times the content output from the same team. Cursor went
-        from $100 million to $3 billion (30x) in annualized revenue in sixteen
-        months on a team of about three hundred, and then, two weeks before the
-        quarter ended, SpaceX bought it for sixty billion dollars, days after
-        its IPO - the biggest acquisition of a venture-backed startup on
-        record. Palantir's CEO marks the boundary of the rhetoric, targeting
-        ten times the revenue with fewer people. Almost every number in this
+        just as absurd.
+      </p>
+      <ul>
+        <li>
+          Lovable says it passed $500 million in annual revenue in June with
+          146 employees, roughly ten times the revenue per head of a normal
+          software company, self-reported and unaudited, while its CEO publicly
+          recruits the people Big Tech just laid off.
+        </li>
+        <li>
+          Duolingo, in SEC filings, grew headcount through its AI-first reorg
+          while its CEO claims four to five times the content output from the
+          same team.
+        </li>
+        <li>
+          Cursor went from $100 million to $3 billion (30x) in annualized
+          revenue in sixteen months on a team of about three hundred, and then,
+          two weeks before the quarter ended, SpaceX bought it for sixty billion
+          dollars, days after its IPO - the biggest acquisition of a
+          venture-backed startup on record.
+        </li>
+        <li>
+          Palantir's CEO marks the boundary of the rhetoric, targeting ten times
+          the revenue with fewer people.
+        </li>
+      </ul>
+      <p>
+        Almost every number in this
         paragraph is a founder reporting his own score, so it's important to
         keep that in mind. But this market posture is real, and these companies
         are likely hiring people who were a) recently let go or b) looking to
@@ -248,7 +278,7 @@ export default function Q2_2026_Content() {
         </figcaption>
       </figure>
 
-      <h2>The Slop</h2>
+      <h2 id="the-slop">The Slop</h2>
       <p>
         Stop me if you’ve heard this one: this is like we’re in 1997. In the
         early internet in the dot-com era, most of these companies will die and
@@ -258,6 +288,13 @@ export default function Q2_2026_Content() {
         guaranteed bananas, mind-blowing, available for a subscription fee, and
         most people are not touching it.
       </p>
+      <aside className="stat-callout">
+        <span className="stat-number">Half</span>
+        <span className="stat-label">
+          of American adults have never used an AI chatbot ever
+        </span>
+      </aside>
+
       <p>
         Roughly half of American adults have never used an AI chatbot ever. Not
         once. Only a quarter use one daily. Meanwhile the passive exposure is
@@ -287,7 +324,7 @@ export default function Q2_2026_Content() {
         the AI the average person has actually encountered.
       </p>
 
-      <h2>The Inversion</h2>
+      <h2 id="the-inversion">The Inversion</h2>
       <p>
         In a 32-country Ipsos survey fielded this March and April, 85% of
         Chinese respondents said AI products and services offer more benefits
@@ -300,11 +337,11 @@ export default function Q2_2026_Content() {
         tightly controlled. Hedge the results hard, but the gap is still forty
         to fifty points across three independent surveys.
       </p>
-      <p>
+      <blockquote>
         So the country building half the frontier is the country that trusts it
         least, and like many things, I don’t think this is just a
         straight-forward simple answer.
-      </p>
+      </blockquote>
       <p>
         I imagine three intermingling components. The first is that Americans
         aren't rejecting artificial intelligence so much as running out of
@@ -374,7 +411,16 @@ export default function Q2_2026_Content() {
         </figcaption>
       </figure>
 
-      <h2>The Grid</h2>
+      <h2 id="the-grid">The Grid</h2>
+
+      <aside className="stat-callout">
+        <span className="stat-number">$700 billion</span>
+        <span className="stat-label">
+          in capital spending planned this year by the four biggest tech
+          companies
+        </span>
+      </aside>
+
       <p>
         All of this runs on electricity. And this quarter, electricity
         graduated from a footnote to a constraint. Microsoft's cloud backlog,
@@ -465,7 +511,7 @@ export default function Q2_2026_Content() {
         </figcaption>
       </figure>
 
-      <h2>The Metabolization</h2>
+      <h2 id="the-metabolization">The Metabolization</h2>
       <p>
         The plumbing is arriving. It has not arrived. When I say plumbing, I
         mean interconnectedness, integrations, foundational layers that make
@@ -545,7 +591,7 @@ export default function Q2_2026_Content() {
         </figcaption>
       </figure>
 
-      <h2>The First Loop</h2>
+      <h2 id="the-first-loop">The First Loop</h2>
       <p>
         I owe you an ending, and I don't have a tidy synthesis. I’m merely
         chronicling this wild journey from inside the roller coaster car while

@@ -76,7 +76,7 @@ export default function Hero() {
             </p>
 
             <p
-              className={`text-lg sm:text-xl text-warm-gray leading-relaxed max-w-xl mb-8 transition-all duration-1000 delay-300 ${
+              className={`text-lg sm:text-xl text-charcoal/85 leading-relaxed max-w-xl mb-8 transition-all duration-1000 delay-300 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
