@@ -28,7 +28,7 @@
   --color-terracotta-light: #C4896E; /* original tone for decorative use */
 
   /* Typography */
-  --font-display: 'Fraunces', 'DM Serif Display', serif;
+  --font-display: 'DM Serif Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -359,9 +359,7 @@ body::before {
 /* Graphite display treatment for the hero name */
 .sketch-name {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-variation-settings: 'opsz' 144;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 /* Hand-drawn underline flourish (SVG stroke, draws itself on load) */
