@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import routeMeta from './routeMeta'
 import Navigation from './components/Navigation'
 import QuoteBand from './components/QuoteBand'
+import Playhead from './components/Playhead'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import AdTech from './sections/AdTech'
@@ -82,6 +83,7 @@ export function HomePage() {
   return (
     <>
       <Navigation />
+      <Playhead />
       <main>
         <Hero />
         <About />

@@ -397,3 +397,36 @@ html.js .pencil-reveal {
   .sketch-flourish path { animation: none; stroke-dashoffset: 0; }
   html.js .pencil-reveal { animation: none; clip-path: none; }
 }
+
+
+/* ============ Playhead progress (ported from variant AB) ============ */
+.playhead-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 60;
+  background: transparent;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-charcoal) 18%, transparent);
+}
+
+.playhead-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-terracotta);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.playhead-marker {
+  position: absolute;
+  top: 3px;
+  margin-left: -5px;
+  color: var(--color-charcoal);
+  transition: left 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playhead-marker { transition: none; }
+}

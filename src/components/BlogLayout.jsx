@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Playhead from './Playhead'
+import SiteNavMenu from './SiteNavMenu'
 
 // Thin bar under the header showing how far through the article the reader is.
 function ReadingProgress() {
@@ -142,7 +144,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
 
   return (
     <div className="min-h-screen bg-cream">
-      <ReadingProgress />
+      <Playhead />
       {/* Header / Nav */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-taupe/30">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -155,7 +157,10 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
             </svg>
             Cody Wymore
           </Link>
-          <span className="font-mono text-xs tracking-wide text-sage">Blog</span>
+          <div className="flex items-center gap-5">
+            <span className="font-mono text-xs tracking-wide text-sage">Blog</span>
+            <SiteNavMenu />
+          </div>
         </div>
       </header>
 
