@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" rx="12" fill="#E8F0E8"/>
+  <circle cx="200" cy="180" r="70" fill="#B5C9B3"/>
+  <ellipse cx="200" cy="340" rx="100" ry="80" fill="#B5C9B3"/>
+  <text x="200" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#7A9E7E">Replace with headshot.jpg</text>
+</svg>
