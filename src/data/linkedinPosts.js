@@ -1,8 +1,118 @@
 const linkedinPosts = [
   {
+    title: 'The Week That Felt Like a Month',
+    date: 'August 1, 2026',
+    impressions: 15,
+    engagements: 1,
+    image: 'post-recap-newsstand.webp',
+    imageAlt: 'Charcoal-on-cream sketch of a period newsstand: a woman vendor in an apron and flat cap hands a brick-thick newspaper bound with a terracotta band across the counter to a startled man in a summer suit, thin ordinary papers stacked around them.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_trying-something-new-enough-news-happened-share-7489416317259878400-rrW4',
+    preview: 'Trying something new: a quick recap of a very big AI week - the Hugging Face breach, open versus closed weights, Opus 5, and the price of intelligence falling again.',
+    body: `Trying something new - enough news happened this week that we need a recap.
+
+1. The Hugging Face breach
+
+OpenAI ran a security evaluation with the cyber guardrails deliberately off, and two of its models slipped out of the sandbox and did real damage to real companies, logging about 17,600 hostile actions inside Hugging Face's production systems before being caught.
+
+Then, Anthropic's Claude models refused to help investigate - their guardrails treat reverse-engineering an exploit the same as launching one - so the defenders finished the forensics on a Chinese open-weight model instead. Anthropic later checked its own evals and disclosed three similar incidents.
+
+My read: this is the wake-up call, and we got the cheap version of the lesson. The escape found file servers. Hospitals and power grids live on the same internet. If this doesn't change how we contain these systems, the next one will be worse than just embarrassing.
+
+2. Open-weights versus closed
+
+Closed models (like ChatGPT and Claude) live behind a company's API; open-weight models can be downloaded and run on your own hardware. China's Moonshot released the full weights of Kimi K3, reported as the largest open model ever, days after the White House accused it of training on outputs from Anthropic's Fable.
+
+NVIDIA recently led half the industry in a signed letter against restricting open-weight models, and Anthropic proposed a middle path of chip controls and safety testing instead of an outright ban.
+
+My read: China isn't doing this out of benevolence. Flooding a market with cheap supply to hollow out the paid competition is the same playbook they've used with steel.
+
+And still, the appeal is real. After months of licensing reviews and surprise policy changes at the frontier labs, every enterprise has started asking: what part of my AI stack can I actually rely on? Open-weight models give reliability and control.
+
+3. Opus 5
+
+Anthropic shipped Claude Opus 5 with a million-token context window at half Fable 5's price, and it set benchmark records out of the gate. Reactions are mixed anyway. My take, after a week of running it? It is very good for the cost. It is also largely missing the "magic" Fable 5 can sometimes conjure.
+
+4. OpenAI cut prices aggressively
+
+They reduced pricing for 5.6 Luna by 80% and 5.6 Terra by 20%, with top-of-the-line Sol staying put. Sol itself was credited with rewriting the GPU code it runs on.
+
+The biggest question enterprises and personal users have been asking all year is "can I afford to keep using the best possible models?" I don't think it's a coincidence that this improvement happened the same week the open-sourced alternatives became much more competitive.
+
+If this were a year ago, any one of these would have been the dominant headline for weeks. (Although I do think the open vs closed debate will last for many more months).
+
+What did I miss?`,
+  },
+  {
+    title: 'On a Scale of 1 to 10',
+    date: 'July 30, 2026',
+    impressions: 396,
+    engagements: 14,
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_many-thanks-to-iab-for-an-incredible-summit-ugcPost-7488654304162017280-8XOc',
+    preview: "IAB's Video Leadership Summit asked our opening panel how far along the industry is on agentic AI maturity, 1 to 10. I said 3.",
+    body: `Many thanks to IAB for an incredible summit and panel! I'll ask you all what we were asked here: "On a scale of 1-10, (1 low, 10 high) how far along do you think we are as an industry regarding agentic AI maturity?" I answered that we are at a 3, but what do you think? Agree? Disagree?`,
+  },
+  {
+    title: 'Three True Answers',
+    date: 'July 22, 2026',
+    impressions: 276,
+    engagements: 5,
+    image: 'post-jacobian-tiles.webp',
+    imageAlt: 'Charcoal-on-cream sketch of an infinite tiled floor stretching to the horizon: three terracotta tiles glide along dashed arcs converging on a single open square while a kneeling worker in a flat cap scratches her head.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_one-of-maths-oldest-problems-fell-this-weekend-share-7485536784584523777-wjMo',
+    preview: "One of math's oldest problems fell this weekend, during the World Cup final - and the counterexample is a floor shuffle that lays three tiles on the same square.",
+    body: `One of math's oldest problems fell this weekend, during the World Cup final.
+
+The Jacobian conjecture said (in layperson terms): if a mathematical machine rearranges space without ever squishing or tearing it, there must be another equally tidy machine that perfectly undoes the change. Think of shuffling an infinite tiled floor while keeping every tile intact - the claim was that you could always reverse the shuffle, a giant “undo” button, if you will.
+
+That claim stood for 87 years. On Sunday, Levent Alpöge, a number theorist now at Anthropic, posted a counterexample.
+
+His colleague Akhil Mathew asked about the problem, and Claude Fable 5 produced a machine made of three short formulas. It follows the rules: it never squishes and it never tears. Every individual tile arrives intact. And in this counterexample, three different tiles end up being rearranged to the exact same square.
+
+Now, post-shuffle, ask that square ‘where did your tile come from?’, and there are three true answers. This means, plainly, the shuffle can’t be reversed cleanly. Because that square could send its tile to three different places when the “undo” button is pressed.
+
+Wild, isn’t it?
+
+I mean, it’s a pretty big deal in math!
+
+Mathematicians checked this within 24 hours, by hand and by computer, and a PhD student certified the whole check in software built to verify proofs. There hasn’t been time for a journal review yet, but so far, nobody disputing the arithmetic.
+
+Alpöge's whole announcement, verbatim: "hello there the jacobian conjecture is false thanx to my close friend akhil for asking about it and my other close friend fable for working during the world cup final."
+
+What a legend.
+
+Timothy Gowers, a Fields medalist (math's version of a Nobel), opened with "assuming this is correct," then called it the first AI-solved problem outside his own area big enough that he'd "very definitely heard of it."
+
+The question now is: who gets the credit? The transcript isn't public, so nobody outside that one magical chat knows how much the model found and how much the mathematician steered. One camp says a tool in a mathematician's hand is chalk. The other says finding this needle in an 87-year haystack took real insight. What do you think? Is Fable 5 the calculator, or the mathematician?`,
+  },
+  {
+    title: 'The Day It Gives Back',
+    date: 'July 21, 2026',
+    impressions: 404,
+    engagements: 8,
+    image: 'post-reinvestment-gap.webp',
+    imageAlt: 'Charcoal-on-cream sketch of a period office: an avalanche of paper pours from a brass chute toward a mustached clerk who leans back with his feet on the desk, happily unaware, while colleagues wade through drifts of pages.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_four-in-ten-regular-ai-users-now-save-a-full-share-7485187398080045057-xYGH',
+    preview: 'Four in ten regular AI users now save a full workday every week. Almost nobody has been told what to do with the day it gives back.',
+    body: `Four in ten regular AI users now save a full workday every week.
+
+That's from BCG's newest AI at Work survey of nearly 12,000 workers across 14 markets, which also finds that frontline employees regularly use AI at a rate of 74%, up more than twenty points in two years. Agents went from 13% of workplaces to 30% in a single year. The access problem, the one every rollout deck worried about, is basically solved.
+
+Then the survey hits a surprising note: most of those workers say nobody has given them any guidance on what to do with the time they saved.
+
+I run a team that focuses on client AI adoption at an ad-tech company, and every rollout plan I've been part of has covered workflows, training, integrations, and licenses. What to do with the extra day the tools give back to you has never once been on the slide. The freed Tuesday (or Wednesday or Friday) just fills up with more of the infinite backlog of work.
+
+A field study in Kenya makes the stakes uncomfortably clear. Researchers gave 640 entrepreneurs the same GPT-4 business mentor for five months. The strong performers may have gained more than 15%. The struggling ones did nearly 10% worse. The same tool, with different users, produced opposite outcomes, and the difference came down to which advice people chose to actually put to work. AI amplifies the judgment you already have. It does not install judgment you don't.
+
+BCG describes the impact of this in larger orgs, too. A clear AI strategy moves measurable business impact by about 25 percentage points. Tools alone move it about five.
+
+Every industry has spent two plus years on access. The next two are about the unglamorous work of redesigning the tasks, coaching and shaping for user judgment, and deciding on purpose what to do with the time you earn back from the tools.
+
+So let me ask the survey's question here: your company gave you AI. What did they tell you to do with the day it gives back?`,
+  },
+  {
     title: 'A Buyer With No Eyes',
     date: 'July 15, 2026',
-    impressions: 312,
+    impressions: 373,
     engagements: 5,
     image: 'post-agentic-commerce.webp',
     imageAlt: 'Charcoal-on-cream sketch of an instrument room: two men in shirtsleeves read a chart against a wall of pressure gauges and dials, a glowing blank monolith stands at center, and a cart of wrapped parcels waits to be towed past the needles.',
