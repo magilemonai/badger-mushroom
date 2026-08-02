@@ -60,17 +60,19 @@ export default function Hero() {
                 transformOrigin: 'top left',
               }}
             >
-              <h1 className="sketch-name text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-charcoal leading-[0.9]">
-                Cody<br />Wymore
-              </h1>
-              <svg
-                className="sketch-flourish mt-3 w-56 sm:w-72 h-4"
-                viewBox="0 0 600 20"
-                preserveAspectRatio="none"
+              <h1 className="sr-only">Cody Wymore</h1>
+              <img
+                src={import.meta.env.BASE_URL + 'name-mark.webp'}
+                srcSet={`${import.meta.env.BASE_URL}name-mark-sm.webp 800w, ${import.meta.env.BASE_URL}name-mark.webp 1600w`}
+                sizes="(max-width: 640px) 90vw, 640px"
+                alt=""
                 aria-hidden="true"
-              >
-                <path d="M4,14 C90,7 180,13 270,9 C360,5 450,13 540,8 C560,7 580,9 596,7" />
-              </svg>
+                width={1600}
+                height={434}
+                fetchpriority="high"
+                loading="eager"
+                className="w-full max-w-[40rem] h-auto"
+              />
             </div>
 
             <p
