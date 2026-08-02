@@ -2,6 +2,7 @@ import { useEffect, useState, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import routeMeta from './routeMeta'
 import Navigation from './components/Navigation'
+import QuoteBand from './components/QuoteBand'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import AdTech from './sections/AdTech'
@@ -84,6 +85,7 @@ export function HomePage() {
       <main>
         <Hero />
         <About />
+        <QuoteBand />
         <AdTech />
         <Creative />
         <Writing />

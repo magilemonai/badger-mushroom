@@ -28,7 +28,7 @@
   --color-terracotta-light: #C4896E; /* original tone for decorative use */
 
   /* Typography */
-  --font-display: 'DM Serif Display', serif;
+  --font-display: 'Fraunces', 'DM Serif Display', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -334,4 +334,68 @@ html.js .animate-on-scroll.is-visible .anim-stagger > *:nth-child(n+7) { transit
 
 .blog-prose figcaption strong {
   color: var(--color-charcoal);
+}
+
+
+/* ============ Sketchbook identity (redesign variant A) ============ */
+
+/* Paper grain: a fixed noise overlay over the cream ground. Kept faint -
+   texture should be felt at reading distance, not seen. */
+html.js body::before,
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.42 0 0 0 0 0.40 0 0 0 0 0.37 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Everything renders above the grain */
+#root { position: relative; z-index: 1; }
+
+/* Graphite display treatment for the hero name */
+.sketch-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.015em;
+}
+
+/* Hand-drawn underline flourish (SVG stroke, draws itself on load) */
+.sketch-flourish path {
+  stroke: var(--color-charcoal);
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: flourish-draw 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes flourish-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Pencil reveal: illustrations wipe in like a sweep of the hand */
+html.js .pencil-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: pencil-wipe 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+@keyframes pencil-wipe {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Dark graphite band */
+.graphite-band {
+  background-color: var(--color-charcoal);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.95 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sketch-flourish path { animation: none; stroke-dashoffset: 0; }
+  html.js .pencil-reveal { animation: none; clip-path: none; }
 }

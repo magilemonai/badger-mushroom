@@ -60,9 +60,17 @@ export default function Hero() {
                 transformOrigin: 'top left',
               }}
             >
-              <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-charcoal leading-[0.9] tracking-tight">
+              <h1 className="sketch-name text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-charcoal leading-[0.9]">
                 Cody<br />Wymore
               </h1>
+              <svg
+                className="sketch-flourish mt-3 w-56 sm:w-72 h-4"
+                viewBox="0 0 600 20"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path d="M4,14 C90,7 180,13 270,9 C360,5 450,13 540,8 C560,7 580,9 596,7" />
+              </svg>
             </div>
 
             <p
@@ -119,8 +127,8 @@ export default function Hero() {
 
           {/* Headshot — 2 columns. No opacity animation: delays LCP. */}
           <div className="md:col-span-2 order-1 md:order-2 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-3 bg-sage-wash rounded-2xl -z-10" />
+            <div className="relative pencil-reveal">
+              <div className="absolute -inset-3 bg-linen rounded-sm rotate-[-1.2deg] shadow-[0_2px_14px_rgba(44,44,44,0.12)] -z-10 border border-taupe/60" />
               <picture>
                 <source
                   type="image/webp"
@@ -130,7 +138,7 @@ export default function Hero() {
                 <img
                   src={import.meta.env.BASE_URL + 'Cody-Wymore-Headshot-Cody-Wymore.jpg'}
                   alt="Cody Wymore"
-                  className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-xl bg-sage-wash"
+                  className="w-64 h-80 sm:w-72 sm:h-[22rem] lg:w-80 lg:h-[26rem] object-cover object-top rounded-sm bg-sage-wash"
                   fetchpriority="high"
                   loading="eager"
                   decoding="async"
