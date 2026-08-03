@@ -2,8 +2,8 @@ import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
 
 const expertise = [
-  { label: 'Connected TV', desc: 'CTV isn\'t "digital TV." It\'s a new medium with its own rules. Most brands still buy it like linear — I help them stop doing that.' },
-  { label: 'AI & Personalization', desc: 'The gap between an AI demo and an AI workflow is where most companies stall. I close that gap — from pilots to production.' },
+  { label: 'Connected TV', desc: 'CTV is a new medium with its own rules. Most brands still buy it like linear - I help them stop doing that.' },
+  { label: 'AI & Personalization', desc: 'Most companies stall somewhere between the AI demo and the AI workflow. I get them from pilots to production.' },
   { label: 'Client Solutions', desc: 'The best ad tech is invisible to the advertiser. My team makes complexity disappear so clients can focus on outcomes.' },
   { label: 'Measurement & Analytics', desc: 'Everyone measures impressions. Almost nobody measures whether the creative actually worked. That\'s the problem I care about.' },
 ]

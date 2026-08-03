@@ -12,7 +12,7 @@ export const projects = [
     title: 'AI Build Wizard',
     subtitle: 'Build something real with AI in under 60 minutes',
     description:
-      'A guided, step-by-step tool that helps anyone — from AI newbies to experienced practitioners — build a working artifact or coded tool using Claude. It interviews you first, then walks you through four modules with copy/paste prompts. No coding experience required. Built with Claude Code.',
+      'A guided, step-by-step tool that helps anyone - from AI newbies to experienced practitioners - build a working artifact or coded tool using Claude. It interviews you first, then walks you through four modules with copy/paste prompts. No coding experience required. Built with Claude Code.',
     url: 'https://build.codywymore.com',
     tags: ['Tool', 'Claude Code', 'AI Education'],
     image: 'build-wizard.png',

@@ -40,8 +40,8 @@ export default function Creative() {
               The other half of the story
             </h2>
             <p className="text-base sm:text-lg text-warm-gray leading-relaxed">
-              Music isn't my hobby. It's a second career I've been building
-              for twenty years. I compose, arrange, and direct music with{' '}
+              Music is a second career I've been building for twenty
+              years. I compose, arrange, and direct music with{' '}
               <a
                 href="https://afterworktheater.org"
                 target="_blank"
@@ -50,8 +50,8 @@ export default function Creative() {
               >
                 AfterWork Theater
               </a>
-              , a NYC nonprofit that proves theater belongs to everyone,
-              not just professionals.
+              , a NYC nonprofit that proves theater belongs to anyone
+              willing to show up after work and rehearse.
             </p>
           </div>
 

@@ -116,8 +116,8 @@ export default function Hero() {
               }`}
             >
               13 years in ad tech. Seven AI projects in 90 days. An MFA in
-              musical theatre writing. Navigating the space between hype and
-              reality with equal parts enthusiasm and honesty.
+              musical theatre writing. At home in the messy middle between
+              hype and reality, with equal parts enthusiasm and honesty.
             </p>
 
             <div
