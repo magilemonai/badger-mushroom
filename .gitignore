@@ -34,3 +34,4 @@ Thumbs.db
 .cache/
 .parcel-cache/
 dist-ssr/
+node_modules
