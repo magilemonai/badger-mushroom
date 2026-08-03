@@ -444,18 +444,22 @@ html.js .pencil-reveal {
   mask-position: 100% 0;
 }
 
-/* Typewriter: hard mask edge stepping once per glyph of "Cody Wymore" */
-.name-write {
-  -webkit-mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
-  mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
-  animation: name-sweep 1.2s steps(11, end) 0.4s forwards;
+/* Typewriter: each glyph pops on its own keystroke */
+.glyph {
+  opacity: 0;
+  animation: glyph-on 1ms steps(1, end) forwards;
+  animation-delay: var(--glyph-delay, 0s);
+}
+
+@keyframes glyph-on {
+  to { opacity: 1; }
 }
 
 /* The underline still draws as one continuous stroke */
 .name-underline-draw {
   -webkit-mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
   mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
-  animation: name-sweep 1s cubic-bezier(0.25, 0.1, 0.35, 1) 1.7s forwards;
+  animation: name-sweep 1s cubic-bezier(0.25, 0.1, 0.35, 1) 1.85s forwards;
 }
 
 @keyframes name-sweep {
@@ -466,7 +470,7 @@ html.js .pencil-reveal {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .name-write,
+  .glyph { animation: none; opacity: 1; }
   .name-underline-draw {
     -webkit-mask-image: none;
     mask-image: none;
