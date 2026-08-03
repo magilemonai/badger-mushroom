@@ -444,22 +444,22 @@ html.js .pencil-reveal {
   mask-position: 100% 0;
 }
 
-/* Typewriter: each glyph pops on its own keystroke */
-.glyph {
-  opacity: 0;
-  animation: glyph-on 1ms steps(1, end) forwards;
-  animation-delay: var(--glyph-delay, 0s);
-}
-
-@keyframes glyph-on {
-  to { opacity: 1; }
-}
-
-/* The underline still draws as one continuous stroke */
-.name-underline-draw {
+/* The name flows in left to right (smooth ink sweep) */
+.name-write {
   -webkit-mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
   mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
-  animation: name-sweep 1s cubic-bezier(0.25, 0.1, 0.35, 1) 1.85s forwards;
+  animation: name-sweep 1.15s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.4s forwards;
+}
+
+/* The underline draws along its real route, double-back included */
+.underline-route-path {
+  stroke-dasharray: 1273;
+  stroke-dashoffset: 1273;
+  animation: underline-follow 1s cubic-bezier(0.3, 0.05, 0.5, 1) 1.7s forwards;
+}
+
+@keyframes underline-follow {
+  to { stroke-dashoffset: 0; }
 }
 
 @keyframes name-sweep {
@@ -470,10 +470,13 @@ html.js .pencil-reveal {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glyph { animation: none; opacity: 1; }
-  .name-underline-draw {
+  .name-write {
     -webkit-mask-image: none;
     mask-image: none;
     animation: none;
+  }
+  .underline-route-path {
+    animation: none;
+    stroke-dashoffset: 0;
   }
 }

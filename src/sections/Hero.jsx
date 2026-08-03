@@ -62,43 +62,41 @@ export default function Hero() {
             >
               <h1 className="sr-only">Cody Wymore</h1>
               <div className="relative w-full max-w-[40rem]" aria-hidden="true">
-                {/* Typewriter: each glyph is an exact clip of the lettering,
-                    popping in on its own keystroke (boundaries measured from
-                    the artwork's ink density, hand-corrected at W|y and r|e). */}
-                <svg viewBox="0 0 1600 434" className="w-full h-auto block">
-                  <defs>
-                    <clipPath id="glyph-0"><rect x="16" y="0" width="175" height="434" /></clipPath>
-                    <clipPath id="glyph-1"><rect x="191" y="0" width="129" height="434" /></clipPath>
-                    <clipPath id="glyph-2"><rect x="320" y="0" width="121" height="434" /></clipPath>
-                    <clipPath id="glyph-3"><rect x="441" y="0" width="133" height="434" /></clipPath>
-                    <clipPath id="glyph-4"><rect x="583" y="0" width="285" height="434" /></clipPath>
-                    <clipPath id="glyph-5"><rect x="868" y="0" width="62" height="434" /></clipPath>
-                    <clipPath id="glyph-6"><rect x="930" y="0" width="182" height="434" /></clipPath>
-                    <clipPath id="glyph-7"><rect x="1112" y="0" width="128" height="434" /></clipPath>
-                    <clipPath id="glyph-8"><rect x="1240" y="0" width="100" height="434" /></clipPath>
-                    <clipPath id="glyph-9"><rect x="1340" y="0" width="85" height="434" /></clipPath>
-                  </defs>
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-0)" className="glyph" style={{ '--glyph-delay': '0.40s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-1)" className="glyph" style={{ '--glyph-delay': '0.53s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-2)" className="glyph" style={{ '--glyph-delay': '0.66s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-3)" className="glyph" style={{ '--glyph-delay': '0.79s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-4)" className="glyph" style={{ '--glyph-delay': '0.92s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-5)" className="glyph" style={{ '--glyph-delay': '1.05s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-6)" className="glyph" style={{ '--glyph-delay': '1.18s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-7)" className="glyph" style={{ '--glyph-delay': '1.31s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-8)" className="glyph" style={{ '--glyph-delay': '1.44s' }} />
-                  <image href={import.meta.env.BASE_URL + 'name-letters.webp'} width="1600" height="434" clipPath="url(#glyph-9)" className="glyph" style={{ '--glyph-delay': '1.57s' }} />
-                </svg>
-                <img
-                  src={import.meta.env.BASE_URL + 'name-underline.webp'}
-                  srcSet={`${import.meta.env.BASE_URL}name-underline-sm.webp 800w, ${import.meta.env.BASE_URL}name-underline.webp 1600w`}
+<img
+                  src={import.meta.env.BASE_URL + 'name-letters.webp'}
+                  srcSet={`${import.meta.env.BASE_URL}name-letters-sm.webp 800w, ${import.meta.env.BASE_URL}name-letters.webp 1600w`}
                   sizes="(max-width: 640px) 90vw, 640px"
                   alt=""
                   width={1600}
                   height={434}
+                  fetchpriority="high"
                   loading="eager"
-                  className="absolute inset-0 w-full h-auto name-underline-draw"
+                  className="w-full h-auto name-write"
                 />
+<svg viewBox="0 0 1600 434" className="absolute inset-0 w-full h-auto" aria-hidden="true">
+                  {/* The reveal brush follows the pen's actual route: left to
+                      right along the arc, then the double-back flick returning
+                      left from the tip (centerline traced from the artwork). */}
+                  <defs>
+                    <mask id="underline-route" maskUnits="userSpaceOnUse">
+                      <path
+                        d="M203,362 L263,352 L323,344 L383,337 L503,328 L563,322 L623,319 L683,316 L743,314 L923,315 L983,316 L1043,319 L1103,323 L1163,330 L1210,336 L1246,342 L1246,344 L1200,347 L1144,347 L1100,347 L1032,347"
+                        fill="none"
+                        stroke="#fff"
+                        strokeWidth="22"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="underline-route-path"
+                      />
+                    </mask>
+                  </defs>
+                  <image
+                    href={import.meta.env.BASE_URL + 'name-underline.webp'}
+                    width="1600"
+                    height="434"
+                    mask="url(#underline-route)"
+                  />
+                </svg>
               </div>
             </div>
 
