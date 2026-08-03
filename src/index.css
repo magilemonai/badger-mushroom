@@ -436,8 +436,6 @@ html.js .pencil-reveal {
    then the underline sweeps beneath it, like a hand finishing a signature. */
 .name-write,
 .name-underline-draw {
-  -webkit-mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
-  mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
   -webkit-mask-size: 250% 100%;
   mask-size: 250% 100%;
   -webkit-mask-repeat: no-repeat;
@@ -446,12 +444,18 @@ html.js .pencil-reveal {
   mask-position: 100% 0;
 }
 
+/* Typewriter: hard mask edge stepping once per glyph of "Cody Wymore" */
 .name-write {
-  animation: name-sweep 1.15s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.4s forwards;
+  -webkit-mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
+  mask-image: linear-gradient(90deg, #000 50%, transparent 50%);
+  animation: name-sweep 1.2s steps(11, end) 0.4s forwards;
 }
 
+/* The underline still draws as one continuous stroke */
 .name-underline-draw {
-  animation: name-sweep 0.5s cubic-bezier(0.25, 0.1, 0.35, 1) 1.6s forwards;
+  -webkit-mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
+  mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
+  animation: name-sweep 1s cubic-bezier(0.25, 0.1, 0.35, 1) 1.7s forwards;
 }
 
 @keyframes name-sweep {
