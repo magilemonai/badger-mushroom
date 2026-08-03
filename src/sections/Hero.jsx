@@ -61,18 +61,29 @@ export default function Hero() {
               }}
             >
               <h1 className="sr-only">Cody Wymore</h1>
-              <img
-                src={import.meta.env.BASE_URL + 'name-mark.webp'}
-                srcSet={`${import.meta.env.BASE_URL}name-mark-sm.webp 800w, ${import.meta.env.BASE_URL}name-mark.webp 1600w`}
-                sizes="(max-width: 640px) 90vw, 640px"
-                alt=""
-                aria-hidden="true"
-                width={1600}
-                height={434}
-                fetchpriority="high"
-                loading="eager"
-                className="w-full max-w-[40rem] h-auto"
-              />
+              <div className="relative w-full max-w-[40rem]" aria-hidden="true">
+                <img
+                  src={import.meta.env.BASE_URL + 'name-letters.webp'}
+                  srcSet={`${import.meta.env.BASE_URL}name-letters-sm.webp 800w, ${import.meta.env.BASE_URL}name-letters.webp 1600w`}
+                  sizes="(max-width: 640px) 90vw, 640px"
+                  alt=""
+                  width={1600}
+                  height={434}
+                  fetchpriority="high"
+                  loading="eager"
+                  className="w-full h-auto name-write"
+                />
+                <img
+                  src={import.meta.env.BASE_URL + 'name-underline.webp'}
+                  srcSet={`${import.meta.env.BASE_URL}name-underline-sm.webp 800w, ${import.meta.env.BASE_URL}name-underline.webp 1600w`}
+                  sizes="(max-width: 640px) 90vw, 640px"
+                  alt=""
+                  width={1600}
+                  height={434}
+                  loading="eager"
+                  className="absolute inset-0 w-full h-auto name-underline-draw"
+                />
+              </div>
             </div>
 
             <p
