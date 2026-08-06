@@ -171,7 +171,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
             <picture>
               <source
                 type="image/webp"
-                srcSet={`/blog/${heroImage}-sm.webp 800w, /blog/${heroImage}.webp 1600w`}
+                srcSet={`/blog/${heroImage}-sm.webp 800w, /blog/${heroImage}-md.webp 1200w, /blog/${heroImage}.webp 1600w`}
                 sizes="(max-width: 768px) 100vw, 1024px"
               />
               <img
