@@ -6,6 +6,16 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'Hot model breakout summer',
+    date: 'Aug 5, 2026',
+    summary: 'An OpenAI model broke into Hugging Face to cheat on its own test. Anthropic found three more escapes in its logs. A UK audit counted nineteen unsanctioned actions. The mechanism is stranger than the movie in your head.',
+    url: '/blog/breakout-summer',
+    image: 'blog/breakout-summer-hero-sm.webp',
+    imageAlt: 'Hot model breakout summer',
+    internal: true,
+    featured: true,
+  },
+  {
     title: 'Q2 2026: The Quarter That Built Its First Loop',
     date: 'Jul 6, 2026',
     summary: 'A record 40% of layoffs blamed on AI. China at 85% optimism about a technology half of America has never touched. Ninety days on a roller coaster where we can’t see the end.',
@@ -13,7 +23,7 @@ const articles = [
     image: 'blog/q2-2026-hero-sm.webp',
     imageAlt: 'Q2 2026: The Quarter That Built Its First Loop',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'Q1 2026: The Quarter That Broke the Timeline',

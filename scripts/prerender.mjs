@@ -76,6 +76,7 @@ const outputs = {
   '/': ['docs/index.html'],
   '/blog/q1-2026': ['docs/blog/q1-2026.html', 'docs/blog/q1-2026/index.html'],
   '/blog/q2-2026': ['docs/blog/q2-2026.html', 'docs/blog/q2-2026/index.html'],
+  '/blog/breakout-summer': ['docs/blog/breakout-summer.html', 'docs/blog/breakout-summer/index.html'],
   '/projects': ['docs/projects.html', 'docs/projects/index.html'],
 }
 

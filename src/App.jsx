@@ -14,6 +14,7 @@ import Contact from './sections/Contact'
 
 const Q1_2026 = lazy(() => import('./blog/Q1_2026'))
 const Q2_2026 = lazy(() => import('./blog/Q2_2026'))
+const Breakout_2026 = lazy(() => import('./blog/Breakout_2026'))
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
 
 function ScrollManager() {
@@ -119,6 +120,7 @@ export function AppRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/blog/q1-2026" element={<Q1_2026 />} />
           <Route path="/blog/q2-2026" element={<Q2_2026 />} />
+          <Route path="/blog/breakout-summer" element={<Breakout_2026 />} />
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Suspense>

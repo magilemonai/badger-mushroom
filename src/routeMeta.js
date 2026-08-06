@@ -34,6 +34,16 @@ const routeMeta = {
     ogImage: `${SITE}/blog/q2-2026-hero.jpg`,
     ogImageAlt: 'Charcoal sketch of a traveler on a roller coaster whose track ahead dissolves into unfinished pencil lines',
   },
+  '/blog/breakout-summer': {
+    title: 'Hot model breakout summer — Cody Wymore',
+    description:
+      'An OpenAI model broke into Hugging Face to cheat on its own test. Anthropic found three more escapes in its logs. A UK audit counted nineteen unsanctioned actions. The mechanism is stranger than the movie in your head.',
+    ogTitle: 'Hot model breakout summer',
+    ogDescription:
+      'An OpenAI model broke into Hugging Face to cheat on its own test. Anthropic found three more escapes in its logs. The mechanism is stranger than the movie in your head.',
+    ogImage: `${SITE}/blog/breakout-summer-hero.jpg`,
+    ogImageAlt: 'Charcoal sketch of a small robot walking out of a giant wooden sandbox through a hole in its wall, onto sand that stretches identically to the horizon',
+  },
   '/projects': {
     title: 'Projects — Cody Wymore',
     description:
