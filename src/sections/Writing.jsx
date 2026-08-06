@@ -10,7 +10,7 @@ const articles = [
     date: 'Aug 5, 2026',
     summary: 'An OpenAI model broke into Hugging Face to cheat on its own test. Anthropic found three more escapes in its logs. A UK audit counted nineteen unsanctioned actions. The mechanism is stranger than the movie in your head.',
     url: '/blog/breakout-summer',
-    image: 'blog/breakout-summer-hero-sm.webp',
+    image: 'blog/breakout-summer-hero-card.webp',
     imageAlt: 'Hot model breakout summer',
     internal: true,
     featured: true,
@@ -20,7 +20,7 @@ const articles = [
     date: 'Jul 6, 2026',
     summary: 'A record 40% of layoffs blamed on AI. China at 85% optimism about a technology half of America has never touched. Ninety days on a roller coaster where we can’t see the end.',
     url: '/blog/q2-2026',
-    image: 'blog/q2-2026-hero-sm.webp',
+    image: 'blog/q2-2026-hero-card.webp',
     imageAlt: 'Q2 2026: The Quarter That Built Its First Loop',
     internal: true,
     featured: false,
@@ -30,7 +30,7 @@ const articles = [
     date: 'Apr 6, 2026',
     summary: '270+ model releases. Over 80,000 layoffs. Seven projects built from scratch. A personal reckoning with the pace of AI.',
     url: '/blog/q1-2026',
-    image: 'blog/q1-2026-hero-sm.webp',
+    image: 'blog/q1-2026-hero-card.webp',
     imageAlt: 'Q1 2026: The Quarter That Broke the Timeline',
     internal: true,
     featured: false,
@@ -314,15 +314,15 @@ export default function Writing() {
               const cardContent = (
                 <>
                   {article.image && (
-                    <div className="-mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 max-h-64 overflow-hidden rounded-t-xl">
+                    <div className="-mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 aspect-[3/1] overflow-hidden rounded-t-xl">
                       <img
                         src={import.meta.env.BASE_URL + article.image}
                         alt={article.imageAlt || ''}
-                        width={800}
-                        height={436}
+                        width={1200}
+                        height={400}
                         loading="lazy"
                         decoding="async"
-                        className="w-full block object-cover object-top"
+                        className="w-full h-full block object-cover object-center"
                       />
                     </div>
                   )}
