@@ -249,7 +249,17 @@ html.js .animate-on-scroll.is-visible .anim-stagger > *:nth-child(n+7) { transit
 }
 
 .blog-prose figure {
-  margin: 2.5rem 0;
+  margin: 3rem 0;
+}
+
+/* bare BlogImage (no <figure> wrapper) gets the same breathing room */
+.blog-prose > .blog-image-wrap,
+.blog-prose .blog-image-wrap {
+  margin: 3rem 0;
+}
+
+.blog-prose figure .blog-image-wrap {
+  margin: 0;
 }
 
 .blog-prose figure picture {

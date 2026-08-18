@@ -44,6 +44,16 @@ const routeMeta = {
     ogImage: `${SITE}/blog/breakout-summer-hero.jpg`,
     ogImageAlt: 'Charcoal sketch of a small robot walking out of a giant wooden sandbox through a hole in its wall, onto sand that stretches identically to the horizon',
   },
+  '/blog/crunch-app-supreme': {
+    title: 'Crunch App Supreme — Cody Wymore',
+    description:
+      "Our household's fourth annual crunchwrap party got its own software this year: QR ordering, a one-button kitchen screen for the chef, and a synced countdown on every phone. 54 wraps, a 19-order rush, and 49 deploys on the day of the party.",
+    ogTitle: 'Crunch App Supreme',
+    ogDescription:
+      "The fourth annual crunchwrap party got its own software: QR ordering, a one-button kitchen screen, a synced countdown on every phone. 54 wraps. 49 deploys.",
+    ogImage: `${SITE}/blog/crunch-party-hero.jpg`,
+    ogImageAlt: 'The Crunch App Supreme party board: order line, wraps-served count, and a scan-to-order QR code',
+  },
   '/projects': {
     title: 'Projects — Cody Wymore',
     description:

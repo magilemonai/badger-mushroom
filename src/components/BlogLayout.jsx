@@ -68,7 +68,7 @@ function TableOfContents({ sections }) {
             <li key={id}>
               <a
                 href={`#${id}`}
-                className={`block pl-3 -ml-px border-l-2 text-sm leading-snug transition-colors ${
+                className={`block pl-3 pr-3 -ml-px border-l-2 text-sm leading-snug transition-colors ${
                   activeId === id
                     ? 'border-forest text-forest font-medium'
                     : 'border-transparent text-warm-gray hover:text-charcoal'

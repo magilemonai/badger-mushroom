@@ -6,6 +6,16 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'Crunch App Supreme',
+    date: 'Aug 17, 2026',
+    summary: "Our household's fourth annual crunchwrap party got its own software this year: QR ordering, a one-button kitchen screen for the chef, and a synced countdown on every phone. 54 wraps, a 19-order rush, and 49 deploys on the day of the party.",
+    url: '/blog/crunch-app-supreme',
+    image: 'blog/crunch-party-hero-card.webp',
+    imageAlt: 'Crunch App Supreme',
+    internal: true,
+    featured: true,
+  },
+  {
     title: 'Hot model breakout summer',
     date: 'Aug 5, 2026',
     summary: 'An OpenAI model broke into Hugging Face to cheat on its own test. Anthropic found three more escapes in its logs. A UK audit counted nineteen unsanctioned actions. The mechanism is stranger than the movie in your head.',
@@ -13,7 +23,7 @@ const articles = [
     image: 'blog/breakout-summer-hero-card.webp',
     imageAlt: 'Hot model breakout summer',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'Q2 2026: The Quarter That Built Its First Loop',
