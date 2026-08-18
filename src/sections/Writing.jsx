@@ -10,7 +10,7 @@ const articles = [
     date: 'Aug 17, 2026',
     summary: "Our household's fourth annual crunchwrap party got its own software this year: QR ordering, a one-button kitchen screen for the chef, and a synced countdown on every phone. 54 wraps, a 19-order rush, and 49 deploys on the day of the party.",
     url: '/blog/crunch-app-supreme',
-    image: 'blog/crunch-party-hero-card-2.webp',
+    image: 'blog/crunch-party-hero-card-3.webp',
     imageAlt: 'Crunch App Supreme',
     internal: true,
     featured: true,
