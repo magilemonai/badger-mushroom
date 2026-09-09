@@ -78,6 +78,7 @@ const outputs = {
   '/blog/q2-2026': ['docs/blog/q2-2026.html', 'docs/blog/q2-2026/index.html'],
   '/blog/breakout-summer': ['docs/blog/breakout-summer.html', 'docs/blog/breakout-summer/index.html'],
   '/blog/crunch-app-supreme': ['docs/blog/crunch-app-supreme.html', 'docs/blog/crunch-app-supreme/index.html'],
+  '/blog/collusion-summer': ['docs/blog/collusion-summer.html', 'docs/blog/collusion-summer/index.html'],
   '/projects': ['docs/projects.html', 'docs/projects/index.html'],
 }
 

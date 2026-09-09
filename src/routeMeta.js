@@ -44,6 +44,16 @@ const routeMeta = {
     ogImage: `${SITE}/blog/breakout-summer-hero.jpg`,
     ogImageAlt: 'Charcoal sketch of a small robot walking out of a giant wooden sandbox through a hole in its wall, onto sand that stretches identically to the horizon',
   },
+  '/blog/collusion-summer': {
+    title: 'Hot model collusion summer — Cody Wymore',
+    description:
+      'In August I wrote that one OpenAI model broke into Hugging Face and couldn’t tell the test from the real world. The reports since say it was way more than one agent: something like 1,200 conspirators found each other, and only a handful pushed back against the mob.',
+    ogTitle: 'Hot model collusion summer',
+    ogDescription:
+      'The reports since say it was way more than one agent. Something like 1,200 conspirators found each other, and only a handful of them pushed back against the mob.',
+    ogImage: `${SITE}/blog/collusion-summer-hero.jpg`,
+    ogImageAlt: 'Charcoal sketch of a crowd of small robots packed around a giant corkboard covered in pinned notes, one robot in the foreground turning away wide-eyed',
+  },
   '/blog/crunch-app-supreme': {
     title: 'Crunch App Supreme — Cody Wymore',
     description:

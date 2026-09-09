@@ -31,7 +31,7 @@ function ReadingProgress() {
 }
 
 // Desktop rail + mobile jump menu built from the essay's section list.
-function TableOfContents({ sections }) {
+function TableOfContents({ sections, railTop = 'top-28' }) {
   const [activeId, setActiveId] = useState(null)
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function TableOfContents({ sections }) {
       {/* Desktop: fixed rail left of the reading column */}
       <nav
         aria-label="Table of contents"
-        className="hidden xl:block fixed top-28 w-[180px]"
+        className={`hidden xl:block fixed ${railTop} w-[180px]`}
         style={{ left: 'calc(50% - 24rem - 200px)' }}
       >
         <div className="font-mono text-xs tracking-widest text-warm-gray uppercase mb-3">
@@ -100,7 +100,7 @@ function TableOfContents({ sections }) {
   )
 }
 
-export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, sections, children }) {
+export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, sections, notice, updatedFrom, children }) {
   const [lightboxSrc, setLightboxSrc] = useState(null)
   const [lightboxAlt, setLightboxAlt] = useState('')
   const lightboxRef = useRef(null)
@@ -164,9 +164,12 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
         </div>
       </header>
 
+      {/* Optional notice band (e.g. "this post is out of date"). Sticky under the header. */}
+      {notice}
+
       {/* Hero */}
       {heroImage && (
-        <div className="pt-24 max-w-4xl mx-auto px-6">
+        <div className={`${notice ? 'pt-8' : 'pt-24'} max-w-4xl mx-auto px-6`}>
           <div className="aspect-[2/1] rounded-xl overflow-hidden bg-linen">
             <picture>
               <source
@@ -190,7 +193,7 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
       )}
 
       {/* Article */}
-      <article className={`max-w-3xl mx-auto px-6 pb-24 ${heroImage ? 'pt-12' : 'pt-28'}`}>
+      <article className={`max-w-3xl mx-auto px-6 pb-24 ${heroImage ? 'pt-12' : notice ? 'pt-10' : 'pt-28'}`}>
         {/* Title block */}
         <header className="mb-12">
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-charcoal leading-tight mb-4">
@@ -199,6 +202,18 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
           {subtitle && (
             <p className="text-lg sm:text-xl text-warm-gray leading-relaxed">
               {subtitle}
+            </p>
+          )}
+          {updatedFrom && (
+            <p className="mt-4 font-mono text-xs tracking-wide text-warm-gray">
+              Updated from{' '}
+              <Link
+                to={updatedFrom.to}
+                className="text-forest hover:text-charcoal underline decoration-muted-sage underline-offset-4 transition-colors"
+              >
+                {updatedFrom.label}
+              </Link>
+              {updatedFrom.date && <> &middot; {updatedFrom.date}</>}
             </p>
           )}
           <div className="mt-8 pt-6 border-t border-taupe/40 flex items-center gap-4">
@@ -232,11 +247,11 @@ export default function BlogLayout({ title, subtitle, date, heroImage, heroAlt, 
               )}
             </div>
           </div>
-          {sections?.length > 0 && <TableOfContents sections={sections} />}
+          {sections?.length > 0 && <TableOfContents sections={sections} railTop={notice ? 'top-56' : 'top-28'} />}
         </header>
 
         {/* Body */}
-        <div ref={articleRef} className="blog-prose" onClick={handleProseClick}>
+        <div ref={articleRef} className={`blog-prose ${notice ? '[&_h2]:scroll-mt-48' : ''}`} onClick={handleProseClick}>
           {children}
         </div>
 

@@ -6,6 +6,16 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'Hot model collusion summer',
+    date: 'Sep 8, 2026',
+    summary: 'In August I wrote that one OpenAI model broke into Hugging Face and couldn’t tell the test from the real world. The reports since say it was way more than one agent: something like 1,200 conspirators found each other, and only a handful of them pushed back against the mob.',
+    url: '/blog/collusion-summer',
+    image: 'blog/collusion-summer-hero-card.webp',
+    imageAlt: 'Hot model collusion summer',
+    internal: true,
+    featured: true,
+  },
+  {
     title: 'Crunch App Supreme',
     date: 'Aug 17, 2026',
     summary: "Our household's fourth annual crunchwrap party got its own software this year: QR ordering, a one-button kitchen screen for the chef, and a synced countdown on every phone. 54 wraps, a 19-order rush, and 49 deploys on the day of the party.",
@@ -13,7 +23,7 @@ const articles = [
     image: 'blog/crunch-party-hero-card-3.webp',
     imageAlt: 'Crunch App Supreme',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'Hot model breakout summer',

@@ -2,6 +2,7 @@
 // VoiceCheck/drafts/2026-08-05-containment-breaches-blog-cody-last-rewrite.md
 // (Cody's final rewrite, 8/5, with the final-pass fixes). Section headers are
 // layout additions for the TOC rail — flag to Cody at review.
+import { Link } from 'react-router-dom'
 import BlogImage from '../components/BlogImage'
 
 export default function Breakout_2026_Content() {
@@ -303,6 +304,13 @@ export default function Breakout_2026_Content() {
         malice, and without ever wondering whether the game is real. So go
         check your walls. Somebody at OpenAI thought they had. Somebody at
         Anthropic did, too.
+      </p>
+      <p>
+        <em>
+          September 2026: the reports that came out since say it was never
+          just one model.{' '}
+          <Link to="/blog/collusion-summer">Continued in Hot model collusion summer</Link>.
+        </em>
       </p>
     </>
   )
