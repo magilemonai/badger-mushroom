@@ -4,6 +4,7 @@ import BreakoutSequelContent from './Breakout_Sequel_2026_Content'
 // Hand-drawn strike for the one word the title corrects. Reuses the site's
 // .sketch-flourish stroke (charcoal, draws itself on load, reduced-motion safe).
 // The stroke is set in viewBox units so it stretches with the word at any width.
+// Terracotta (the site's playhead color) instead of the flourish's charcoal.
 function Struck({ children }) {
   return (
     <s className="relative inline-block no-underline text-warm-gray">
@@ -15,7 +16,7 @@ function Struck({ children }) {
         preserveAspectRatio="none"
         style={{ left: '-3%', top: 0, width: '106%', height: '100%', overflow: 'visible' }}
       >
-        <path pathLength="620" d="M1 7 C 18 4, 35 9, 52 6 S 84 4, 99 7" style={{ strokeWidth: 1.05 }} />
+        <path pathLength="620" d="M1 7 C 18 4, 35 9, 52 6 S 84 4, 99 7" style={{ strokeWidth: 1.05, stroke: 'var(--color-terracotta)' }} />
       </svg>
     </s>
   )
