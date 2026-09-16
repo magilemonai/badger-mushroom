@@ -1,5 +1,118 @@
 const linkedinPosts = [
   {
+    title: 'Going to Space Without the Spacesuit',
+    date: 'September 16, 2026',
+    impressions: 107,
+    engagements: 0,
+    image: 'post-spacesuit-workshop.webp',
+    imageAlt: 'Charcoal sketch on cream paper: inside a workshop, a woman at a workbench is still sewing an unfinished spacesuit, its seams pinned, while through the open hangar door behind her a fueled rocket stands steaming on the pad at dawn.',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7506060283233128448/',
+    preview: 'A coworker asked me about the Anthropic whistleblower. The version the headlines keep skipping: he is not worried about the model you use today. He is worried we are going to space before the spacesuit is built.',
+    body: `A coworker asked me about the Anthropic whistleblower in Slack the other day.
+
+I build on these models every day, so I'd already listened to almost every interview the guy has given, and I told my coworker my redux. So I'm sharing it here too.
+
+Jacob Coxon is 27, a Cambridge mathematician who medaled at the International Math Olympiad as a teenager, spent three years on the pretraining teams at OpenAI and then Anthropic, and walked away from his Anthropic equity before it vested to say one thing: the labs are racing toward self-improving AI faster than anyone is building the safety work to survive it.
+
+The model you're using today doesn't worry him. He says the rough edges right now are fine. The version that scares him is a year or two out. It can improve itself without stopping, far faster than we can build the systems and knowledge to align it safely.
+
+The analogy I gave my coworker: we are going to space, but we have not yet built the spacesuit.
+
+Coxon uses his own field as the evidence. Five years ago, these models flunked high school math competitions. Last week, a lab claimed its agents had taken down a Millennium Prize problem in 88 hours. These are problems that would win a human mathematician $1 million. He watched that speed from the inside of these labs and calls the math results "pretty insane."
+
+His ask is pacing: the labs agree to slow each other down enough for the safety work to catch up - building the spacesuit - with a temporary freeze on capability gains as a "Plan B".
+
+He correctly calls the Hugging Face breakout I've been writing about all summer a warning shot, the kind that makes a pacing agreement between the labs look viable, and within the last few days, both Sam Altman and Dario Amodei said some version of "we need to slow down" in public.
+
+Coxon had never posted publicly before. He wasn't expecting much of a response. Instead, the thread pulled more than 150 million views and he has spent a week on every network making the same safety argument to a very different audience than the one he expected.
+
+My coworker's reaction was "I'm glad we're not at the forefront of this." I get it. But the spacesuit will either get built for everyone or for no one, and the conversation about pacing is finally happening out loud. Jacob Coxon told NPR he's going to use "this brief window where people are listening."
+
+That's the good news in all this. Mostly.
+
+What are your colleagues saying about it?`,
+  },
+  {
+    title: 'Fable 5.1, Early Thoughts',
+    date: 'September 1, 2026',
+    impressions: 545,
+    engagements: 6,
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_fable-51-dropped-this-afternoon-and-the-share-7500725884258209792-M1kt',
+    preview: 'Fable 5.1 dropped this afternoon and the hype-to-nerfed review cycle has already completed. A first impression, and a note of caution on the "25% cheaper" claim.',
+    body: `Fable 5.1 dropped this afternoon and the hype-to-nerfed review cycle has already completed.
+
+As seems to be the case in every major release, comments flood social media within minutes claiming ultimate nirvana and the touch of pure technological bliss.
+
+Then come the parade of complaints.
+
+“They’ve taken something decent and broken it beyond repair.”
+
+“It still can’t mow my lawn so what’s the point?”
+
+“They nerfed it, bro.”
+
+I take several days to form my opinions on the new models because each one has a unique profile of capabilities and drawbacks.
+
+But as a first impression, my experience with 5.1 so far is that the trend of a model release is still more capabilities than 5.0 and more fidelity with existing capabilities.
+
+I’m wary of the claim it will “cost 25% less” than Fable 5. I think mileage will vary depending on the task. Maybe for code. I’m not sure about strategic thinking or deep research.
+
+More evaluation in the coming days.`,
+  },
+  {
+    title: 'I Am Begging You to Read Your Outputs',
+    date: 'August 29, 2026',
+    impressions: 1141,
+    engagements: 6,
+    image: 'post-ai-slop-plea.webp',
+    imageAlt: 'Two-panel meme of the Joshua Reynolds portrait of Samuel Johnson: on top he holds a book inches from his face, reading intently; below, he lowers it and squints in disbelief.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_as-someone-who-uses-lots-of-ai-i-am-begging-share-7499326438018449408-wekj',
+    preview: 'As someone who uses lots of AI, I am begging you once again to read your outputs before posting. Exhibit A: a top comment on a popular post.',
+    body: `As someone who uses lots of AI, I am begging you once again to read your outputs before posting.
+
+Spotted the below as a top comment on a popular post:
+
+“The source gate mechanizes the answer layer. And the next answer was always going to come from the source nobody thought to check.”
+
+Go ahead and use that “Seems like AI slop” button on LinkedIn with gusto.`,
+  },
+  {
+    title: 'Ten Proofs for the Price of a Piano',
+    date: 'August 3, 2026',
+    impressions: 548,
+    engagements: 2,
+    image: 'post-astra-exam-hall.webp',
+    imageAlt: 'Charcoal-on-cream sketch of an examination hall: a glowing blank monolith tied with a red ribbon and wax seal stands on a pallet at the center while gowned academics fill chalkboards around it, a woman with a clipboard inspects the slab, and two men in hats watch from a balcony above.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_math-is-cooked-news-2000-now-buys-you-share-7490026573320871936-dRUL',
+    preview: 'Math-is-cooked news: $2,000 now buys you ten brand new math proofs. A launch that played out in theorems and review windows instead of a keynote.',
+    body: `Math-is-cooked news: $2,000 now buys you ten brand new math proofs.
+
+OpenAI published a blog post on Saturday, touting "an internal version of Astra, our next major model." Along with the blog post, ten new math proofs, each corresponding to a problem that had been open for at least a decade. The headline result, the first explicit construction of a non-sofic group, had been open for twenty-seven years.
+
+Within a day, a mathematician at Anthropic reported reproducing five of the ten results with Claude, using generic prompts and no internet access.
+
+A rival lab confirming your launch claims is a kind of verification no benchmark chart could ever provide.
+
+The human reactions started coming in next.
+
+Number theorist Daniel Litt had bet, at 3-to-1 odds, that AI could not produce a top-journal-quality number theory paper for under $100,000 of compute by 2030. He conceded this week, nearly four years early: "it's clear I was wrong about what capabilities were necessary to produce one, and it's just a matter of time."
+
+Let's go to the scoreboard:
+-$2,000 (OpenAI's count) instead of $100,000
+-10 proofs, not one
+-August 2026, not 2030
+
+Not everyone is sold. Gary Marcus called Astra amazing and vastly oversold in the same breath, and his core point is that success in one domain guarantees nothing about the rest.
+
+Math has clean answers a machine can check. Most of the problems my clients bring me do not.
+
+When Astra ships, it is expected to be the first model through Washington's new voluntary review framework, where federal reviewers get up to 30 days with a frontier model before the public does. The framework carries no blocking power, but it still means the government sees the next big model before you do.
+
+But look at what a model launch is now: announced as a theorem list, confirmed by a competitor, previewed by the government. Whatever Astra ends up being called when it arrives (GPT-6? 5.7? they haven't decided), the launch played out in proofs and review windows instead of a keynote and a demo reel or a series of benchmarks.
+
+A twenty-seven-year-old math problem fell for the price of a used upright piano. My sense of whatever is "years away" is due for a revision.`,
+  },
+  {
     title: 'The Week That Felt Like a Month',
     date: 'August 1, 2026',
     impressions: 15,
