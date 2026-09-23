@@ -32,8 +32,8 @@ export default function Projects() {
               {/* Visual */}
               <div className="sm:w-2/5 bg-linen flex items-center justify-center">
                 <img
-                  src="/inkwood-title.png"
-                  alt="Inkwood — a typing game"
+                  src={import.meta.env.BASE_URL + featured.image}
+                  alt={featured.imageAlt || ''}
                   className="w-full h-full object-cover"
                 />
               </div>
