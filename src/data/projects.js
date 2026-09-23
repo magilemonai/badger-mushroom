@@ -5,9 +5,21 @@ export const featured = {
     'A cozy, meditative typing game where your words are spells that reawaken a dormant forest. Five minutes, casual, playable on desktop and mobile. Built with Claude Code.',
   url: 'https://inkwood.codywymore.com',
   tags: ['Game', 'Typing', 'Claude Code'],
+  image: 'inkwood-title.png',
+  imageAlt: 'Inkwood title card: a starlit night sky over a dark forest with a small green pine tree logo',
 }
 
 export const projects = [
+  {
+    title: 'Moonwyld',
+    subtitle: 'A Valisar tarot battler',
+    description:
+      'A two-player tarot card battler set in the world of my homebrew D&D campaign. Build from a pool of 78 two-faced cards and choose which side is up when you play one: reverse a card and its attack, health, and text all change. Built by Claude and Astra working back and forth, with 94 painted images.',
+    url: 'https://magilemonai.github.io/moonwyld/',
+    tags: ['Game', 'Card Battler', 'Claude + Astra'],
+    image: 'moonwyld-title.webp',
+    imageAlt: 'Moonwyld: a full moon over painted tarot cards, with the title and the line "A Valisar Tarot Battler"',
+  },
   {
     title: 'AI Build Wizard',
     subtitle: 'Build something real with AI in under 60 minutes',

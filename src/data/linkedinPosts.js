@@ -1,5 +1,89 @@
 const linkedinPosts = [
   {
+    title: 'A Model That Calls the Cues',
+    date: 'September 22, 2026',
+    impressions: 191,
+    engagements: 3,
+    image: 'post-jev-questions.webp',
+    imageAlt: 'Flat infographic of TypeSafe\'s docs example: one support ticket reading "I was charged twice. Please fix this ASAP." above three questions (is this about billing, what is the customer\'s tone, how urgent is it), each with the chosen answer highlighted and an example number between 0 and 1.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_its-not-every-day-that-a-model-drop-rewrites-share-7508030083534876672-qJ1P',
+    preview: 'Jev, from TypeSafe AI, answers questions with a number between 0 and 1 in place of a paragraph. Why I think it is the first model we will grade on how well it decides.',
+    body: `It's not every day that a model drop rewrites the game. Jev, I think, has just done that.
+
+Nine months of launches have basically trained us to shrug. A new model drops and the "technological bliss" crowd and the reactionary "they nerfed it, bro" crowd finish their cycle by dinner. Every LLM release is essentially a bigger, smoother version of the same shape: a model that produces long strings of text.
+
+Jev, from a startup called TypeSafe AI, does not produce long strings of text.
+
+Instead, you can hand Jev a pile of text and ask three kinds of questions. The main example TypeSafe uses to demonstrate is a support ticket that reads "I was charged twice. Please fix this ASAP."
+
+Is this about billing - yes or no?
+
+What's the customer's tone - calm, frustrated, or angry?
+
+How urgent is it - it can wait, this week, today?
+
+Jev attaches a probabilistic answer to each in a fraction of a second.
+
+Now let’s talk about how it was trained.
+
+Chat-based models learn from human ratings. People score the answers, and the model learns to produce more of the kinds of answers people like.
+
+TypeSafe's founder, Diogo Almeida, who helped co-create ChatGPT, argues that a side effect of this training is that most models learn to sound sure, whether they are truly correct or merely guessing.
+
+Jev is trained with what TypeSafe calls RLCD - Reinforcement Learning for Calibrated Decisions. It is rewarded for being right and for being honest about how sure it was. When it says 80%, it should be right about 80% of the time.
+
+Part of what makes Jev so exciting is that it doesn't have to work alone.
+
+Picture a workflow as a show. The actors (agents) carry the scenes (work). The stage manager calls the cues. "Go. Hold. Not yet. Now go." A few hundred cues a night. The LLM chat model is doing both jobs today, and it calls cues the way an actor would, in long flowery monologues.
+
+Jev is built to call the cues with a response that plugs in well to lots of pre-existing software. What that means technically is that Jev doesn’t respond with text, it responds with numbers between 0 and 1. Short. Punchy. Math.
+
+The caveats are real (I had Claude read all 500 Hacker News comments so I didn't have to). Every speed and cost multiple so far is TypeSafe's own math, and the outside tests say 3x-18x. While it doesn't "hallucinate" the same way an LLM might, it can still pick the wrong item. It's designed for small questions with a human or a hard rule nearby.
+
+For those who want to experiment, first find the cue in your workflow where a chatbot is likely over-producing a long response, then ask Jev a question. Brand safety flag. Creative QA. "Does this ticket need a human today?" You can sign up on a waitlist today.
+
+Over the last nine months, we've been grading models on how well they produce text, images, and video. This is the first one we'll grade on how well it decides.`,
+  },
+  {
+    title: 'Moonwyld, Made Between Bites of Potato Salad',
+    date: 'September 17, 2026',
+    impressions: 172,
+    engagements: 8,
+    image: 'post-moonwyld-grid.webp',
+    imageAlt: 'A three-by-three grid of painted tarot cards from Moonwyld, deep blues and purples with a full moon at the center, overlaid with the title "Moonwyld" and the line "A Valisar Tarot Battler".',
+    projectUrl: 'https://magilemonai.github.io/moonwyld/',
+    projectLabel: 'Play Moonwyld',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_i-built-a-tarot-inspired-card-battler-based-share-7506181511705169920-8u58',
+    preview: 'I built a tarot-inspired card battler set in my D&D world. Claude wrote the rules and the code, Astra rendered 94 images and playtested, and my whole job was tie-breaker.',
+    body: `I built a tarot-inspired card battler based on my D&D world. You can play it here for free: https://magilemonai.github.io/moonwyld/
+
+A couple of weeks ago I said I'd come back with a verdict on Fable 5.1 once I'd used it for real. Well, for this, I used both Fable 5.1 and Astra together in a new kind of way for me. This is the verdict:
+
+These tools are remarkable. Insane. Beyond. I keep saying that this year and it keeps being more true.
+
+Moonwyld is set in Valisar, my homebrew D&D world. Two players, three lanes, one pool of 78 cards to build from. Each card has two faces, upright and reversed, and you decide which side is up when you play the card. Reverse a card and its attack and health swap, and its text changes too. A 1/3 wall played reversed is a 3/1 attacker.
+
+Claude, running Fable 5.1, wrote the rules, the deck composition, and the code proper. It also wrote the brief for 94 images, which Astra rendered with Images 2.5, with a seven-point checklist per image: things like no lettering, nothing important near the edges, nine actual cups present on the nine of Tides.
+
+I handed that brief to Astra and went to the pool. It churned for something like four and a half hours without me. It also graded its own work against the checklist and redrew most of the cards once or twice before I ever saw them. When I did review, I only asked for revisions on maybe four or five.
+
+I was pretty blown away.
+
+A group of 94 images (78 cards plus some game tokens) that hangs together like a single deck, and I was eating chips and guac during most of its production.
+
+Then I pointed the two models at each other.
+
+Astra reviewed the design and playtested in a browser against the live build, with subagents picking apart the mechanics. It wrote up what it found. Claude took the packet, changed the rules and the code, shipped, and asked for a specific kind of playtest next. Then again. Eleven rounds between Sunday night and Labor Day. Twenty-two commits.
+
+My whole job was to be tie-breaker. Twenty, maybe thirty minutes of it, on my phone, between bites of potato salad.
+
+Now, this game is admittedly still rough in places, and the mechanics won't win any awards, but it still feels like a real deck, consistent and of a piece, and I was basically asleep at the wheel while it got made.
+
+When I think about how I started all of this just seven short months ago in February, I feel a bit untethered. I don't fully know what to do with what these things can do now, so I'll just say it out loud:
+
+This is wild.`,
+  },
+  {
     title: 'Going to Space Without the Spacesuit',
     date: 'September 16, 2026',
     impressions: 107,

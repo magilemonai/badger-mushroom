@@ -114,8 +114,8 @@ export default function ProjectsPage() {
           <div className="sm:flex">
             <div className="sm:w-2/5 bg-linen flex items-center justify-center">
               <img
-                src={import.meta.env.BASE_URL + 'build-wizard.png'}
-                alt="Build something real with AI"
+                src={import.meta.env.BASE_URL + featured.image}
+                alt={featured.imageAlt || ''}
                 className="w-full h-full object-cover"
               />
             </div>
