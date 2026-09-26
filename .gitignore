@@ -35,3 +35,7 @@ Thumbs.db
 .parcel-cache/
 dist-ssr/
 node_modules
+
+# Local redesign mockups and trailers (large, not for the repo)
+/trailer*.mp4
+/redesigns/
