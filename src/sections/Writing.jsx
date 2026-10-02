@@ -6,6 +6,16 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'Q3 2026: The Quarter We Looked for the Brakes',
+    date: 'Oct 2, 2026',
+    summary: 'I spent the summer building weird little games as fast as the models would let me. Then a 27-year-old researcher quit his job and his posts were viewed 153 million times. The labs said out loud that they should slow down, Washington called it a hoax, and three in four voters don’t want a data center near their house.',
+    url: '/blog/q3-2026',
+    image: 'blog/q3-2026-hero-card.webp',
+    imageAlt: 'Q3 2026: The Quarter We Looked for the Brakes',
+    internal: true,
+    featured: true,
+  },
+  {
     title: 'Hot model collusion summer',
     date: 'Sep 8, 2026',
     summary: 'In August I wrote that one OpenAI model broke into Hugging Face and couldn’t tell the test from the real world. The reports since say it was way more than one agent: something like 1,200 conspirators found each other, and only a handful of them pushed back against the mob.',
@@ -13,7 +23,7 @@ const articles = [
     image: 'blog/collusion-summer-hero-card.webp',
     imageAlt: 'Hot model collusion summer',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'Crunch App Supreme',

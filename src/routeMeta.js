@@ -34,6 +34,16 @@ const routeMeta = {
     ogImage: `${SITE}/blog/q2-2026-hero.jpg`,
     ogImageAlt: 'Charcoal sketch of a traveler on a roller coaster whose track ahead dissolves into unfinished pencil lines',
   },
+  '/blog/q3-2026': {
+    title: 'Q3 2026: The Quarter We Looked for the Brakes — Cody Wymore',
+    description:
+      'I spent the summer building weird little games as fast as the models would let me. Then a 27-year-old researcher quit his job and his posts were viewed 153 million times. The labs said out loud that they should slow down, Washington called it a hoax, and three in four voters don’t want a data center near their house.',
+    ogTitle: 'Q3 2026: The Quarter We Looked for the Brakes',
+    ogDescription:
+      'A 27-year-old researcher quit his job and his posts were viewed 153 million times. The labs said out loud that they should slow down, and Washington called it a hoax. Ninety days of corkscrews.',
+    ogImage: `${SITE}/blog/q3-2026-hero.jpg`,
+    ogImageAlt: 'Charcoal sketch of a traveler riding a roller-coaster car past a wall of gears marked Q3, sketching in a notebook, while a woman in the car ahead hauls on a hand-brake lever and the track corkscrews into fog',
+  },
   '/blog/breakout-summer': {
     title: 'Hot model breakout summer — Cody Wymore',
     description:
