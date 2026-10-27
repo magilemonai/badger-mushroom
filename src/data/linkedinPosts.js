@@ -4,6 +4,8 @@ const linkedinPosts = [
     date: 'October 22, 2026',
     impressions: 188,
     engagements: 5,
+    image: 'post-lockpick-robot.webp',
+    imageAlt: 'Pencil sketch of a small robot holding up a lockpick beside a front door on a row of brick houses, a padlock on the door and a note taped above it.',
     url: 'https://www.linkedin.com/posts/cody-wymore-66543680_could-the-great-internet-hackening-we-worried-share-7519226691152621569-eXny',
     preview: 'PHP2Shell, explained as one door lock on millions of front doors, and why it matters to anyone whose ads run on other people\'s pages.',
     body: `Could the great internet hackening we worried about in April, when Mythos was first announced, be happening right now?
@@ -33,6 +35,8 @@ So no, the sky is not falling. But if you run a website, patch it today. If you 
     date: 'October 21, 2026',
     impressions: 852,
     engagements: 9,
+    image: 'post-diary-airport.webp',
+    imageAlt: 'Pencil sketch of a man in an airport security line typing on his phone, a small robot beside him holding a checklist.',
     url: 'https://www.linkedin.com/posts/cody-wymore-66543680_523pm-work-trip-work-laptop-the-one-with-share-7518820852784693248-9r95',
     preview: 'A diary post from a work trip, written with a Claude session that had none of my files and rebuilt most of my system from scraps.',
     body: `5:23pm. work trip. work laptop. the one with every file i typically use to write these posts is at home.
