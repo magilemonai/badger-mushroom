@@ -1,5 +1,198 @@
 const linkedinPosts = [
   {
+    title: 'Twenty-Year-Old Lock, Brand New Lockpick',
+    date: 'October 22, 2026',
+    impressions: 188,
+    engagements: 5,
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_could-the-great-internet-hackening-we-worried-share-7519226691152621569-eXny',
+    preview: 'PHP2Shell, explained as one door lock on millions of front doors, and why it matters to anyone whose ads run on other people\'s pages.',
+    body: `Could the great internet hackening we worried about in April, when Mythos was first announced, be happening right now?
+
+Short version: probably not. But this week looked like the first tremor.
+
+So what's happening?
+
+PHP is a programming language from the 90s that still runs a huge share of the web. Every WordPress site, a lot of news sites, plenty of store checkouts, and probably your agency's homepage.
+
+It's the code on the server that builds the page before it reaches your browser. For this story, think of it as one model of door lock installed on millions of front doors over twenty years.
+
+This week, we learned that lock has had a flaw the whole time. Anyone who knows the trick can walk in. No password. No key. Open access.
+
+The people who maintain PHP found it, built a fix, and tried to roll it out quietly. But the secret got out early. Turns out people (agents?) were already trying the lock-picking trick before the good actors could warn everyone else.
+
+Why you should care even if you don't run a single PHP server: your stuff lives on other people's webpages. In ad tech, your ads, tags and pixels sit on publishers' pages. If their site is open, so is your ad.
+
+Now the Mythos part. Wiz, the security firm that proved the break-in works, said this trick used to take an absurdly long chain of steps. Recent AI models made it a lot shorter.
+
+Twenty-year-old lock. Brand new lockpick.
+
+So no, the sky is not falling. But if you run a website, patch it today. If you run ads, ask your publishers if they did.`,
+  },
+  {
+    title: '5:23pm, From the Road',
+    date: 'October 21, 2026',
+    impressions: 852,
+    engagements: 9,
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_523pm-work-trip-work-laptop-the-one-with-share-7518820852784693248-9r95',
+    preview: 'A diary post from a work trip, written with a Claude session that had none of my files and rebuilt most of my system from scraps.',
+    body: `5:23pm. work trip. work laptop. the one with every file i typically use to write these posts is at home.
+
+ok. new plan.
+
+"hey claude. you don't have my files. what do you remember about how i do this?"
+
+5:24. it has the voice guide. all six attributes. the banned phrase list (em dashes. "quietly". you know the ones).
+
+5:24. asked it to read my linkedin through my browser. browser's on the laptop. laptop's at home. no.
+
+5:25. fine. dropped in an analytics export from the linkedin app.
+
+5:26. oh. it found my merge script. it's running it.
+
+5:28. it is now telling me things. nine quiet days in october cost me 90% of my daily reach.
+
+5:30. ok stop. i did not ask for a performance review
+
+5:31. it says the post should be about this. the one you're reading.
+
+5:33. of course it does. it asks what i really think about this experience. ok.
+
+eight months ago, this system lived in a claude project. i managed every document by hand.
+
+four months ago, the system made a hard shift to claude code and local folders.
+
+today the model rebuilt most of it from scraps. its memories, two exports from my phone, and whatever other tools it could reach.
+
+5:34. still had to write and edit the thing. thumbs. security line. this affected textspeak is harder to type than normal.
+
+if you haven't challenged a frontier model lately, you might be stunned.`,
+  },
+  {
+    title: 'Standby, Go',
+    date: 'October 20, 2026',
+    impressions: 598,
+    engagements: 8,
+    image: 'post-standby.webp',
+    imageAlt: 'Charcoal sketch of a theater wing: five crew members at the rail with fingers on their buttons, four red cue lamps and one green, and a stage manager in a headset at the calling desk.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_anthropics-agents-spend-about-80-of-a-work-share-7518111372963127296-F2dd',
+    preview: 'Anthropic\'s agents spend about 80% of a work session waiting on a human, which looks a lot like a crew at standby waiting for the stage manager\'s cue.',
+    body: `Anthropic's agents spend about 80% of a work session waiting on a human.
+
+Also from the same study: those agents log six hours of work for every hour a person does.
+
+So the agents are out-working us and also, somehow, waiting on us. Sounds about right.
+
+In a theater, the stage manager says "standby" and every crew member's finger goes to a button. Nothing moves until they get the cue. "Go."
+
+That's now similar to the crew of agents running on my behalf. A crew mostly at standby, and me, reading and greenlighting.
+
+The models got fast. I'm still the one calling go.`,
+  },
+  {
+    title: 'Music Is Magic',
+    date: 'September 25, 2026',
+    impressions: 601,
+    engagements: 16,
+    image: 'post-symphony.webp',
+    imageAlt: 'Gustavo Dudamel and the New York Philharmonic taking their bows on stage after Mahler’s Fifth, the violinists standing in the front row.',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_last-night-i-went-to-the-symphony-for-the-share-7509241508429025280-mO1_',
+    preview: 'My first night at the symphony in years: Dudamel, Mahler 5, and a reminder to go do art.',
+    body: `Last night, I went to the symphony for the first time in many years.
+
+Gustavo Dudamel’s tenure as the New York Philharmonic’s Artistic and Music Director just started a few weeks ago.
+
+This concert featured Mahler’s Symphony No. 5.
+
+AI is cool and has its place. But.
+
+Music is magic.
+
+Do art.
+
+Get the full, rich, experience of being human.
+
+Happy Friday!`,
+  },
+  {
+    title: 'Opus 5.5 Scored a Trailer It Couldn\'t Hear',
+    date: 'September 24, 2026',
+    impressions: 546,
+    engagements: 11,
+    image: 'post-wymore-pictures.webp',
+    imageAlt: 'Opening card of the trailer: "Wymore Pictures" in gold letters on a dark starfield.',
+    projectUrl: 'https://magilemonai.github.io/bramblewick/',
+    projectLabel: 'Play Bramblewick',
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_opus-55-is-ridiculous-and-im-totally-blown-ugcPost-7508729415242043392-eW7r',
+    preview: 'Opus 5.5 painted 195 sprites in code, built nine redesigns of this website, and rescored a trailer it could only read as meters and spectrograms.',
+    body: `Opus 5.5 is ridiculous, and I'm totally blown away.
+
+I know how that sounds. Every launch brings a wave of people declaring the new model the best thing ever made. I'm joining the wave this time. It's better, faster, and cheaper, and it's more pleasant to work with. A lot of that comes down to cost, or "usage," as we've all learned to call it.
+
+Two things I have made with it so far:
+
+The first is Bramblewick, a game that mashes up Slay the Spire with Stardew Valley. Opus 5.5 made all of the pixel art, and there isn't a single image file in the game. All 195 sprites are painted in code, with a little brush kit of shaded ellipses and polygons, then finished pixel by pixel. The music is written in code too.
+
+The second is weirder. I asked it to mock up some alternate designs for my website and cut a trailer of them. It built nine redesigns at once, from a theater program to a TV channel guide to an engraved music score that spells my name in notes. Then it cut three trailers: an original, an anime opening, and a summer blockbuster that opens on "IN A WORLD OF CREAM AND SAGE."
+
+I gave the blockbuster trailer one note: "the score could be more robust and orchestral, you might need to update your music system."
+
+It found the orchestral samples that ship with Logic, sitting locally on my Mac, and rescored the trailer. Trumpet fanfare, horn theme, and a deadpan tuba bonk under the final joke.
+
+It did all of that without hearing a note. Claude can't listen to audio. It balanced the mix by reading meters and spectrograms, and then told me the final call needs a composer's ears.
+
+Mine, as it happens.
+
+My verdict: the sounds are better, and the music itself is still somewhat meh (too vanilla for my taste). It's also orders of magnitude better than anything the previous models composed for me. What really impressed me was the sync. The music hits land right on the visual cuts, the way real movie trailers do it to get you excited about the movie.
+
+Does it overuse the JJ Abrams lens flare effect? Yes it does. Is it truly astounding that Claude can generate a 90-second video without having a native image creator? I think so.`,
+  },
+  {
+    title: 'Some Trains Become Other Trains',
+    date: 'September 23, 2026',
+    impressions: 259,
+    engagements: 2,
+    image: 'post-images-bakeoff-1.webp',
+    imageAlt: 'Cover slide: "Same four prompts. Seven months." above five rock-climbing penguins, one each from Nano Banana 2, Midjourney, ChatGPT Gen 1, Images 2.0 and Images 2.5.',
+    images: ['post-images-bakeoff-1.webp', 'post-images-bakeoff-2.webp', 'post-images-bakeoff-3.webp', 'post-images-bakeoff-4.webp', 'post-images-bakeoff-5.webp', 'post-images-bakeoff-6.webp'],
+    imagesAlt: [
+      'Cover slide: "Same four prompts. Seven months." above five rock-climbing penguins, one per image model.',
+      'Prompt 1 of 4, the 1998 action movie still: the Images 2.5 result above four earlier rounds.',
+      'Prompt 2 of 4, the impossible subway map: the Images 2.5 result above four earlier rounds.',
+      'Prompt 3 of 4, the rock-climbing penguin in Arizona: the Images 2.5 result above four earlier rounds.',
+      'Prompt 4 of 4, the PRC ad edit with the headline "A different kind of flight": the Images 2.5 result above four earlier rounds.',
+      'How the test works: the same four prompts word for word since February, with the dates of each round.',
+    ],
+    url: 'https://www.linkedin.com/posts/cody-wymore-66543680_images-25-tests-ugcPost-7508369036381057024-9plw',
+    preview: 'I ran my same four test prompts from February through ChatGPT Images 2.5: a 1998 movie still, an impossible subway map, a climbing penguin and an ad edit.',
+    body: `ChatGPT Images 2.5 has been out for a minute, so I ran my same four test prompts from Nano Banana 2 back in February. I'm keeping the same words, even with my typo in the 4th prompt.
+
+Swipe through to see every round side by side: Nano Banana 2, Midjourney, ChatGPT Gen 1, Images 2.0, and now 2.5.
+
+My takeaways:
+
+The movie still
+
+The biggest jump of the bunch. This finally looks like a frame from a real 1998 movie (including the aspect ratio!) with a hero mid-sprint, an actual ancient sword, and a villain who looks properly unhinged. The math on the lab coat? Still gibberish.
+
+The subway map
+
+The most ambitious one yet. 35 lines, a "Central Central" interchange, and a stop called "Museum of Delays," which is the most honest station name I've ever seen. The small labels in the dense middle are pretty garbled.
+
+But I like the service note "Some trains become other trains."
+
+The penguin
+
+The most real-looking yet. Gorgeous light, some real height to give perspective to the Arizona buttes, and the penguin is both realistic and looks natural in the climbing gear.
+
+The ad
+
+This is where 2.5 is supposed to shine: editing without wrecking what's already there. It kept everything important about the original, while subtly adjusting the chalk bag to make room for the headline. Pretty solid editing!
+
+"A different kind of flight" is solid, but I still think March's "Defy gravity. Stay Waddly." wins the copy round.
+
+What do you think?`,
+  },
+  {
     title: 'A Model That Calls the Cues',
     date: 'September 22, 2026',
     impressions: 191,
