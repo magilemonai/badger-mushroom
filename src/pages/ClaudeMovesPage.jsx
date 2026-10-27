@@ -37,8 +37,32 @@ const credits = [
   { plan: 'Team', detail: '$20 per Standard seat, $100 per Premium seat, pooled', amount: 'up to $500/mo' },
 ]
 
+const videoPrompt = `I want to make a 60-second vertical video that teaches [your topic] to [who it's for]. Think social media short: packed with useful information, and fun to watch. Build it in code with Remotion, in a new folder.
+
+1. Script first. Write about 150 spoken words in short numbered lines, one idea per line, with a hook in the first three seconds. Shape it as [five quick tips]. Show me the script before you build anything.
+
+2. Keep it real. Any answer, number or product detail on screen has to be real: generate it or look it up, and tell me the source. Label anything made up as made up, on screen.
+
+3. Voice: use ElevenLabs if I give you an API key, otherwise a placeholder voice so we can check the timing. Time the captions and animations to the words.
+
+4. Style: 1080x1920, big captions of 1-3 words that work with the sound off, a title card for each point, quick cuts on a steady beat, music under the voice, and an end card that recaps every point. Keep the important stuff in the middle of the frame so it also crops to 4:5 for LinkedIn.
+
+5. Before the final render, show me a still from each section. Then export a 9:16 and a 4:5 version, with the audio leveled for social.
+
+Ask me what you need to know before you start.`
+
 function promptText(p) {
   return p.text || p.before + p.blank + p.after
+}
+
+function withBlanks(text) {
+  return text.split(/(\[[^\]]+\])/).map((part, i) =>
+    part.startsWith('[') ? (
+      <span key={i} className="text-terracotta font-medium">{part}</span>
+    ) : (
+      part
+    )
+  )
 }
 
 function CopyButton({ text }) {
@@ -238,8 +262,40 @@ export default function ClaudeMovesPage() {
         </div>
       </div>
 
-      {/* Safety */}
+      {/* Make your own */}
       <div className="bg-linen py-16 sm:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <SectionLabel>Make your own</SectionLabel>
+          <h2 className="font-display text-3xl sm:text-4xl text-charcoal mb-4">
+            A prompt for a video like this one
+          </h2>
+          <p className="text-warm-gray leading-relaxed mb-8">
+            Claude Code made this video: it wrote the script and the animation code in Remotion, a tool for making
+            videos with code, and the voice comes from ElevenLabs. Here's a starting prompt for making your own.
+            You'll need Claude Code and a computer with Node.js installed. Expect a few rounds of notes after the
+            first draft; mine took several.
+          </p>
+          <div className="bg-pearl rounded-xl border border-taupe/50 p-6 sm:p-8">
+            <p className="font-mono text-xs tracking-widest uppercase text-terracotta mb-2">
+              Paste into Claude Code
+            </p>
+            <h3 className="font-display text-2xl sm:text-3xl text-charcoal mb-4">
+              A 60-second explainer
+            </h3>
+            <p className="bg-linen rounded-lg p-4 sm:p-5 text-charcoal leading-relaxed whitespace-pre-line mb-4">
+              {withBlanks(videoPrompt)}
+            </p>
+            <p className="text-sm text-warm-gray leading-relaxed mb-5">
+              Fill in the colored parts first. Remotion is free for individuals, non-profits and companies with up to
+              three employees; bigger companies need its company license.
+            </p>
+            <CopyButton text={videoPrompt} />
+          </div>
+        </div>
+      </div>
+
+      {/* Safety */}
+      <div className="py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <SectionLabel>Before you paste anything</SectionLabel>
           <ul className="list-disc pl-5 space-y-3 text-warm-gray leading-relaxed marker:text-sage">
@@ -251,7 +307,7 @@ export default function ClaudeMovesPage() {
       </div>
 
       {/* Want more */}
-      <div className="py-16 sm:py-20">
+      <div className="bg-linen py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-pearl rounded-xl border border-taupe/50 overflow-hidden">
             <div className="h-2 bg-gradient-to-r from-terracotta via-sage to-forest" />
@@ -281,7 +337,7 @@ export default function ClaudeMovesPage() {
       </div>
 
       {/* Footer */}
-      <div className="bg-cream pb-12">
+      <div className="bg-cream py-12">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-xs text-warm-gray leading-relaxed mb-6">
             Not affiliated with Anthropic. The Claude answers in the video are real (Claude Opus 5.5, October 2026);
