@@ -12,6 +12,7 @@ import Breakout_2026 from './blog/Breakout_2026'
 import Crunchwrap_2026 from './blog/Crunchwrap_2026'
 import Breakout_Sequel_2026 from './blog/Breakout_Sequel_2026'
 import ProjectsPage from './pages/ProjectsPage'
+import ClaudeMovesPage from './pages/ClaudeMovesPage'
 
 export function render(path) {
   return renderToString(
@@ -25,6 +26,7 @@ export function render(path) {
         <Route path="/blog/crunch-app-supreme" element={<Crunchwrap_2026 />} />
         <Route path="/blog/collusion-summer" element={<Breakout_Sequel_2026 />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/claude-moves" element={<ClaudeMovesPage />} />
       </Routes>
     </MemoryRouter>
   )

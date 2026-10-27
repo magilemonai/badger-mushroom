@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@source not "../public/claude-moves";
-@source not "../docs/claude-moves";
 
 /* Self-hosted Inter 400 — eliminates Google Fonts network hops
    for the primary body text weight, which is often the LCP element

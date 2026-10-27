@@ -84,6 +84,16 @@ const routeMeta = {
     ogImage: `${SITE}/og.jpg`,
     ogImageAlt: 'Cody Wymore holding a mug in front of a colorful painted backdrop',
   },
+  '/claude-moves': {
+    title: 'Five Claude Moves — Cody Wymore',
+    description:
+      'The prompts from the video, ready to copy: four beginner moves and a pro tip about the API credits in Max and Team plans.',
+    ogTitle: 'Five Claude moves',
+    ogDescription:
+      'The prompts from the video, ready to copy: four beginner moves and a pro tip about the API credits in Max and Team plans.',
+    ogImage: `${SITE}/claude-moves/og.jpg`,
+    ogImageAlt: 'Five Claude moves: talk to it, talk back, real details, check the work, and claim your API credits.',
+  },
 }
 
 export default routeMeta

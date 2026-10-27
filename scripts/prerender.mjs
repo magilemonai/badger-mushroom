@@ -81,6 +81,7 @@ const outputs = {
   '/blog/crunch-app-supreme': ['docs/blog/crunch-app-supreme.html', 'docs/blog/crunch-app-supreme/index.html'],
   '/blog/collusion-summer': ['docs/blog/collusion-summer.html', 'docs/blog/collusion-summer/index.html'],
   '/projects': ['docs/projects.html', 'docs/projects/index.html'],
+  '/claude-moves': ['docs/claude-moves.html', 'docs/claude-moves/index.html'],
 }
 
 for (const [path, files] of Object.entries(outputs)) {

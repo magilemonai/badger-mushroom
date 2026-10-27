@@ -18,6 +18,7 @@ const Breakout_2026 = lazy(() => import('./blog/Breakout_2026'))
 const Crunchwrap_2026 = lazy(() => import('./blog/Crunchwrap_2026'))
 const Breakout_Sequel_2026 = lazy(() => import('./blog/Breakout_Sequel_2026'))
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
+const ClaudeMovesPage = lazy(() => import('./pages/ClaudeMovesPage'))
 const Q3_2026 = lazy(() => import('./blog/Q3_2026'))
 
 function ScrollManager() {
@@ -128,6 +129,7 @@ export function AppRoutes() {
           <Route path="/blog/collusion-summer" element={<Breakout_Sequel_2026 />} />
           <Route path="/blog/q3-2026" element={<Q3_2026 />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/claude-moves" element={<ClaudeMovesPage />} />
         </Routes>
       </Suspense>
     </>
