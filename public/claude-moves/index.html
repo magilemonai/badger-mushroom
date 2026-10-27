@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Claude Moves</title>
+<meta name="description" content="The prompts from the video, ready to copy: four beginner moves and a pro tip about the API credits in Max and Team plans.">
+<link rel="canonical" href="https://codywymore.com/claude-moves/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Five Claude moves">
+<meta property="og:description" content="The prompts from the video, ready to copy: four beginner moves and a pro tip about the API credits in Max and Team plans.">
+<meta property="og:url" content="https://codywymore.com/claude-moves/">
+<meta property="og:image" content="https://codywymore.com/claude-moves/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Five Claude moves: talk to it, talk back, real details, check the work, and claim your API credits.">
+<meta name="twitter:card" content="summary_large_image">
+<script data-goatcounter="https://codywymore.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ee;
+    --card: #fffdf9;
+    --line: #e4ddd1;
+    --ink: #22201d;
+    --muted: #6d675f;
+    --accent: #c4613f;
+    --accent-2: #e09a45;
+    --chip: #f0e9dd;
+    --display: "Instrument Serif", Georgia, serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12110f;
+      --card: #1d1c1a;
+      --line: #33302c;
+      --ink: #f2ede4;
+      --muted: #a39d93;
+      --accent: #ec7d5b;
+      --accent-2: #f3b05a;
+      --chip: #2a2825;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12110f;
+    --card: #1d1c1a;
+    --line: #33302c;
+    --ink: #f2ede4;
+    --muted: #a39d93;
+    --accent: #ec7d5b;
+    --accent-2: #f3b05a;
+    --chip: #2a2825;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 var(--body); }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+  h1 { font: 400 46px/1.02 var(--display); margin: 0 0 14px; letter-spacing: -0.5px; }
+  h1 em { color: var(--accent); }
+  h2 { font: 400 32px/1.1 var(--display); margin: 44px 0 14px; }
+  h3 { font: 400 26px/1.1 var(--display); margin: 0 0 8px; }
+  .lede { color: var(--muted); margin: 0; }
+  .note { font-size: 15px; color: var(--muted); }
+
+  .prompt { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin: 14px 0; }
+  .prompt .step { font: 600 13px var(--body); color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 6px; }
+  .prompt p { margin: 0 0 14px; }
+  .prompt p.note { margin-top: -4px; }
+  .blank { color: var(--accent); font-weight: 600; }
+  button.copy {
+    font: 600 15px var(--body); color: var(--bg); background: var(--ink); border: 0; border-radius: 999px;
+    padding: 12px 20px; min-height: 44px; cursor: pointer; width: 100%;
+  }
+  button.copy.done { background: var(--accent); }
+
+  ol.moves { list-style: none; padding: 0; margin: 0; counter-reset: m; }
+  ol.moves li { counter-increment: m; display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+  ol.moves li::before { content: "0" counter(m); font: 600 18px var(--body); color: var(--accent); padding-top: 3px; }
+  ol.moves b { display: block; }
+  .tag { display: inline-block; font-size: 13px; background: var(--chip); border-radius: 999px; padding: 2px 10px; margin-left: 6px; color: var(--muted); vertical-align: 2px; white-space: nowrap; }
+
+  .credits { width: 100%; border-collapse: collapse; margin: 6px 0 4px; }
+  .credits td { padding: 12px 0; border-top: 1px solid var(--line); vertical-align: baseline; }
+  .credits td:last-child { text-align: right; font-weight: 600; white-space: nowrap; padding-left: 12px; }
+  .credits small { display: block; font-size: 14px; color: var(--muted); font-weight: 400; }
+  h3.sub { margin-top: 28px; }
+  ol.steps { padding-left: 22px; margin: 0; }
+  ol.steps li, ul.safe li, ul.fine li { margin: 8px 0; }
+  ul.safe, ul.fine { padding-left: 20px; margin: 0; }
+  .path { font-weight: 600; white-space: nowrap; }
+  .receipt { margin-top: 16px; font-size: 15px; color: var(--muted); }
+
+  .more { margin-top: 48px; padding: 4px 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+  .more h2 { margin-top: 18px; }
+  .more p { margin: 0 0 16px; }
+  .more-links { display: flex; flex-direction: column; gap: 10px; }
+  .more-link {
+    display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px;
+    border: 1.5px solid var(--ink); border-radius: 999px; color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none;
+  }
+  .more-link:hover { background: var(--chip); }
+
+  footer { margin-top: 48px; font-size: 14px; color: var(--muted); }
+
+  @media (min-width: 720px) {
+    main { padding: 72px 24px 96px; }
+    h1 { font-size: 64px; }
+    button.copy { width: auto; }
+    .more-links { flex-direction: row; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Five <em>Claude</em> moves</h1>
+  <p class="lede">The prompts from the video, ready to copy. Paste them into <a href="https://claude.ai">claude.ai</a>. Moves one to four work on the free plan; the fifth is a pro tip for Max and Team subscribers.</p>
+
+  <h2>Try them tonight</h2>
+
+  <div class="prompt">
+    <p class="step">Move 1 · Talk to it</p>
+    <h3>Start a new chat</h3>
+    <p data-text="Write a short limerick about a dog who is afraid of the mailman.">Write a short limerick about a dog who is afraid of the mailman.</p>
+    <button class="copy" type="button">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <p class="step">Move 2 · Talk back</p>
+    <h3>Then reply in the same chat</h3>
+    <p data-text="Make it funnier, and make her a chihuahua.">Make it funnier, and make her a chihuahua.</p>
+    <p class="note">Claude knows who "her" is because it's the same conversation. If your dog came out a "he," swap the word and it works the same.</p>
+    <button class="copy" type="button">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <p class="step">Move 3 · Real details</p>
+    <h3>Dinner from your fridge</h3>
+    <p data-text="Plan three weeknight dinners using mostly what I already have: [what's in your fridge right now]. Keep each under 30 minutes. Give me a short shopping list for anything missing. Keep the whole answer short.">Plan three weeknight dinners using mostly what I already have: <span class="blank">[what's in your fridge right now]</span>. Keep each under 30 minutes. Give me a short shopping list for anything missing. Keep the whole answer short.</p>
+    <p class="note">Swap in your real list. The video used eggs, half a bag of spinach, a can of chickpeas, rice, a block of feta, two lemons, garlic, and some tired cherry tomatoes.</p>
+    <button class="copy" type="button">Copy prompt</button>
+  </div>
+
+  <h2>The five moves</h2>
+  <ol class="moves">
+    <li><div><b>Talk to it.</b> Type like you're texting a friend, with no magic words needed.</div></li>
+    <li><div><b>Talk back.</b> If something's off, reply in the same chat with what to change: "shorter," "warmer," "give me three options." Claude keeps the context, so you don't have to start over.</div></li>
+    <li><div><b>Real details.</b> What's in your fridge, who it's for, where you're going. You can add files and photos from the + button.</div></li>
+    <li><div><b>Check the work.</b> Hold what comes back against what you asked for, every time. Claude can be confidently wrong, and totals are a good place to look. In the video, a made-up expense summary said $63, and the items added up to $78.</div></li>
+    <li><div><b>Claim your API credits.</b><span class="tag">Pro tip</span> If you're on Max or Team, your plan includes monthly credits for the Claude API. Details below.</div></li>
+  </ol>
+
+  <h2>Pro tip: the API credits in Max and Team</h2>
+  <p>Since October 2026, Max and Team plans come with monthly credits for building on the Claude API. You only get them if you link a Claude Console organization.</p>
+  <table class="credits">
+    <tr><td>Max 5x</td><td>$100/mo</td></tr>
+    <tr><td>Max 20x</td><td>$200/mo</td></tr>
+    <tr><td>Team<small>$20 per Standard seat, $100 per Premium seat, pooled</small></td><td>up to $500/mo</td></tr>
+  </table>
+
+  <h3 class="sub">How to claim them</h3>
+  <ol class="steps">
+    <li>On claude.ai in a web browser, open <span class="path">Settings › Billing</span>. On Team, it's <span class="path">Organization settings › Billing</span>, and an Owner has to do it.</li>
+    <li>In the <b>API credits</b> section, pick the Console organization that should get the credits and link it. You can create one there if you don't have one.</li>
+    <li>The credits show up under <b>Promotional credits</b> on the Billing page at <a href="https://platform.claude.com/settings/billing">platform.claude.com</a>. Make an API key and start building.</li>
+  </ol>
+
+  <h3 class="sub">The fine print</h3>
+  <ul class="fine">
+    <li>They don't roll over. Unused credits expire at the end of each billing cycle.</li>
+    <li>They cover the Claude API, Managed Agents, the Agent SDK and the Console playground. They don't cover Claude Code or extra usage in the Claude apps.</li>
+    <li>New subscribers can claim after 7 days on the plan.</li>
+    <li>You can't switch the linked organization yourself (support can), so link the one you'll actually build in.</li>
+  </ul>
+  <p class="receipt">Source: <a href="https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers">API credits for Max and Team plans</a>, Anthropic's docs. Checked October 26, 2026. Plans change, so the docs page wins if it says something different.</p>
+
+  <h2>Before you paste anything</h2>
+  <ul class="safe">
+    <li>Paste only what you'd be comfortable putting in an email. Leave out passwords, account numbers, and other people's private details.</li>
+    <li>Decide whether your chats can help train future models: Settings, then Privacy, then "Help improve our AI models." Either choice is fine. Pick it on purpose.</li>
+    <li>Claude can be confidently wrong. For anything that matters (money, health, dates), check the facts yourself.</li>
+  </ul>
+
+  <aside class="more">
+    <h2>Want more?</h2>
+    <p>I write about AI on my site, including a quarterly roundup of what changed and what it meant. I also make small games you can play in a browser, like a five-minute typing game and an alien game show.</p>
+    <div class="more-links">
+      <a class="more-link" href="https://codywymore.com/#writing">Read the writing</a>
+      <a class="more-link" href="https://codywymore.com/projects">Play the games</a>
+    </div>
+  </aside>
+
+  <footer>Not affiliated with Anthropic. The Claude answers in the video are real (Claude Opus 5.5, October 2026); the interface is recreated. Screens and plans may have changed since.</footer>
+</main>
+<script>
+  document.querySelectorAll("button.copy").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.parentElement.querySelector("[data-text]").dataset.text;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const t = document.createElement("textarea");
+        t.value = text;
+        document.body.appendChild(t);
+        t.select();
+        try { document.execCommand("copy"); } catch {}
+        t.remove();
+      }
+      btn.textContent = "Copied";
+      btn.classList.add("done");
+      setTimeout(() => { btn.textContent = "Copy prompt"; btn.classList.remove("done"); }, 1800);
+    });
+  });
+</script>
+</body>
+</html>
