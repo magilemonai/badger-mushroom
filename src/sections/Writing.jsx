@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import SectionLabel from '../components/SectionLabel'
 import useScrollAnimation from '../components/useScrollAnimation'
+import ImageCarousel from '../components/ImageCarousel'
 import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
@@ -183,16 +184,20 @@ function LinkedInPost({ post }) {
         <div className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-taupe/30">
           {postImages.length > 0 && (
             <div className="mt-6 mb-2">
-              <div className={postImages.length > 1 ? 'flex gap-4' : ''}>
-                {postImages.map((img, i) => (
-                  <img
-                    key={img}
-                    src={import.meta.env.BASE_URL + img}
-                    alt={postImagesAlt[i] || ''}
-                    className={`max-h-96 sm:max-h-[32rem] rounded-lg object-contain ${postImages.length > 1 ? 'flex-1 min-w-0' : 'max-w-full mx-auto block'}`}
-                  />
-                ))}
-              </div>
+              {postImages.length > 2 ? (
+                <ImageCarousel images={postImages} alts={postImagesAlt} />
+              ) : (
+                <div className={postImages.length > 1 ? 'flex gap-4' : ''}>
+                  {postImages.map((img, i) => (
+                    <img
+                      key={img}
+                      src={import.meta.env.BASE_URL + img}
+                      alt={postImagesAlt[i] || ''}
+                      className={`max-h-96 sm:max-h-[32rem] rounded-lg object-contain ${postImages.length > 1 ? 'flex-1 min-w-0' : 'max-w-full mx-auto block'}`}
+                    />
+                  ))}
+                </div>
+              )}
               {(post.video || post.projectUrl) && (
                 <div className="flex justify-center mt-4">
                   <a
