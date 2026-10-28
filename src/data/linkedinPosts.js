@@ -1,5 +1,26 @@
 const linkedinPosts = [
   {
+    title: 'Five Claude Moves in 58 Seconds',
+    date: 'October 27, 2026',
+    impressions: 120,
+    engagements: 4,
+    image: 'post-claude-moves.webp',
+    imageAlt: 'Cover frame of the video: a large orange "5" over the words "Claude moves" in white serif italics on a dark background.',
+    projectUrl: '/claude-moves',
+    projectLabel: 'Get the prompts',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7520686741591293952/',
+    preview: 'A 58-second video teaching five Claude moves, animated in code by Claude, with every answer on screen real Claude output.',
+    body: `I made a 58-second video last night teaching five Claude moves.
+
+Claude wrote the code that animates it. Every answer on screen is real Claude output, including a limerick about a beagle named Ruth who's scared of the mailman (and her second life as a chihuahua).
+
+A video like this used to take a crew.
+
+Now, one person with something to teach can make it after dinner, which means our feeds are about to get a lot fuller.
+
+So the fourth move applies to video too: check the work.`,
+  },
+  {
     title: 'Twenty-Year-Old Lock, Brand New Lockpick',
     date: 'October 22, 2026',
     impressions: 188,
