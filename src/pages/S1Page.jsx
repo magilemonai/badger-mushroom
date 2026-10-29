@@ -142,7 +142,11 @@ export default function S1Page() {
           </h1>
           <p className="text-lg sm:text-xl text-warm-gray leading-relaxed">
             Same filing, same facts, six completely different videos, each with its own script, voice and score.
-            I posted the red-pen one on LinkedIn. Here's the whole set.
+            I posted the red-pen one{' '}
+            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7521708146026020864/" target="_blank" rel="noopener noreferrer" className="text-forest underline underline-offset-4 hover:text-charcoal">
+              on LinkedIn
+            </a>
+            . Here's the whole set.
           </p>
         </div>
       </div>

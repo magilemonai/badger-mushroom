@@ -1,5 +1,28 @@
 const linkedinPosts = [
   {
+    title: "Anthropic's S-1, Six Ways",
+    date: 'October 29, 2026',
+    image: 'post-s1-redline.webp',
+    imageAlt: "Cover frame of the video: the net-loss line of Anthropic's S-1 circled in red pen, \"read the footnotes\" written in the margin, and the caption \"Everyone's quoting two numbers from Anthropic's S-1.\"",
+    projectUrl: '/s1',
+    projectLabel: 'Watch all six',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7521708146026020864/',
+    preview: "A 60-second red-pen walk through Anthropic's S-1, one of six explainers in six different styles. The other five are on this site.",
+    body: `Anthropic's S-1 has been pored over by almost every agent, including mine.
+
+I asked it to turn the filing into a 60-second explainer. And then I asked for six of them, with different scripts and different styles, just to see the variety.
+
+This is the one I thought LinkedIn would like the most. But maybe I should have picked the one that mimics a nature documentary? Hmmm.
+
+Before we built the videos, a second Claude sub-agent checked every script line against the filing.
+
+That $80 billion loss that's been leading the headlines? Almost all of it is a paper loss, cash from operations was positive at $3.9 billion.
+
+The other five videos are on my site, including a game show and one that plays like opening night on Broadway.
+
+Which one would you have posted?`,
+  },
+  {
     title: 'Five Claude Moves in 58 Seconds',
     date: 'October 27, 2026',
     impressions: 120,
