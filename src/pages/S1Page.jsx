@@ -219,8 +219,8 @@ export default function S1Page() {
           <SectionLabel>How they were made</SectionLabel>
           <p className="text-warm-gray leading-relaxed mb-4">
             Claude Code wrote the six scripts and the animation code, in Remotion, from my brief. ElevenLabs made the
-            voices, the music and the sound effects. Before anything was voiced, a separate Claude agent checked every
-            script line against a fact sheet built from the filing.
+            voices, the music and the sound effects. Before the videos were built, a separate Claude agent checked every
+            script line against the filing itself.
           </p>
           <p className="text-warm-gray leading-relaxed mb-8">
             Want to make one? The starter prompt is on the{' '}
