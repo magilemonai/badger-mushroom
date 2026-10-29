@@ -94,6 +94,16 @@ const routeMeta = {
     ogImage: `${SITE}/claude-moves/og.jpg`,
     ogImageAlt: 'Five Claude moves: talk to it, talk back, real details, check the work, and claim your API credits.',
   },
+  '/s1': {
+    title: "Anthropic's S-1, Six Ways — Cody Wymore",
+    description:
+      'Six 60-second explainers of the same filing, each with its own script, voice and look, plus the numbers they share, with page numbers from the S-1.',
+    ogTitle: "Anthropic's S-1, six ways",
+    ogDescription:
+      'Six 60-second explainers of the same filing: an annotated filing, a nature documentary, a Broadway opening, a game show and more.',
+    ogImage: `${SITE}/s1/og.jpg`,
+    ogImageAlt: "Anthropic's S-1, six ways: six video covers, from a red-pen annotated filing to a nature documentary.",
+  },
 }
 
 export default routeMeta

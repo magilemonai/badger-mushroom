@@ -82,6 +82,7 @@ const outputs = {
   '/blog/collusion-summer': ['docs/blog/collusion-summer.html', 'docs/blog/collusion-summer/index.html'],
   '/projects': ['docs/projects.html', 'docs/projects/index.html'],
   '/claude-moves': ['docs/claude-moves.html', 'docs/claude-moves/index.html'],
+  '/s1': ['docs/s1.html', 'docs/s1/index.html'],
 }
 
 for (const [path, files] of Object.entries(outputs)) {
