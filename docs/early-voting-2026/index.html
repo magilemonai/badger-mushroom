@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Watch New York City fill in, one night at a time: nine days of early voting for the 2026 governor's race, tracked nightly from the Board of Elections and compared with the last five elections, by day and by borough.">
+<meta property="og:title" content="First Day at the Polls: NYC Early Voting 2026">
+<meta property="og:description" content="690,526 New Yorkers voted early. An interactive map replays all nine days and compares them with 2021 through 2025, by day and by borough.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://codywymore.com/early-voting-2026/">
+<meta property="og:image" content="https://codywymore.com/blog/early-voting-2026-og.jpg">
+<meta property="og:image:alt" content="Map of the five boroughs filled with red dots, one per thousand early voters, beside the total 690,526">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://codywymore.com/early-voting-2026/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>First Day at the Polls: NYC Early Voting 2026 · Cody Wymore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a map-first story. The five boroughs fill with dots (one per ~1,000 voters) as nine nights replay;
+   everything below the map is synced to the same day. Condensed tally-sheet numerals, ballot red for 2026. */
+:root{
+  --bg:#F3F2EE; --paper:#FFFFFF; --ink:#17202B; --ink-2:#4B5563; --ink-3:#7D8796;
+  --rule:#DCDDD9; --rule-soft:#EAEAE6; --track:#E6E6E1;
+  --water:#DCE6EE; --land:#F7F6F1; --land-line:#B9C2CC; --other-land:#ECEBE6;
+  --red:#D4383F; --red-ink:#B22B32; --red-soft:#FBE7E8; --red-glow:rgba(212,56,63,.35);
+  --s22:#4F93D1; --s25:#2B5BA8; --s26:#D4383F; --s24:#8A94A6; --s21:#B7BFCC; --slate:#9AA6B8;
+  --focus:#2B5BA8;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --shadow:0 1px 2px rgba(23,32,43,.06),0 10px 30px rgba(23,32,43,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1319; --paper:#161C25; --ink:#EEF1F5; --ink-2:#B5BDCA; --ink-3:#808B9C;
+    --rule:#293240; --rule-soft:#212935; --track:#232B37;
+    --water:#0F1A26; --land:#1C2430; --land-line:#3A4656; --other-land:#141B24;
+    --red:#EA5F66; --red-ink:#F4939A; --red-soft:#3A1F22; --red-glow:rgba(234,95,102,.45);
+    --s22:#4C9AD6; --s25:#2A5DB0; --s26:#E85D64; --s24:#7C8798; --s21:#4E5868; --slate:#5E6B7E;
+    --focus:#6FA3E6; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --paper:#161C25; --ink:#EEF1F5; --ink-2:#B5BDCA; --ink-3:#808B9C;
+  --rule:#293240; --rule-soft:#212935; --track:#232B37;
+  --water:#0F1A26; --land:#1C2430; --land-line:#3A4656; --other-land:#141B24;
+  --red:#EA5F66; --red-ink:#F4939A; --red-soft:#3A1F22; --red-glow:rgba(234,95,102,.45);
+  --s22:#4C9AD6; --s25:#2A5DB0; --s26:#E85D64; --s24:#7C8798; --s21:#4E5868; --slate:#5E6B7E;
+  --focus:#6FA3E6; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding-block:26px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+button{font:inherit}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-ink);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,8vw,86px);line-height:.94;letter-spacing:-.015em;margin-top:10px}
+.lede{color:var(--ink-2);max-width:66ch;margin-top:14px;font-size:17px}
+.lede b{color:var(--ink);font-weight:600}
+
+/* ===== Hero: map + day card ===== */
+.stage{margin-top:26px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.85fr);grid-template-rows:1fr auto;gap:18px;align-items:stretch}
+.mapcard{grid-row:1/3}
+.playercard{background:var(--paper);border:1px solid var(--rule);border-radius:18px;box-shadow:var(--shadow);padding:16px 20px}
+@media (max-width:820px){.stage{grid-template-columns:1fr;grid-template-rows:auto}.mapcard{grid-row:auto}.playercard{order:2}.daycard{order:3}}
+.mapcard{background:var(--water);border:1px solid var(--rule);border-radius:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;min-height:320px}
+.mapcard svg{display:block;width:100%;height:auto}
+.mapcard .legend-dot{position:absolute;left:14px;bottom:12px;font-size:12px;color:var(--ink-2);display:flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--paper) 78%,transparent);padding:6px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.mapcard .legend-dot i{width:9px;height:9px;border-radius:50%;background:var(--red);display:inline-block}
+.mapcard .daytag{position:absolute;right:14px;bottom:12px;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:color-mix(in srgb,var(--paper) 78%,transparent);padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+.mapcard .daytag span{color:var(--ink-3);font-weight:600;margin-left:6px}
+.boro{fill:var(--land);stroke:var(--land-line);stroke-width:1.2;stroke-linejoin:round;transition:fill .3s}
+.boro.lit{fill:color-mix(in srgb,var(--land) 70%,var(--red-soft))}
+.otherland{fill:var(--other-land);stroke:none}
+.dot{fill:var(--red);opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(0);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.9,.3,1.3)}
+.dot.on{opacity:.92;transform:scale(1)}
+.pulse{fill:none;stroke:var(--red);stroke-width:2;opacity:0;pointer-events:none}
+.pulse.go{animation:pulse 1.5s ease-out forwards}
+@keyframes pulse{0%{opacity:.75;stroke-width:3}100%{opacity:0;stroke-width:.5}}
+.blabel{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;fill:var(--ink);paint-order:stroke;stroke:var(--water);stroke-width:4px;stroke-linejoin:round}
+.bnum{font-family:var(--display);font-weight:700;font-size:17px;fill:var(--red-ink);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:var(--water);stroke-width:4px;stroke-linejoin:round}
+.bhit{fill:transparent;cursor:pointer}
+.bhit:hover+.boro,.boro.hover{stroke:var(--ink);stroke-width:1.8}
+.wlabel{font-family:var(--body);font-style:italic;font-size:11px;fill:var(--ink-3);letter-spacing:.08em;opacity:.8}
+
+.daycard{background:var(--paper);border:1px solid var(--rule);border-radius:18px;box-shadow:var(--shadow);padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.daycard .when{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.daycard .when b{color:var(--ink);font-weight:700}
+.bigcount{font-family:var(--display);font-weight:800;font-size:clamp(56px,9vw,84px);line-height:.88;letter-spacing:-.02em;color:var(--red);font-variant-numeric:tabular-nums}
+.bigcount small{display:block;font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:10px}
+.todayline{font-size:14.5px;color:var(--ink-2)}
+.todayline b{font-family:var(--display);font-size:22px;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.bl{display:grid;grid-template-columns:auto 1fr auto;gap:4px 10px;align-items:center;font-size:13px}
+.bl .n{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.bl .bar{height:8px;background:var(--track);border-radius:3px;overflow:hidden;position:relative}
+.bl .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:0 3px 3px 0;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.bl .v{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;text-align:right;min-width:52px}
+.player{display:flex;flex-direction:column;gap:10px}
+.prow{display:flex;align-items:center;gap:10px}
+.play{appearance:none;border:0;background:var(--red);color:#fff;width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:none;box-shadow:0 4px 14px var(--red-glow);transition:transform .12s}
+.play:hover{transform:scale(1.05)}
+.play svg{width:18px;height:18px;fill:currentColor}
+.scrub{flex:1;min-width:0;appearance:none;height:28px;background:transparent;margin:0}
+.scrub::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(to right,var(--red) 0 var(--p,0%),var(--track) var(--p,0%) 100%)}
+.scrub::-moz-range-track{height:6px;border-radius:3px;background:var(--track)}
+.scrub::-moz-range-progress{height:6px;border-radius:3px;background:var(--red)}
+.scrub::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:var(--paper);border:3px solid var(--red);margin-top:-7px;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}
+.scrub::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--red);cursor:pointer}
+.ticks{display:grid;grid-template-columns:repeat(10,1fr);font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--ink-3);text-transform:uppercase}
+.ticks span{text-align:center;cursor:pointer;line-height:1.1;padding:2px 0;border-radius:4px}
+.ticks span b{display:block;font-size:13px;color:var(--ink-2)}
+.ticks span.cur{color:var(--red-ink)}.ticks span.cur b{color:var(--red-ink)}
+.speed{display:inline-flex;background:var(--track);border-radius:8px;padding:2px;gap:2px}
+.speed button{appearance:none;border:0;background:transparent;color:var(--ink-2);font-size:12px;font-weight:600;padding:4px 9px;border-radius:6px;cursor:pointer}
+.speed button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.ctl-label{font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.play:focus-visible,.scrub:focus-visible,.speed button:focus-visible,.seg button:focus-visible,.legend button:focus-visible,.linkbtn:focus-visible,.ticks span:focus-visible,.bhit:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ===== Plain-language tiles ===== */
+.explain{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.ex{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:16px 18px}
+.ex h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.ex p{margin:0;font-size:14px;color:var(--ink-2)}
+.ex .hero-n{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;margin:4px 0 6px}
+.ex .hero-n em{font-style:normal;color:var(--red)}
+
+/* ===== Sections ===== */
+.section{margin-top:52px}
+.shead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 20px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+h2{font-family:var(--display);font-weight:800;font-size:32px;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+.sub{color:var(--ink-3);font-size:13.5px;margin-top:5px;max-width:70ch}
+.controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:14px}
+.ctl{display:inline-flex;align-items:center;gap:8px}
+.seg{display:inline-flex;background:var(--track);border-radius:9px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{appearance:none;border:0;background:transparent;color:var(--ink-2);font-size:13px;font-weight:500;padding:6px 11px;border-radius:7px;cursor:pointer;font-variant-numeric:tabular-nums}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12);font-weight:600}
+.hint{font-size:13px;color:var(--ink-3);margin-top:10px;max-width:72ch}
+.card{margin-top:16px;background:var(--paper);border:1px solid var(--rule);border-radius:16px;padding:18px 18px 12px;box-shadow:var(--shadow);position:relative}
+.legend{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;margin-bottom:12px}
+.legend button{appearance:none;border:0;background:none;font-size:13px;color:var(--ink-2);display:inline-flex;align-items:center;gap:7px;padding:4px 6px;border-radius:6px;cursor:pointer}
+.legend button i{width:14px;height:0;border-top:3px solid currentColor;display:inline-block;border-radius:2px}
+.legend button i.dash{border-top-style:dashed}
+.legend button[aria-pressed="false"]{opacity:.45;text-decoration:line-through}
+.legend .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* race chart */
+#lc{overflow-x:auto;overflow-y:hidden;margin:0 -6px;padding:0 6px}
+#lc svg{min-width:620px;display:block;width:100%;height:auto;overflow:visible}
+.lc .grid line{stroke:var(--rule-soft);stroke-width:1}
+.lc .axis text{fill:var(--ink-3);font-family:var(--body);font-size:11px;font-variant-numeric:tabular-nums}
+.lc .axis .dow{fill:var(--ink-3);font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--display);font-weight:600}
+.lc .base{stroke:var(--rule);stroke-width:1}
+.lc path.line{fill:none;stroke-width:2.25;stroke-linejoin:round;stroke-linecap:round}
+.lc path.line.cur{stroke-width:3.5}
+.lc path.gap{fill:none;stroke-width:2;stroke-dasharray:3 5;stroke-linecap:round}
+.lc circle.pt{stroke:var(--paper);stroke-width:2}
+.lc .end{font-family:var(--display);font-weight:700;font-size:14px;fill:var(--ink);font-variant-numeric:tabular-nums}
+.lc .endlab{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;fill:var(--ink-3)}
+.lc .cursor{stroke:var(--red);stroke-width:1;stroke-dasharray:3 3;opacity:.7}
+.lc .xline{stroke:var(--ink);stroke-width:1;stroke-dasharray:2 3;opacity:0}
+.lc .hit{fill:transparent;cursor:crosshair}
+.tooltip{position:absolute;z-index:5;pointer-events:none;background:var(--ink);color:var(--bg);padding:10px 12px;border-radius:9px;font-size:12.5px;line-height:1.45;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:260px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;white-space:nowrap}
+.tooltip.show{opacity:1;transform:none}
+.tooltip b{font-family:var(--display);font-size:20px;font-weight:700;display:block;line-height:1;margin:2px 0 4px;font-variant-numeric:tabular-nums}
+.tooltip .t{font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.tooltip .d{opacity:.85}
+.tooltip table{border-collapse:collapse;margin-top:4px}
+.tooltip td{padding:1px 0;font-variant-numeric:tabular-nums;border:0;font-size:12.5px;color:inherit;white-space:nowrap}
+.tooltip td:first-child{padding-right:10px;display:flex;align-items:center;gap:6px}
+.tooltip td:last-child{text-align:right;font-weight:600}
+.tooltip td i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.tooltip td.sub{opacity:.65;font-size:11.5px;padding-left:15px}
+
+/* borough cards */
+.bcards{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.bc{background:var(--paper);border:1px solid var(--rule);border-radius:16px;padding:16px 16px 14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;min-width:0;cursor:pointer;transition:transform .15s,border-color .15s}
+.bc:hover{transform:translateY(-2px);border-color:var(--ink-3)}
+.bc.sel{border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft),var(--shadow)}
+.bc .shape{height:84px;display:flex;align-items:center;justify-content:center}
+.bc .shape svg{height:84px;width:100%;overflow:visible}
+.bc .shape path{fill:var(--red-soft);stroke:var(--red);stroke-width:1.4;stroke-linejoin:round}
+.bc h3{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase}
+.bc .big{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+.bc .big small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:4px;font-family:var(--display)}
+.bc .cmp{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;font-size:12px;color:var(--ink-3)}
+.bc .cmp .bar{height:7px;background:var(--track);border-radius:3px;position:relative;overflow:hidden}
+.bc .cmp .bar i{position:absolute;top:0;bottom:0;left:0;border-radius:3px}
+.bc .cmp .v{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);text-align:right}
+.bc p{margin:2px 0 0;font-size:13px;color:var(--ink-2)}
+.bc .share{font-size:12.5px;color:var(--ink-2)}
+.bc .share b{color:var(--ink)}
+
+/* through-day bars */
+.ychart{margin-top:16px;--lab:96px;--val:84px;--del:80px}
+.row{display:grid;grid-template-columns:var(--lab) 1fr var(--val) var(--del);align-items:center;gap:0 12px;width:100%;padding:7px 0;border:0;background:none;text-align:left;color:inherit;cursor:pointer;border-radius:8px;position:relative}
+.row:hover .track{background:var(--rule)}
+.row[aria-pressed="true"]::before{content:"";position:absolute;left:-10px;top:10px;bottom:10px;width:3px;border-radius:2px;background:var(--ink)}
+.row.nodata{cursor:default;opacity:.6}
+.rlabel{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.rlabel strong{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.01em;color:var(--ink)}
+.rlabel span{font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{height:26px;background:var(--track);border-radius:3px;position:relative;overflow:hidden;transition:background .15s}
+.bar2{position:absolute;left:0;top:0;bottom:0;background:var(--slate);border-radius:0 4px 4px 0;width:0;transition:width .7s cubic-bezier(.2,.7,.2,1)}
+.bar2.is-2026{background:var(--red)}
+.bar2.est{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.25) 0 4px,transparent 4px 8px)}
+.rval{font-family:var(--display);font-weight:700;font-size:22px;text-align:right;font-variant-numeric:tabular-nums;line-height:1}
+.rval.na{font-size:12px;color:var(--ink-3);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.rdelta{font-size:13px;text-align:right;color:var(--ink-2);font-variant-numeric:tabular-nums;font-weight:500}
+.rdelta.base{color:var(--ink-3);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.rdelta.down{color:var(--ink-3)}
+.axis{display:grid;grid-template-columns:var(--lab) 1fr var(--val) var(--del);gap:0 12px;margin-top:2px}
+.axis .ticks2{position:relative;height:18px;border-top:1px solid var(--rule)}
+.axis .ticks2 span{position:absolute;top:4px;transform:translateX(-50%);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.axis .ticks2 span:first-child{transform:none}
+.axis .ticks2 span:last-child{transform:translateX(-100%)}
+.gridlines{position:absolute;inset:0;pointer-events:none}
+.gridlines i{position:absolute;top:0;bottom:0;width:1px;background:var(--paper);opacity:.9}
+@media (max-width:560px){.ychart{--lab:70px;--val:70px;--del:60px}.row{gap:0 8px}.axis{gap:0 8px}.rlabel strong{font-size:19px}.rval{font-size:19px}.rdelta{font-size:12px}.axis .ticks2 span:nth-child(even){display:none}}
+
+/* notes, data */
+.notes{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.note{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:15px 17px}
+.note h3{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+.note p{margin:0;font-size:14px;color:var(--ink-2)}
+.linkbtn{appearance:none;background:none;border:0;padding:0;font-size:13px;color:var(--s25);text-decoration:underline;cursor:pointer}
+.tablewrap{overflow-x:auto;margin-top:12px;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+table.data{border-collapse:collapse;width:100%;min-width:640px;font-size:13px}
+.data th,.data td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--rule-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+.data th{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);position:sticky;top:0;background:var(--paper)}
+.data th:first-child,.data td:first-child{text-align:left;position:sticky;left:0;background:var(--paper)}
+.data td:first-child{font-weight:600}
+.data tr:last-child td{border-bottom:0}
+.data tr.hl td{color:var(--red-ink);font-weight:600}
+.data td.na{color:var(--ink-3)}
+.data td.est{font-style:italic;color:var(--ink-2)}
+.data td.est::after{content:"*";color:var(--ink-3)}
+.tabs{display:flex;gap:4px;margin-top:14px}
+.sources{margin-top:28px;font-size:12.5px;color:var(--ink-3)}
+.sources ul{padding-left:18px;margin:6px 0 0}
+.sources li{margin:3px 0}
+.sources a{color:var(--ink-2)}
+details.fold summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase;padding:6px 0;list-style:none;display:flex;align-items:center;gap:8px}
+details.fold summary::before{content:"+";display:inline-flex;width:20px;height:20px;border:1.5px solid var(--ink-3);border-radius:50%;align-items:center;justify-content:center;font-size:14px;color:var(--ink-3)}
+details.fold[open] summary::before{content:"−"}
+@media (max-width:820px){.mapcard .daytag{top:12px;bottom:auto;right:auto;left:14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+
+<style>
+html,body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.sitebar{font-family:"Public Sans",system-ui,sans-serif;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1060px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.sitebar a{color:inherit;text-decoration:none;opacity:.7}
+.sitebar a:hover{opacity:1;text-decoration:underline}
+.sitefoot{font-family:"Public Sans",system-ui,sans-serif;font-size:12.5px;opacity:.7;max-width:1060px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.sitefoot a{color:inherit}
+</style>
+<script data-goatcounter="https://codywymore.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<nav class="sitebar"><a href="https://codywymore.com/">&larr; codywymore.com</a><span>Cody Wymore &middot; November 2026</span></nav>
+<div class="wrap">
+  <div class="eyebrow"><span>New York City · Early voting · Oct 24 to Nov 1, 2026</span></div>
+  <h1>First Day at the Polls</h1>
+  <p class="lede">For nine days before Election Day, New Yorkers could vote early at sites across the five boroughs. Every night the Board of Elections posted how many people had checked in. <b>690,526</b> did by the time the doors closed on Sunday. Press play to watch the city fill in, one night at a time.</p>
+
+  <section class="stage" aria-label="Map and day controls">
+    <div class="mapcard" id="mapcard">
+      <div class="daytag" id="daytag"></div>
+      <div id="map"></div>
+      <div class="legend-dot"><i></i>Each dot is about 1,000 early voters</div>
+    </div>
+    <div class="daycard">
+      <div class="when" id="when"></div>
+      <div class="bigcount" id="bigcount"></div>
+      <div class="todayline" id="todayline"></div>
+      <div class="bl" id="blist"></div>
+    </div>
+    <div class="playercard">
+      <div class="player">
+        <div class="prow">
+          <button class="play" id="play" aria-label="Replay the nine days"><svg viewBox="0 0 24 24" id="playicon"><path d="M8 5v14l11-7z"/></svg></button>
+          <input class="scrub" id="scrub" type="range" min="0" max="9" step="1" value="9" aria-label="Early voting day">
+        </div>
+        <div class="ticks" id="ticks"></div>
+        <div class="prow" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+          <span class="ctl-label">Speed</span>
+          <span class="speed" id="speed"><button data-ms="2200" aria-pressed="false">Slow</button><button data-ms="1400" aria-pressed="true">Normal</button><button data-ms="700" aria-pressed="false">Fast</button></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="explain" id="explain"></div>
+
+  <section class="section">
+    <div class="shead">
+      <div><h2>The race against past years</h2><div class="sub">How many New Yorkers had voted by each night, this year versus the last five elections. The 2026 line draws as you play the map.</div></div>
+    </div>
+    <div class="controls">
+      <span class="ctl"><span class="ctl-label">Show</span>
+      <span class="seg" id="modeSeg" role="group" aria-label="Chart mode"><button data-mode="cum" aria-pressed="true">Running total</button><button data-mode="day" aria-pressed="false">Each day</button></span></span>
+    </div>
+    <div class="card">
+      <div class="legend" id="lcLegend"></div>
+      <div id="lc"></div>
+      <div class="tooltip" id="lcTip" role="status" aria-live="polite"></div>
+    </div>
+    <p class="hint" id="lcHint"></p>
+  </section>
+
+  <section class="section">
+    <div class="shead">
+      <div><h2>Borough by borough</h2><div class="sub">Where the early vote came from, and how each borough compared with the last two elections. Tap a card to highlight it on the map.</div></div>
+    </div>
+    <div class="bcards" id="bcards"></div>
+  </section>
+
+  <section class="section">
+    <div class="shead">
+      <div><h2>Same day, different years</h2><div class="sub">Running total at the same point in each election. Pick a day; pick a year to compare against.</div></div>
+    </div>
+    <div class="controls">
+      <span class="ctl"><span class="ctl-label">Day</span><span class="seg" id="daySeg" role="group" aria-label="Day"></span></span>
+      <span class="ctl"><span class="ctl-label">Compare to</span><span class="seg" id="baseSeg" role="group" aria-label="Baseline year"></span></span>
+    </div>
+    <div class="ychart" id="ychart"></div>
+    <p class="hint">Hatched bars are worked out from the BOE's neighboring posts rather than posted directly.</p>
+  </section>
+
+  <section class="section">
+    <div class="shead"><div><h2>What it means</h2></div></div>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <section class="section">
+    <details class="fold" id="datafold">
+      <summary>The numbers and where they came from</summary>
+      <div class="tabs seg" id="tblSeg" role="group" aria-label="Table"><button data-t="cum" aria-pressed="true">Running total by day</button><button data-t="day" aria-pressed="false">Each day</button><button data-t="boro" aria-pressed="false">Boroughs, final</button></div>
+      <div class="tablewrap" id="tablewrap"></div>
+      <div class="sources">All figures are the Board of Elections' unofficial check-in counts at close of polls, posted nightly on @BOENYC and relayed by NY1, NBC New York, Patch, Spectrum, amNY and CBS. Cells marked * are derived by subtraction from neighboring posts; blank cells were not found in published sources. Registered-voter counts are the BOE's active enrollment as of June 2026. Poll hours differed by day (weekends 9–5, Tue/Wed 10–8, Thu 8–4), and 2025's Day 6 fell during a torrential downpour. The map is a simplified sketch of the five boroughs, not a survey.
+        <ul>
+          <li><a href="https://www.vote.nyc/page/early-voting-check-ins" target="_blank" rel="noopener">BOE · Early Voting Check-Ins (2026)</a> · <a href="https://x.com/BOENYC" target="_blank" rel="noopener">@BOENYC nightly posts</a></li>
+          <li><a href="https://patch.com/new-york/new-york-city/nyc-early-voting-2025-heres-breakdown-whos-voting-so-far" target="_blank" rel="noopener">Patch · 2025 Days 1–4</a> · <a href="https://ny1.com/nyc/all-boroughs/news/2025/10/30/more-than-370-000-new-yorkers-cast-ballots-after-five-days-of-early-voting" target="_blank" rel="noopener">NY1 · Day 5</a> · <a href="https://ny1.com/nyc/all-boroughs/news/2025/10/30/nearly-400-000-new-yorkers-cast-ballots-after-six-days-days-of-early-voting" target="_blank" rel="noopener">Day 6</a> · <a href="https://ny1.com/nyc/all-boroughs/news/2025/10/31/more-than-480-000-new-yorkers-cast-ballots-in-seven-days-of-early-voting" target="_blank" rel="noopener">Day 7</a> · <a href="https://ny1.com/nyc/all-boroughs/news/2025/11/01/nearly-585-000-new-yorkers-cast-ballots-so-far" target="_blank" rel="noopener">Day 8</a> · <a href="https://www.cbsnews.com/newyork/news/nyc-early-voting-2025-turnout/" target="_blank" rel="noopener">CBS · final</a></li>
+          <li><a href="https://x.com/BOENYC/status/1850297334414049541" target="_blank" rel="noopener">BOE · 2024 Day 1</a> · <a href="https://spectrumlocalnews.com/nys/central-ny/politics/2024/10/28/more-than-700-000-cast-ballots-in-first-weekend-of-new-york-early-voting" target="_blank" rel="noopener">Spectrum · weekend</a> · <a href="https://ny1.com/nyc/all-boroughs/news/2024/10/29/more-than-300-000-new-yorkers-have-so-far-voted-early--boe-says" target="_blank" rel="noopener">NY1 · Day 3</a> · <a href="https://ny1.com/nyc/all-boroughs/politics/2024/10/30/boe--nearly-half-a-million-new-yorkers-have-voted-early-in-first-four-days" target="_blank" rel="noopener">Day 4</a> · <a href="https://ny1.com/nyc/all-boroughs/politics/2024/10/31/boe--over-half-a-million-new-yorkers-have-voted-early-in-first-five-days" target="_blank" rel="noopener">Day 5</a> · <a href="https://ny1.com/nyc/all-boroughs/politics/2024/11/02/boe--over-800-000-new-yorkers-vote-early-in-first-week" target="_blank" rel="noopener">Day 7</a> · <a href="https://ny1.com/nyc/all-boroughs/politics/2024/11/03/more-than-1-million-votes-cast-in-new-york-city--officials-say" target="_blank" rel="noopener">final</a></li>
+          <li><a href="https://webcf.waybackmachine.org/web/20230124174756/https://twitter.com/BOENYC" target="_blank" rel="noopener">BOE feed archive · 2022 Days 1–9</a> · <a href="https://www.amny.com/politics/early-voting-turnout-nyc-mayor-first-day-2025" target="_blank" rel="noopener">amNY · 2021 Days 1–2</a> · <a href="https://www.cbsnews.com/newyork/news/nyc-early-voting-2025-turnout/" target="_blank" rel="noopener">CBS · 2021 final</a></li>
+          <li><a href="https://elnuevodiario.com.do/5359346-votantes-registrados-en-nyc-para-elecciones-2026/" target="_blank" rel="noopener">BOE enrollment by borough, June 2026 (via El Nuevo Diario)</a></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+</div>
+
+<script>
+(function(){
+  // ===================== DATA =====================
+  const B = ['Manhattan','Bronx','Brooklyn','Queens','Staten Island'];
+  const SHORT = {Manhattan:'Manhattan',Bronx:'Bronx',Brooklyn:'Brooklyn',Queens:'Queens','Staten Island':'Staten Is.'};
+  const REG = {Manhattan:1054808,Bronx:738409,Brooklyn:1565595,Queens:1283255,'Staten Island':318166}; // active, BOE June 2026
+  const REGTOT = 4960273;
+  const DOW = ['Sat','Sun','Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const DOWF = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+  const DATES26 = ['Sat, Oct 24','Sun, Oct 25','Mon, Oct 26','Tue, Oct 27','Wed, Oct 28','Thu, Oct 29','Fri, Oct 30','Sat, Oct 31','Sun, Nov 1'];
+  const HOURS = ['9am–5pm','9am–5pm','9am–5pm','10am–8pm','10am–8pm','8am–4pm','9am–5pm','9am–5pm','9am–5pm'];
+  const b5 = (m,x,k,q,s)=>({Manhattan:m,Bronx:x,Brooklyn:k,Queens:q,'Staten Island':s});
+  const E = {
+    '2021':{race:'Mayoral',days:[{t:15418,b:{Manhattan:4563}},{t:31176},null,null,null,null,null,null,{t:169879}]},
+    '2022':{race:'Governor',days:[
+      {t:49709,b:b5(16314,5282,12688,10599,4826)},{t:97155,b:b5(32020,9149,26878,20079,9029)},
+      {t:127756,b:{Brooklyn:35611,Queens:26345,'Staten Island':11791}},{t:171777,b:b5(55799,16089,49045,35246,15598)},
+      {t:212746,b:b5(68494,19822,61629,43777,19024)},{t:246833,b:{Brooklyn:72218,Queens:50703,'Staten Island':21706}},
+      {t:283753,b:b5(90902,26056,84639,57803,24353)},{t:346429,b:b5(110922,31631,104037,70531,29308)},
+      {t:432634,b:b5(133618,39069,135239,88840,35868),bEst:['Manhattan']}]},
+    '2024':{race:'Presidential',days:[
+      {t:140145,b:b5(38237,16462,40289,31671,13486)},{t:257860},{t:385265,b:b5(106870,40217,115286,87174,35718)},
+      {t:495478,b:b5(136206,50830,150805,112350,45287)},{t:602392,b:b5(164107,61851,184649,137617,54168)},null,
+      {t:826159,b:b5(222810,83536,259716,189523,70574)},{t:940009,est:true},{t:1089328,b:b5(282533,113955,345840,255102,91898)}]},
+    '2025':{race:'Mayoral',days:[
+      {t:79409,b:b5(24046,7793,22105,19045,6420)},{t:164190,b:b5(49191,14225,49432,38791,12551)},
+      {t:223268,b:b5(67110,19096,67729,52272,17061)},{t:297718,b:b5(89474,24919,92035,68873,22417)},
+      {t:372111,b:b5(111068,30633,117297,85548,27565)},{t:398477,b:b5(118920,32655,126055,91371,29476)},
+      {t:480338,b:b5(144269,37830,156390,107743,34106)},{t:584105,b:b5(174708,46259,189606,131541,41991)},
+      {t:735317,b:b5(212679,58661,243737,166519,53721)}]},
+    '2026':{race:'Governor',current:true,days:[
+      {t:86215,b:b5(24704,9994,23296,20839,7382)},{t:165143,b:b5(46314,17595,47177,40281,13776)},
+      {t:224894,b:b5(63195,23685,64556,54595,18863)},{t:294604,b:b5(82438,30848,85849,71106,24363)},
+      {t:357027,b:b5(99121,37212,105516,85995,29183)},{t:400137,b:b5(110908,41629,119215,95982,32403)},
+      {t:468103,b:b5(130047,47875,142117,111059,37005)},{t:572786,b:b5(160045,57167,177271,135095,43208)},
+      {t:690526,b:b5(188434,67630,219536,162914,52012)}]}
+  };
+  const YEARS=['2021','2022','2024','2025','2026'];
+  const cur=E['2026'];
+  let asOf=9;
+  const cumRaw=(y,d)=>E[y].days[d-1]||null;
+  const cum=(y,d)=>(y==='2026'&&d>asOf)?null:cumRaw(y,d);
+  const daily=(y,d)=>{const a=cumRaw(y,d),p=d===1?{t:0}:cumRaw(y,d-1); if(!a||!p) return null; return {t:a.t-p.t,est:!!(a.est||p.est)};};
+  const dailyB=(y,d,b)=>{const a=cumRaw(y,d),p=d===1?{b:{}}:cumRaw(y,d-1); if(!a||!a.b||a.b[b]==null) return null; const pv=d===1?0:(p&&p.b?p.b[b]:null); if(pv==null) return null; return a.b[b]-pv;};
+  const fmt=n=>n.toLocaleString('en-US');
+  const pct=(a,b)=>{const d=(a-b)/b*100;const s=Math.abs(d)>=10?d.toFixed(0):d.toFixed(1);return (d>=0?'+':'−')+Math.abs(+s)+'%';};
+  const mult=(a,b)=>(a/b).toFixed(1)+'×';
+  const cmp=(a,b)=>a/b>=2?mult(a,b):pct(a,b);
+  const col=y=>`var(--s${y.slice(2)})`;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ===================== MAP GEOMETRY (simplified lon/lat sketches) =====================
+  const GEO={
+    Manhattan:[[-74.017,40.700],[-74.013,40.712],[-74.011,40.735],[-74.002,40.760],[-73.990,40.780],[-73.975,40.800],[-73.960,40.830],[-73.948,40.853],[-73.930,40.872],[-73.910,40.875],[-73.912,40.862],[-73.920,40.850],[-73.934,40.836],[-73.934,40.820],[-73.930,40.806],[-73.936,40.793],[-73.942,40.780],[-73.955,40.763],[-73.962,40.745],[-73.972,40.728],[-73.975,40.712],[-73.995,40.705],[-74.010,40.700]],
+    Bronx:[[-73.933,40.878],[-73.918,40.912],[-73.900,40.917],[-73.860,40.905],[-73.830,40.893],[-73.790,40.885],[-73.775,40.868],[-73.785,40.850],[-73.800,40.830],[-73.820,40.815],[-73.850,40.805],[-73.880,40.800],[-73.905,40.805],[-73.925,40.812],[-73.933,40.825],[-73.932,40.845],[-73.920,40.860],[-73.912,40.870]],
+    Queens:[[-73.962,40.740],[-73.950,40.755],[-73.930,40.775],[-73.910,40.790],[-73.890,40.795],[-73.860,40.790],[-73.835,40.790],[-73.815,40.780],[-73.790,40.790],[-73.760,40.797],[-73.735,40.785],[-73.705,40.760],[-73.700,40.735],[-73.715,40.700],[-73.730,40.660],[-73.740,40.620],[-73.760,40.598],[-73.800,40.585],[-73.840,40.570],[-73.890,40.555],[-73.935,40.550],[-73.920,40.560],[-73.880,40.575],[-73.840,40.590],[-73.820,40.610],[-73.830,40.640],[-73.850,40.660],[-73.858,40.690],[-73.870,40.700],[-73.895,40.700],[-73.910,40.710],[-73.925,40.720],[-73.940,40.725],[-73.955,40.735]],
+    Brooklyn:[[-73.962,40.738],[-73.958,40.725],[-73.965,40.710],[-73.980,40.700],[-73.998,40.700],[-74.015,40.688],[-74.020,40.675],[-74.010,40.665],[-74.030,40.655],[-74.040,40.640],[-74.030,40.615],[-74.005,40.600],[-73.985,40.575],[-73.945,40.572],[-73.925,40.580],[-73.905,40.590],[-73.890,40.610],[-73.870,40.630],[-73.860,40.650],[-73.858,40.690],[-73.870,40.700],[-73.895,40.700],[-73.910,40.710],[-73.925,40.720],[-73.940,40.725],[-73.955,40.735]],
+    'Staten Island':[[-74.055,40.645],[-74.075,40.648],[-74.100,40.640],[-74.130,40.640],[-74.165,40.635],[-74.200,40.630],[-74.235,40.615],[-74.255,40.600],[-74.250,40.570],[-74.245,40.540],[-74.230,40.505],[-74.200,40.510],[-74.160,40.530],[-74.120,40.560],[-74.090,40.585],[-74.065,40.605],[-74.060,40.625]]
+  };
+  // neighbouring land, for context only
+  const OTHER={
+    NJ:[[-74.30,40.95],[-74.02,40.95],[-74.02,40.90],[-74.00,40.85],[-73.99,40.80],[-74.02,40.76],[-74.03,40.72],[-74.05,40.69],[-74.07,40.66],[-74.09,40.64],[-74.14,40.645],[-74.20,40.66],[-74.26,40.66],[-74.30,40.64]],
+    Nassau:[[-73.72,40.95],[-73.68,40.95],[-73.60,40.90],[-73.55,40.80],[-73.55,40.62],[-73.60,40.59],[-73.68,40.58],[-73.73,40.58],[-73.74,40.62],[-73.73,40.66],[-73.715,40.70],[-73.70,40.735],[-73.705,40.76],[-73.735,40.785],[-73.76,40.797],[-73.73,40.86],[-73.70,40.90]],
+    Westchester:[[-73.96,40.95],[-73.90,40.95],[-73.86,40.92],[-73.82,40.90],[-73.78,40.89],[-73.73,40.89],[-73.72,40.95]],
+    Hudson:[]
+  };
+  const VB=700, PAD=18, LON0=-74.27, LAT1=40.925, LONW=0.57, LATH=0.44, CL=Math.cos(40.7*Math.PI/180);
+  const sc=Math.min((VB-2*PAD)/(LONW*CL),(VB-2*PAD)/LATH);
+  const P=([lon,lat])=>[PAD+(lon-LON0)*CL*sc, PAD+(LAT1-lat)*sc];
+  const poly={}; B.forEach(b=>poly[b]=GEO[b].map(P));
+  const pathOf=pts=>'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join('L')+'Z';
+  const inside=(pt,vs)=>{let c=false;for(let i=0,j=vs.length-1;i<vs.length;j=i++){const [xi,yi]=vs[i],[xj,yj]=vs[j];if(((yi>pt[1])!==(yj>pt[1]))&&(pt[0]<(xj-xi)*(pt[1]-yi)/(yj-yi)+xi))c=!c;}return c;};
+  const area=vs=>{let a=0;for(let i=0,j=vs.length-1;i<vs.length;j=i++)a+=(vs[j][0]+vs[i][0])*(vs[j][1]-vs[i][1]);return Math.abs(a/2);};
+  const centroid=vs=>{let x=0,y=0,a=0;for(let i=0,j=vs.length-1;i<vs.length;j=i++){const f=vs[j][0]*vs[i][1]-vs[i][0]*vs[j][1];a+=f;x+=(vs[j][0]+vs[i][0])*f;y+=(vs[j][1]+vs[i][1])*f;}a*=.5;return [x/(6*a),y/(6*a)];};
+  // Label anchors (hand-placed so they sit on land)
+  const LAB={Manhattan:[-73.975,40.787],Bronx:[-73.863,40.858],Brooklyn:[-73.945,40.645],Queens:[-73.805,40.715],'Staten Island':[-74.155,40.580]};
+  const CEN={}; B.forEach(b=>CEN[b]=P(LAB[b]));
+
+  // dot slots: hex grid sized per borough, filled outward from the centroid
+  const need={}; B.forEach(b=>need[b]=Math.round(cumRaw('2026',9).b[b]/1000));
+  const slots={}, dotR={};
+  B.forEach(b=>{
+    const vs=poly[b], A=area(vs); let s=Math.sqrt(2*A/(Math.sqrt(3)*need[b]*1.18)); let pts=[];
+    const [cx,cy]=CEN[b];
+    for(let tries=0;tries<12;tries++){
+      pts=[]; const xs=vs.map(p=>p[0]),ys=vs.map(p=>p[1]); const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+      const h=s*Math.sqrt(3)/2; let row=0;
+      for(let y=y0+h/2;y<y1;y+=h,row++){ for(let x=x0+(row%2?s/2:0)+s/2;x<x1;x+=s){ const p=[x,y]; if(inside(p,vs)) pts.push(p); } }
+      if(pts.length>=need[b]) break; s*=0.92;
+    }
+    // sort by distance from the label anchor with a little angular swirl so rings aren't perfectly round
+    pts.forEach(p=>{const dx=p[0]-cx,dy=p[1]-cy;p.d=Math.hypot(dx,dy)+Math.sin(Math.atan2(dy,dx)*3)*s*.6;});
+    pts.sort((a,b)=>a.d-b.d);
+    slots[b]=pts.slice(0,need[b]); dotR[b]=s;
+  });
+  const R=Math.max(1.9,Math.min(3.2,Math.min(...B.map(b=>dotR[b]))*.4)); B.forEach(b=>dotR[b]=R);
+  // assign dots to days
+  const dotsByDay={}; B.forEach(b=>{let prev=0;for(let d=1;d<=9;d++){const n=Math.round(cumRaw('2026',d).b[b]/1000);dotsByDay[b+d]=slots[b].slice(prev,n);prev=n;}});
+
+  // ---- build map SVG
+  const mapEl=document.getElementById('map');
+  let svg=`<svg viewBox="0 0 ${VB} ${VB}" role="img" aria-label="Map of the five boroughs filling with dots, one per 1,000 early voters">`;
+  svg+=`<defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter></defs>`;
+  Object.keys(OTHER).forEach(k=>{ if(OTHER[k].length) svg+=`<path class="otherland" d="${pathOf(OTHER[k].map(P))}"/>`; });
+  const w1=P([-74.19,40.50]), w2=P([-73.80,40.515]), w3=P([-74.12,40.86]);
+  svg+=`<text class="wlabel" x="${w1[0]}" y="${w1[1]}">Lower New York Bay</text><text class="wlabel" x="${w2[0]}" y="${w2[1]}">Atlantic Ocean</text><text class="wlabel" x="${w3[0]-28}" y="${w3[1]}" transform="rotate(-72 ${w3[0]-28} ${w3[1]})">Hudson River</text>`;
+  B.forEach(b=>{ svg+=`<path class="boro" id="boro-${b.replace(' ','')}" d="${pathOf(poly[b])}"/>`; });
+  svg+=`<g id="pulses"></g><g id="dots">`;
+  B.forEach(b=>{ for(let d=1;d<=9;d++){ dotsByDay[b+d].forEach((p,i)=>{ svg+=`<circle class="dot" data-b="${b}" data-d="${d}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${dotR[b]}"/>`; }); } });
+  svg+=`</g>`;
+  B.forEach(b=>{ const [x,y]=CEN[b]; const off=b==='Manhattan'?[-76,0]:b==='Bronx'?[0,-32]:b==='Staten Island'?[-40,26]:b==='Queens'?[18,-30]:[0,34]; svg+=`<g class="lab" data-b="${b}"><text class="blabel" x="${x+off[0]}" y="${y+off[1]}" text-anchor="middle">${b}</text><text class="bnum" id="bnum-${b.replace(' ','')}" x="${x+off[0]}" y="${y+off[1]+18}" text-anchor="middle"></text></g>`; });
+  B.forEach(b=>{ svg+=`<path class="bhit" data-b="${b}" d="${pathOf(poly[b])}" tabindex="0" role="button" aria-label="${b}"><title>${b}</title></path>`; });
+  svg+='</svg>';
+  mapEl.innerHTML=svg;
+  const mapSvg=mapEl.firstElementChild, pulsesG=mapSvg.querySelector('#pulses');
+  const dotEls=[...mapSvg.querySelectorAll('.dot')];
+
+  // ===================== PLAYER =====================
+  let playing=false, timer=null, stepMs=1400;
+  const scrub=document.getElementById('scrub'), playBtn=document.getElementById('play'), playIcon=document.getElementById('playicon');
+  const ICON_PLAY='<path d="M8 5v14l11-7z"/>', ICON_PAUSE='<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>', ICON_REPLAY='<path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/>';
+  function setDay(d,{animate=true,pulse=true}={}){
+    const prev=asOf; asOf=d;
+    scrub.value=d; scrub.style.setProperty('--p',(d/9*100)+'%');
+    // dots
+    dotEls.forEach(el=>{ const dd=+el.dataset.d; const on=dd<=d; if(on!==el.classList.contains('on')){ if(on&&animate&&dd===d){ el.style.transitionDelay=(Math.random()*Math.min(900,stepMs*.6))+'ms'; } else el.style.transitionDelay='0ms'; el.classList.toggle('on',on); } });
+    B.forEach(b=>mapSvg.querySelector('#boro-'+b.replace(' ','')).classList.toggle('lit',d>0));
+    if(pulse&&animate&&d>prev&&d>0&&!reduce){ B.forEach(b=>{ const n=dailyB('2026',d,b)||0; const r=Math.sqrt(n)*0.42; const [x,y]=CEN[b]; const c=document.createElementNS('http://www.w3.org/2000/svg','circle'); c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',6);c.setAttribute('class','pulse'); pulsesG.appendChild(c); requestAnimationFrame(()=>{c.classList.add('go'); c.style.transition='r 1.5s ease-out'; c.setAttribute('r',r);}); setTimeout(()=>c.remove(),1600); }); }
+    renderDayCard(); renderMapNums(); renderExplain(); renderLc(); renderNotes(); renderBCards();
+    if(typeof renderDaySeg==='function'){ day=Math.max(1,d); renderDaySeg(); renderBaseSeg(); renderYears(false); }
+  }
+  function renderMapNums(){ B.forEach(b=>{ const el=mapSvg.querySelector('#bnum-'+b.replace(' ','')); el.textContent=asOf>0?fmt(cumRaw('2026',asOf).b[b]):''; }); document.getElementById('daytag').innerHTML= asOf===0?'Before polls open<span>Sat, Oct 24</span>':`Day ${asOf}<span>${DATES26[asOf-1]}</span>`; }
+  function renderDayCard(){
+    const c=asOf>0?cumRaw('2026',asOf):{t:0,b:b5(0,0,0,0,0)}, dd=asOf>0?daily('2026',asOf).t:0;
+    document.getElementById('when').innerHTML= asOf===0?`<b>Saturday, Oct 24</b> · polls open at 9am`:`<b>Day ${asOf} of 9</b> · ${DATES26[asOf-1]} · polls ${HOURS[asOf-1]}`;
+    document.getElementById('bigcount').innerHTML=`${fmt(c.t)}<small>${asOf===0?'No one has voted yet':asOf===9?'New Yorkers voted early in total':'New Yorkers had voted early so far'}</small>`;
+    document.getElementById('todayline').innerHTML= asOf===0?`Nine days of early voting ahead. Press play.`:`<b>${fmt(dd)}</b> checked in ${asOf===1?'on opening day':'on '+DOWF[asOf-1]}${asOf===6?', the short 8-to-4 day':asOf===9?', Marathon Sunday':asOf===8?', Halloween':''}.`;
+    const mx=Math.max(...B.map(b=>cumRaw('2026',9).b[b]));
+    document.getElementById('blist').innerHTML=B.map(b=>`<span class="n">${SHORT[b]}</span><span class="bar"><i style="width:${c.b[b]/mx*100}%"></i></span><span class="v">${fmt(c.b[b])}</span>`).join('');
+  }
+  function step(){ if(asOf>=9){ stop(); return; } setDay(asOf+1); if(asOf>=9) stop(); }
+  function start(){ if(asOf>=9) setDay(0,{animate:false}); playing=true; playIcon.innerHTML=ICON_PAUSE; playBtn.setAttribute('aria-label','Pause'); timer=setInterval(step,stepMs); setTimeout(()=>{ if(playing&&asOf===0) step(); },120); }
+  function stop(){ playing=false; clearInterval(timer); playIcon.innerHTML=asOf>=9?ICON_REPLAY:ICON_PLAY; playBtn.setAttribute('aria-label',asOf>=9?'Replay the nine days':'Play'); }
+  playBtn.addEventListener('click',()=>playing?stop():start());
+  scrub.addEventListener('input',()=>{ if(playing) stop(); setDay(+scrub.value,{animate:false}); });
+  document.getElementById('speed').addEventListener('click',ev=>{const b=ev.target.closest('button'); if(!b) return; stepMs=+b.dataset.ms; document.querySelectorAll('#speed button').forEach(x=>x.setAttribute('aria-pressed',x===b)); if(playing){clearInterval(timer);timer=setInterval(step,stepMs);} });
+  const ticks=document.getElementById('ticks');
+  ticks.innerHTML=`<span data-d="0" tabindex="0"><b>·</b>start</span>`+DOW.map((d,i)=>`<span data-d="${i+1}" tabindex="0"><b>${i+1}</b>${d}</span>`).join('');
+  ticks.addEventListener('click',ev=>{const s=ev.target.closest('span[data-d]'); if(!s) return; if(playing) stop(); setDay(+s.dataset.d,{animate:false});});
+  ticks.addEventListener('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ const s=ev.target.closest('span[data-d]'); if(s){ev.preventDefault(); if(playing) stop(); setDay(+s.dataset.d,{animate:false});} } });
+  function markTicks(){ ticks.querySelectorAll('span').forEach(s=>s.classList.toggle('cur',+s.dataset.d===asOf)); }
+  // map hover -> highlight borough card
+  let selB=null;
+  mapSvg.addEventListener('pointerover',ev=>{const h=ev.target.closest('.bhit'); if(h) mapSvg.querySelector('#boro-'+h.dataset.b.replace(' ','')).classList.add('hover');});
+  mapSvg.addEventListener('pointerout',ev=>{const h=ev.target.closest('.bhit'); if(h) mapSvg.querySelector('#boro-'+h.dataset.b.replace(' ','')).classList.remove('hover');});
+  mapSvg.addEventListener('click',ev=>{const h=ev.target.closest('.bhit'); if(!h) return; selectB(h.dataset.b); document.getElementById('bcards').scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});});
+  function selectB(b){ selB=(selB===b)?null:b; document.querySelectorAll('.bc').forEach(c=>c.classList.toggle('sel',c.dataset.b===selB)); B.forEach(x=>mapSvg.querySelector('#boro-'+x.replace(' ','')).classList.toggle('hover',x===selB)); }
+
+  // ===================== EXPLAIN TILES =====================
+  function renderExplain(){
+    const c=asOf>0?cumRaw('2026',asOf).t:0; const p25=cumRaw('2025',Math.max(1,asOf)).t, p22=cumRaw('2022',Math.max(1,asOf)).t;
+    const oneIn=c>0?Math.round(REGTOT/c):0;
+    document.getElementById('explain').innerHTML=[
+      `<div class="ex"><h3>How many is that?</h3><div class="hero-n">${c>0?`1 in <em>${oneIn}</em>`:'—'}</div><p>${c>0?`About one in every ${oneIn} of the city's 4.96 million registered voters had voted early${asOf<9?' so far':''}. The rest could still vote on Election Day, Tuesday, November 3.`:'Press play to see the share of registered voters who turned out early.'}</p></div>`,
+      `<div class="ex"><h3>Versus last year</h3><div class="hero-n"><em>${asOf>0?cmp(c,p25):'—'}</em></div><p>${asOf>0?`Compared with the same ${asOf===1?'day':asOf+' days'} of the 2025 mayor's race (${fmt(p25)}), which set the record for a non-presidential year. ${asOf===9?'2026 finished just behind it.':'A close race for second place.'}`:'The 2025 mayoral race is the record to beat for a non-presidential year.'}</p></div>`,
+      `<div class="ex"><h3>Versus the last governor's race</h3><div class="hero-n"><em>${asOf>0?cmp(c,p22):'—'}</em></div><p>${asOf>0?`The 2022 governor's race had ${fmt(p22)} at this point. ${asOf===9?'Early voting has become a habit: this year beat 2022 in every borough by at least 40%.':'Same office on the ballot, far more people voting early.'}`:'2022 was the last time New York elected a governor.'}</p></div>`
+    ].join('');
+    markTicks();
+  }
+
+  // ===================== RACE CHART =====================
+  const lcOn={2021:true,2022:true,2024:false,2025:true,2026:true}; let mode='cum';
+  const lcLegend=document.getElementById('lcLegend'), lcEl=document.getElementById('lc'), lcTip=document.getElementById('lcTip'), lcCard=lcEl.parentElement;
+  function renderLcLegend(){ lcLegend.innerHTML=YEARS.slice().reverse().map(y=>`<button data-y="${y}" aria-pressed="${lcOn[y]}" style="color:${col(y)}"><i class="${y==='2024'||y==='2021'?'dash':''}"></i><span style="color:var(--ink-2)">${y} ${E[y].race}</span></button>`).join('')+`<span class="note">2024 is hidden to start; it ends at 1.09 million</span>`; }
+  lcLegend.addEventListener('click',ev=>{const b=ev.target.closest('button[data-y]'); if(!b) return; const y=b.dataset.y; if(lcOn[y]&&Object.values(lcOn).filter(Boolean).length===1) return; lcOn[y]=!lcOn[y]; renderLcLegend(); renderLc();});
+  document.getElementById('modeSeg').addEventListener('click',ev=>{const b=ev.target.closest('button'); if(!b) return; mode=b.dataset.mode; document.querySelectorAll('#modeSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b)); renderLc(); hideLcTip();});
+  const val=(y,d)=>mode==='cum'?cum(y,d):(y==='2026'&&d>asOf?null:daily(y,d));
+  function renderLc(){
+    const c=asOf>0?cumRaw('2026',asOf).t:0;
+    document.getElementById('lcHint').textContent= mode==='cum'
+      ? (asOf>0?`Through Day ${asOf}, 2026 is ${cmp(c,cumRaw('2025',asOf).t)} against 2025 and ${cmp(c,cumRaw('2022',asOf).t)} against the last governor's race. The flat step in 2025's line on Day 6 is a rainstorm.`:'Press play on the map to draw the 2026 line.')
+      : `Daily counts swing with poll hours: Thursday is an 8-hour day every year, Tuesday and Wednesday run 10 hours. 2025's Day 6 (26K) was a downpour. The final Sunday is usually the biggest day of all.`;
+    const W=760,H=320,m={l:52,r:84,t:18,b:40}; const on=YEARS.filter(y=>lcOn[y]);
+    let max=0; on.forEach(y=>{for(let d=1;d<=9;d++){const v=(mode==='cum'?cumRaw(y,d):daily(y,d)); if(v&&v.t>max) max=v.t;}});
+    const step=max>600000?200000:max>300000?100000:max>120000?50000:max>60000?20000:10000; const top=Math.ceil(max/step)*step;
+    const X=d=>m.l+(d-1)/8*(W-m.l-m.r), Y=v=>H-m.b-(v/top)*(H-m.b-m.t);
+    let s=`<svg class="lc" viewBox="0 0 ${W} ${H}" role="img" aria-label="${mode==='cum'?'Running total':'Daily'} early voting check-ins by day">`;
+    s+='<g class="grid">'; for(let v=step;v<=top;v+=step) s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}"/>`; s+='</g><g class="axis">';
+    for(let v=0;v<=top;v+=step) s+=`<text x="${m.l-8}" y="${Y(v)+4}" text-anchor="end">${v===0?'0':v>=1000000?(v/1000000).toFixed(1)+'M':(v/1000)+'K'}</text>`;
+    for(let d=1;d<=9;d++) s+=`<text x="${X(d)}" y="${H-m.b+16}" text-anchor="middle">Day ${d}</text><text class="dow" x="${X(d)}" y="${H-m.b+29}" text-anchor="middle">${DOW[d-1]}</text>`;
+    s+=`</g><line class="base" x1="${m.l}" x2="${W-m.r}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+    if(asOf>0&&asOf<9) s+=`<line class="cursor" x1="${X(asOf)}" x2="${X(asOf)}" y1="${m.t}" y2="${H-m.b}"/>`;
+    const ends=[];
+    on.forEach(y=>{
+      const pts=[]; for(let d=1;d<=9;d++){const v=val(y,d); if(v) pts.push({d,t:v.t,est:v.est});} if(!pts.length) return;
+      let solid='',gaps='';
+      for(let i=0;i<pts.length;i++){const p=pts[i];const c2=`${X(p.d)} ${Y(p.t)}`; if(i===0){solid+='M'+c2;continue;} const pr=pts[i-1]; if(p.d-pr.d>1){gaps+=`M${X(pr.d)} ${Y(pr.t)} L${c2}`; solid+=' M'+c2;} else solid+=' L'+c2;}
+      const dash=(y==='2024'||y==='2021')?'stroke-dasharray="6 5"':'';
+      s+=`<path class="gap" d="${gaps}" stroke="${col(y)}"/><path class="line ${y==='2026'?'cur':''}" d="${solid}" stroke="${col(y)}" ${dash}/>`;
+      pts.forEach(p=>{ if(y==='2026'||pts.length<=3||p.est) s+=`<circle class="pt" cx="${X(p.d)}" cy="${Y(p.t)}" r="${y==='2026'?5:3.5}" fill="${p.est?'var(--paper)':col(y)}" ${p.est?`stroke="${col(y)}"`:''}/>`; });
+      const last=pts[pts.length-1]; ends.push({y,x:X(last.d),yy:Y(last.t),t:last.t});
+    });
+    ends.sort((a,b)=>a.yy-b.yy); for(let i=1;i<ends.length;i++){ if(ends[i].yy-ends[i-1].yy<26) ends[i].yy=ends[i-1].yy+26; }
+    ends.forEach(e=>{ const lift=0; s+=`<text class="end" x="${e.x+9}" y="${e.yy+5+lift}" fill="${e.y==='2026'?'var(--red-ink)':'var(--ink)'}">${fmt(e.t)}</text><text class="endlab" x="${e.x+9}" y="${e.yy+17+lift}">${e.y}${e.y==='2026'&&asOf<9?' · so far':''}</text>`; });
+    s+=`<line class="xline" id="xline" x1="0" x2="0" y1="${m.t}" y2="${H-m.b}"/><rect class="hit" x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.b-m.t}"/></svg>`;
+    lcEl.innerHTML=s;
+    const sv=lcEl.firstElementChild, hit=sv.querySelector('.hit'), xline=sv.querySelector('#xline');
+    function move(ev){
+      const r=sv.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W; const d=Math.max(1,Math.min(9,Math.round((px-m.l)/(W-m.l-m.r)*8+1)));
+      xline.setAttribute('x1',X(d)); xline.setAttribute('x2',X(d)); xline.style.opacity=1;
+      const rows=on.map(y=>({y,v:(mode==='cum'?cumRaw(y,d):daily(y,d))})).filter(r=>r.v).sort((a,b)=>b.v.t-a.v.t); const ref=rows.find(r=>r.y==='2026');
+      lcTip.innerHTML=`<span class="t">Day ${d} · ${DOW[d-1]} · ${mode==='cum'?'running total':'that day only'}</span><table>${rows.map(r=>`<tr><td><i style="background:${col(r.y)}"></i>${r.y} ${E[r.y].race}</td><td>${fmt(r.v.t)}${r.v.est?'*':''}</td></tr>${ref&&r.y!=='2026'?`<tr><td class="sub" colspan="2">2026 ${ref.v.t>=r.v.t?cmp(ref.v.t,r.v.t):'at '+Math.round(ref.v.t/r.v.t*100)+'%'}</td></tr>`:''}`).join('')}</table>`;
+      lcTip.classList.add('show');
+      const cr=lcCard.getBoundingClientRect(); const sx=r.left-cr.left+X(d)/W*r.width; let left=sx+14; const tw=lcTip.offsetWidth; if(left+tw>cr.width-8) left=sx-tw-14; lcTip.style.left=Math.max(8,left)+'px'; lcTip.style.top=Math.max(0,(r.top-cr.top)+m.t/H*r.height)+'px';
+    }
+    hit.addEventListener('pointermove',move); hit.addEventListener('pointerdown',move); hit.addEventListener('pointerleave',hideLcTip);
+    sv._hide=()=>{xline.style.opacity=0;};
+  }
+  function hideLcTip(){ lcTip.classList.remove('show'); const sv=lcEl.firstElementChild; if(sv&&sv._hide) sv._hide(); }
+
+  // ===================== BOROUGH CARDS =====================
+  const SENT={
+    Manhattan:'Highest turnout rate of any borough, yet fewer voters than during last year\'s mayoral race, which was a Manhattan event.',
+    Bronx:'The one borough that grew on 2025. Lowest turnout rate in the city, but the fastest-rising.',
+    Brooklyn:'The most early voters, as always, and the biggest drop from the mayoral race in raw numbers.',
+    Queens:'Nearly doubled the 2022 governor\'s race and held level with 2025. The steadiest borough.',
+    'Staten Island':'Second-highest turnout rate. Ran ahead of 2025 most of the week before a quiet final Sunday.'
+  };
+  function miniPath(b){ const vs=poly[b]; const xs=vs.map(p=>p[0]),ys=vs.map(p=>p[1]); const x0=Math.min(...xs),y0=Math.min(...ys),w=Math.max(...xs)-x0,h=Math.max(...ys)-y0; return `<svg viewBox="${x0-4} ${y0-4} ${w+8} ${h+8}" preserveAspectRatio="xMidYMid meet"><path d="${pathOf(vs)}"/></svg>`; }
+  function renderBCards(){
+    const d=Math.max(1,asOf); const c=cumRaw('2026',d); const c25=cumRaw('2025',d), c22=cumRaw('2022',d);
+    document.getElementById('bcards').innerHTML=B.map(b=>{
+      const v=asOf>0?c.b[b]:0, v25=c25.b[b], v22=c22&&c22.b?c22.b[b]:null; const rate=v/REG[b]*100;
+      const maxv=Math.max(v,v25,v22||0);
+      const bar=(x,color)=>`<span class="bar"><i style="width:${x/maxv*100}%;background:${color}"></i></span>`;
+      return `<div class="bc" data-b="${b}" tabindex="0" role="button" aria-pressed="${selB===b}">
+        <div class="shape">${miniPath(b)}</div>
+        <h3>${b}</h3>
+        <div class="big">${fmt(v)}<small>early voters${asOf<9?' through day '+asOf:''}</small></div>
+        <div class="share"><b>${rate.toFixed(1)}%</b> of registered voters · <b>${asOf>0?Math.round(v/c.t*100):0}%</b> of the city's early vote</div>
+        <div class="cmp"><span>2026</span>${bar(v,'var(--s26)')}<span class="v">${fmt(v)}</span><span>2025</span>${bar(v25,'var(--s25)')}<span class="v">${asOf>0?cmp(v,v25):'—'}</span><span>2022</span>${v22!=null?bar(v22,'var(--s22)'):'<span class="bar"></span>'}<span class="v">${v22!=null&&asOf>0?cmp(v,v22):'—'}</span></div>
+        ${asOf===9?`<p>${SENT[b]}</p>`:''}
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('bcards').addEventListener('click',ev=>{const c=ev.target.closest('.bc'); if(c) selectB(c.dataset.b);});
+  document.getElementById('bcards').addEventListener('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){const c=ev.target.closest('.bc'); if(c){ev.preventDefault(); selectB(c.dataset.b);} } });
+
+  // ===================== SAME DAY, DIFFERENT YEARS =====================
+  let day=9, baseline='2025';
+  const daySeg=document.getElementById('daySeg'), baseSeg=document.getElementById('baseSeg'), ychart=document.getElementById('ychart');
+  function renderDaySeg(){ daySeg.innerHTML=DOW.map((d,i)=>`<button data-d="${i+1}" aria-pressed="${i+1===day}" title="${DATES26[i]}">${i+1}</button>`).join(''); }
+  daySeg.addEventListener('click',ev=>{const b=ev.target.closest('button'); if(!b) return; day=+b.dataset.d; renderDaySeg(); renderBaseSeg(); renderYears(true);});
+  function renderBaseSeg(){ baseSeg.innerHTML=YEARS.map(y=>`<button data-id="${y}" aria-pressed="${y===baseline}" ${cum(y,day)?'':'disabled'}>${y}</button>`).join(''); }
+  baseSeg.addEventListener('click',ev=>{const b=ev.target.closest('button'); if(!b||b.disabled) return; baseline=b.dataset.id; renderBaseSeg(); renderYears(false);});
+  function renderYears(animate){
+    if(!cum(baseline,day)){ baseline=cum('2025',day)?'2025':'2022'; renderBaseSeg(); }
+    const base=cum(baseline,day); const rows=YEARS.map(y=>({y,c:cum(y,day)})); const max=Math.max(...rows.filter(r=>r.c).map(r=>r.c.t));
+    const step=max>600000?200000:max>300000?100000:max>120000?50000:25000; const ticks2=[]; for(let t=0;t<=max;t+=step) ticks2.push(t);
+    ychart.innerHTML=rows.map(({y,c})=>{ const e=E[y];
+      if(!c) return `<div class="row nodata" aria-disabled="true"><span class="rlabel"><strong>${y}</strong><span>${e.race}</span></span><span class="track"></span><span class="rval na">${y==='2026'?'Not yet':'No post'}</span><span></span></div>`;
+      const w=c.t/max*100; let delta;
+      if(y===baseline) delta=`<span class="rdelta base">Baseline</span>`; else { const up=c.t>=base.t; delta=`<span class="rdelta ${up?'':'down'}">${up?cmp(c.t,base.t):pct(c.t,base.t)}</span>`; }
+      return `<button class="row" data-id="${y}" aria-pressed="${y===baseline}"><span class="rlabel"><strong>${y}</strong><span>${e.race}</span></span><span class="track"><span class="gridlines">${ticks2.slice(1).map(t=>`<i style="left:${t/max*100}%"></i>`).join('')}</span><span class="bar2 ${y==='2026'?'is-2026':''} ${c.est?'est':''}" data-w="${w}" style="width:${animate?0:w}%"></span></span><span class="rval">${fmt(c.t)}</span>${delta}</button>`;
+    }).join('')+`<div class="axis"><span></span><div class="ticks2">${ticks2.map(t=>`<span style="left:${t/max*100}%">${t===0?'0':t>=1000000?(t/1000000).toFixed(1)+'M':(t/1000)+'K'}</span>`).join('')}</div><span></span><span></span></div>`;
+    if(animate) requestAnimationFrame(()=>requestAnimationFrame(()=>{ychart.querySelectorAll('.bar2').forEach(b=>b.style.width=b.dataset.w+'%');}));
+  }
+  ychart.addEventListener('click',ev=>{const r=ev.target.closest('.row'); if(!r||r.classList.contains('nodata')) return; baseline=r.dataset.id; renderBaseSeg(); renderYears(false);});
+
+  // ===================== NOTES =====================
+  function renderNotes(){
+    const d=Math.max(1,asOf), c=cumRaw('2026',d).t, p25=cumRaw('2025',d).t;
+    const items = asOf===0 ? [['Press play','Nine nights of Board of Elections posts, replayed on the map above. Everything on this page follows the day you pick.']] : [
+      asOf===9?['Second-best ever, for a non-presidential year',`690,526 New Yorkers voted early: ${pct(690526,735317)} on last year's record mayoral race and ${cmp(690526,432634)} on the 2022 governor's race. Only presidential years have seen more.`]
+              :['Where it stands',`Through Day ${asOf}, 2026 is ${cmp(c,p25)} on the same point of last year's mayoral race (${fmt(c)} vs ${fmt(p25)}) and ${cmp(c,cumRaw('2022',d).t)} on the last governor's race.`],
+      ['Where the gap to 2025 opened', asOf>=9?`2026 matched 2025 through Monday and again on Halloween Saturday. The shortfall came from the two long 10-to-8 weekdays (−6% and −16%), Friday (−17%) and Marathon Sunday (${cmp(daily('2026',9).t,daily('2025',9).t)}, ${fmt(daily('2026',9).t)} vs ${fmt(daily('2025',9).t)}).`:`Watch the weekdays. In 2025 Tuesday and Wednesday ran 10am to 8pm and drew 74K each; the final Sunday drew 151K.`],
+      ['Why compare with 2025 and 2022?',`2025 is the fairest test of enthusiasm: the most recent election, with the same early-voting habits. 2022 is the fairest test of the office: the last time the governor was on the ballot. 2024 was a presidential year and sits in its own league.`],
+      ['The Bronx showed up',`The Bronx is the only borough that beat its 2025 count (${cmp(cumRaw('2026',d).b.Bronx,cumRaw('2025',d).b.Bronx)}), and it ran ahead all nine days. Manhattan and Brooklyn, which powered last year's mayoral surge, pulled back the most.`],
+      ['Turnout rates by borough',`Manhattan led at 17.9% of registered voters, then Staten Island (16.3%), Brooklyn (14.0%), Queens (12.7%) and the Bronx (9.2%). Citywide, 13.9%: about one registered voter in seven.`],
+      ['Early voting is new here',`New York only started early voting in 2019. The 2021 mayoral race drew 170K early voters in total; 2026 passed that on its third day. Part of the growth over 2022 is simply New Yorkers getting used to it.`]
+    ];
+    document.getElementById('notes').innerHTML=items.map(([h,p])=>`<div class="note"><h3>${h}</h3><p>${p}</p></div>`).join('');
+  }
+
+  // ===================== TABLES =====================
+  let tbl='cum'; const tw=document.getElementById('tablewrap');
+  document.getElementById('tblSeg').addEventListener('click',ev=>{const b=ev.target.closest('button'); if(!b) return; tbl=b.dataset.t; document.querySelectorAll('#tblSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b)); renderTable();});
+  const cell=v=>!v?`<td class="na">—</td>`:`<td class="${v.est?'est':''}">${fmt(v.t)}</td>`;
+  function renderTable(){
+    if(tbl==='boro'){ tw.innerHTML=`<table class="data"><thead><tr><th>Nine-day total</th>${B.map(b=>`<th>${b}</th>`).join('')}<th>Total</th></tr></thead><tbody>${YEARS.map(y=>{const c=cumRaw(y,9); return `<tr class="${y==='2026'?'hl':''}"><td>${y} ${E[y].race}</td>${B.map(b=>c&&c.b&&c.b[b]!=null?`<td class="${c.bEst&&c.bEst.includes(b)?'est':''}">${fmt(c.b[b])}</td>`:`<td class="na">—</td>`).join('')}${c?cell(c):`<td class="na">—</td>`}</tr>`;}).join('')}<tr><td>Registered (active)</td>${B.map(b=>`<td>${fmt(REG[b])}</td>`).join('')}<td>${fmt(REGTOT)}</td></tr></tbody></table>`; }
+    else { const f=tbl==='cum'?cumRaw:daily; tw.innerHTML=`<table class="data"><thead><tr><th>${tbl==='cum'?'Running total':'That day'}</th>${DOW.map((d,i)=>`<th>D${i+1} ${d}</th>`).join('')}</tr></thead><tbody>${YEARS.map(y=>`<tr class="${y==='2026'?'hl':''}"><td>${y} ${E[y].race}</td>${DOW.map((_,i)=>cell(f(y,i+1))).join('')}</tr>`).join('')}</tbody></table>`; }
+  }
+
+  // ===================== BOOT =====================
+  renderLcLegend(); renderDaySeg(); renderBaseSeg(); renderYears(!reduce); renderTable();
+  setDay(9,{animate:false,pulse:false});
+  stop();
+})();
+</script>
+
+<footer class="sitefoot">Built night by night from @BOENYC's close-of-polls posts, October 24 to November 1, 2026, with prior-year figures from the sources listed above. The borough outlines are a simplified sketch. Questions or corrections: <a href="https://codywymore.com/#contact">codywymore.com</a>.</footer>
+</body>
+</html>

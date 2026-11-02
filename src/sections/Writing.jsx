@@ -7,6 +7,17 @@ import allLinkedinPosts from '../data/allLinkedinPosts'
 
 const articles = [
   {
+    title: 'First Day at the Polls: nine nights of NYC early voting',
+    date: 'Nov 1, 2026',
+    summary: 'Every night for nine days the Board of Elections posted how many New Yorkers had voted early in the governor’s race. I logged each post as it came in. The result is an interactive map that replays all nine days, one borough at a time, and sets 690,526 voters against the last five elections.',
+    url: '/early-voting-2026/',
+    image: 'blog/early-voting-2026-hero-card.webp',
+    imageAlt: 'Map of Brooklyn, Queens and Manhattan filled with red dots, one per thousand early voters',
+    internal: false,
+    sameSite: true,
+    featured: true,
+  },
+  {
     title: 'Q3 2026: The Quarter We Looked for the Brakes',
     date: 'Oct 2, 2026',
     summary: 'I spent the summer building weird little games as fast as the models would let me. Then a 27-year-old researcher quit his job and his posts were viewed 153 million times. The labs said out loud that they should slow down, Washington called it a hoax, and three in four voters don’t want a data center near their house.',
@@ -14,7 +25,7 @@ const articles = [
     image: 'blog/q3-2026-hero-card.webp',
     imageAlt: 'Q3 2026: The Quarter We Looked for the Brakes',
     internal: true,
-    featured: true,
+    featured: false,
   },
   {
     title: 'Hot model collusion summer',
@@ -387,7 +398,7 @@ export default function Writing() {
                       stroke="currentColor"
                       strokeWidth={2}
                     >
-                      {article.internal ? (
+                      {article.internal || article.sameSite ? (
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       ) : (
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -400,6 +411,11 @@ export default function Writing() {
                 <Link key={article.title} to={article.url} className={cardClass}>
                   {cardContent}
                 </Link>
+              ) : article.sameSite ? (
+                // A static page served from public/ outside the SPA router (no react-router Link, same tab).
+                <a key={article.title} href={article.url} className={cardClass}>
+                  {cardContent}
+                </a>
               ) : (
                 <a key={article.title} href={article.url} target="_blank" rel="noopener noreferrer" className={cardClass}>
                   {cardContent}
