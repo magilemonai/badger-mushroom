@@ -11,6 +11,16 @@ export const featured = {
 
 export const projects = [
   {
+    title: 'Shatterhour',
+    subtitle: 'An exploding clock-tower city',
+    description:
+      'A city built on a giant clock face, caught mid-explosion. You ride the clock hand: sweep it to run time forward or back, and every full turn puts the city back together in the next of four dimensions. Runs in the browser on desktop and mobile. Built with Claude Code in three.js.',
+    url: 'https://codywymore.com/shatterhour/',
+    tags: ['Experience', 'three.js', 'Claude Code'],
+    image: 'shatterhour/card.jpg',
+    imageAlt: 'Shatterhour: clock towers and lit buildings lifting off a giant clock face while brass gears fly against a night sky',
+  },
+  {
     title: 'Noctiluca',
     subtitle: 'A 12-second bioluminescence game',
     description:
