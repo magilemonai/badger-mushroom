@@ -11,6 +11,16 @@ export const featured = {
 
 export const projects = [
   {
+    title: 'Noctiluca',
+    subtitle: 'A 12-second bioluminescence game',
+    description:
+      "You're a glowing swimmer lighting plankton colonies in black water, twelve seconds a dive. The anglerfish only show up in the light you make. Playable on desktop and mobile. Built with Claude Code.",
+    url: 'https://codywymore.com/noctiluca/',
+    tags: ['Game', 'Arcade', 'Claude Code'],
+    image: 'noctiluca/og.jpg',
+    imageAlt: 'Noctiluca title card: glowing blue plankton colonies lighting up in dark water behind the game\'s name',
+  },
+  {
     title: 'Inkwood',
     subtitle: 'A 5-minute typing game',
     description:
