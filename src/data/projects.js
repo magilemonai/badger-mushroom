@@ -11,6 +11,16 @@ export const featured = {
 
 export const projects = [
   {
+    title: 'Tray Bien',
+    subtitle: 'A waiter game where things keep going wrong',
+    description:
+      "You're Gerald, a waiter at the city's fourth-tallest restaurant. Catch what's on a plate and stack it up to the bell while a deadpan narrator reports each new problem: geese in the forecast, a visit from the moon, a health inspector who makes even the falling soup hold still. Nineteen of those, every one read aloud. Playable on desktop and mobile. Built with Claude Code, narrated by an ElevenLabs voice.",
+    url: 'https://codywymore.com/tray-bien/',
+    tags: ['Game', 'Arcade', 'Claude Code'],
+    image: 'tray-bien/og.jpg',
+    imageAlt: "Tray Bien title card: a mustached cartoon waiter holding up a tray stacked with soup, a goose, pancakes, a bowling ball, a cat and a pie, beside the game's name",
+  },
+  {
     title: 'Rock Flock',
     subtitle: 'A rhythm game for birds on a wire',
     description:
