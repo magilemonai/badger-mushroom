@@ -11,6 +11,16 @@ export const featured = {
 
 export const projects = [
   {
+    title: 'Rock Flock',
+    subtitle: 'A rhythm game for birds on a wire',
+    description:
+      'A rhythm game where the telephone wire is the hit line. Four birds dive down their lanes and you land each one on the beat. Every landing plays a note of the melody, so a miss leaves a hole in the tune. Three original songs about bird stuff, and a cat that climbs the pole when you slip. Playable on desktop and mobile. Built with Claude Code.',
+    url: 'https://codywymore.com/rock-flock/',
+    tags: ['Game', 'Rhythm', 'Claude Code'],
+    image: 'rock-flock/og.jpg',
+    imageAlt: "Rock Flock title card: four cartoon rock-star birds perched on a telephone wire at sunset under the game's name",
+  },
+  {
     title: 'Shatterhour',
     subtitle: 'An exploding clock-tower city',
     description:
