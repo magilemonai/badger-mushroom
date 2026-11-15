@@ -21,7 +21,10 @@ export default function useScrollAnimation() {
           observer.unobserve(el)
         }
       },
-      { threshold: 0.15 }
+      // 15% of the element, capped at 15% of a screen's height. A wrapper
+      // taller than ~6.7 screens can never show 15% of itself at once, so an
+      // uncapped threshold left it invisible (Writing on phones).
+      { threshold: Math.min(0.15, (0.15 * window.innerHeight) / (rect.height || 1)) }
     )
 
     observer.observe(el)
