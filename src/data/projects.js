@@ -17,7 +17,7 @@ export const projects = [
       'Paint blots ooze toward your Prism, and a sprout can only hurt the ones that share a pigment with it. Sprouts are also walls, so every one you plant bends the path. Fuse two neighbors to blend a new color, which frees a tile and reopens the maze. Route the blots through a paint puddle and they change color on the way. Eight gardens, and something very large waiting in the last one. Playable on desktop and mobile. Built with Claude Code.',
     url: 'https://codywymore.com/hue-goes-there/',
     tags: ['Game', 'Tower Defense', 'Claude Code'],
-    image: 'hue-goes-there/og.jpg?v=2', // v=2: recomposed 2026-11-21; the query skips the 4-hour browser cache of the first version
+    image: 'hue-goes-there/og.jpg?card=1121b', // the query skips browser and CDN copies of the first, badly cropped version (recomposed 2026-11-21)
     imageAlt: "Hue Goes There? title card: the game's name in rainbow letters above a parade of cartoon paint blots in six colors",
   },
   {
