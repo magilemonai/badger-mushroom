@@ -11,6 +11,16 @@ export const featured = {
 
 export const projects = [
   {
+    title: 'Hue Goes There?',
+    subtitle: 'A color-mixing tower defense',
+    description:
+      'Paint blots ooze toward your Prism, and a sprout can only hurt the ones that share a pigment with it. Sprouts are also walls, so every one you plant bends the path. Fuse two neighbors to blend a new color, which frees a tile and reopens the maze. Route the blots through a paint puddle and they change color on the way. Eight gardens, and something very large waiting in the last one. Playable on desktop and mobile. Built with Claude Code.',
+    url: 'https://codywymore.com/hue-goes-there/',
+    tags: ['Game', 'Tower Defense', 'Claude Code'],
+    image: 'hue-goes-there/og.jpg',
+    imageAlt: "Hue Goes There? title card: the game's name in rainbow letters above a parade of cartoon paint blots in six colors",
+  },
+  {
     title: 'Tray Bien',
     subtitle: 'A waiter game where things keep going wrong',
     description:
